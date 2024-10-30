@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=95305861" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script defer="" src="../../_static/app.umd.js?v=c93eadd1"></script>
+    <link rel="icon" href="../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tools for Low Speed Mixed Signal System Design" href="../tools_for_ls/index.html" />
+    <link rel="prev" title="Converter Connectivity Tutorial" href="../converter_connectivity_tutorial/index.html" />
+   
+  
+  <meta name="global_root" content="../../../">
+  <meta name="repo" content="documentation">
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head><body>
+  <div class="banner"></div>
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button value="search" class="icon"></button>
+      <span id="search-progress"></span>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com"></a>
+        <div class="vertical-divider"></div>
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        <a id="logo" href="../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../index.html" class="current">System Level</a>
+  <a href="../../../hdl/index.html">HDL</a>
+  <a href="../../../testbenches/index.html">HDL Testbenches</a>
+  <a href="../../../pyadi-iio/index.html">Hardware Python Interfaces</a>
+  <a href="../../../libiio/index.html">libiio</a>
+  <a href="../../../no-OS/index.html">no-OS</a>
+  <a href="../../../precision-converters-firmware/index.html">Precision Converters Firmware</a>
+  <a href="../../../PrecisionToolbox/index.html">Precision Toolbox</a>
+  <a href="../../../scopy/index.html">Scopy</a>
+  <a href="../../../doctools/index.html">Doctools</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div>
+          <div class="localtoc-header">On this page</div>
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a><ul>
+<li><a class="reference internal" href="#hadware-setup">Hadware setup</a></li>
+<li><a class="reference internal" href="#used-software">Used software</a><ul>
+<li><a class="reference internal" href="#scopy-2-0">Scopy 2.0</a></li>
+<li><a class="reference internal" href="#thonny">Thonny</a></li>
+<li><a class="reference internal" href="#command-line">Command line</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#iio-info">IIO Info</a></li>
+<li><a class="reference internal" href="#simple-sine-wave-from-the-m2k-to-the-ad4080">Simple sine wave from the M2K to the AD4080</a></li>
+<li><a class="reference internal" href="#performance-metrics-with-genalyzer">Performance metrics with Genalyzer</a></li>
+<li><a class="reference internal" href="#sinc1-frequency-response">Sinc1 frequency response</a></li>
+<li><a class="reference internal" href="#obspy">ObsPy</a></li>
+<li><a class="reference internal" href="#using-libiio-in-c">Using libiio in C</a></li>
+<li><a class="reference internal" href="#iiod-and-context-forwarding">IIOD and context forwarding</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../index.html" class="current">System Level</a>
+  <a href="../../../hdl/index.html">HDL</a>
+  <a href="../../../testbenches/index.html">HDL Testbenches</a>
+  <a href="../../../pyadi-iio/index.html">Hardware Python Interfaces</a>
+  <a href="../../../libiio/index.html">libiio</a>
+  <a href="../../../no-OS/index.html">no-OS</a>
+  <a href="../../../precision-converters-firmware/index.html">Precision Converters Firmware</a>
+  <a href="../../../PrecisionToolbox/index.html">Precision Toolbox</a>
+  <a href="../../../scopy/index.html">Scopy</a>
+  <a href="../../../doctools/index.html">Doctools</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../linux/kuiper/index.html">Kuiper Linux</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kuiper/release-notes.html">Release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kuiper/sdcard/index.html">SD Card flashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kuiper/project-list.html">Project list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kuiper/update.html">Updating</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1-1" id="toctree-collapse-2-1-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-2-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/petalinux.html">Building with Petalinux</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Evaluation Boards</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/index.html">User guides</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../eval/user-guide/eval-adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ User Guide</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-1" id="toctree-collapse-7-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-7-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval/user-guide/adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-1-1" id="toctree-collapse-7-1-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-7-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval/user-guide/adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval/user-guide/adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../university/index.html">Engineering University Program</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1"/><div class="collapse"><a class="reference internal" href="../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/forking_publishing.html">Forking and publishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/creating_new_pages.html">Creating new pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body" role="main">
+            
+  <section id="key-adi-s-software-infrastructure-for-designing-with-adcs-dacs-and-sensors">
+<h1>Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors<a class="headerlink" href="#key-adi-s-software-infrastructure-for-designing-with-adcs-dacs-and-sensors" title="Link to this heading">#</a></h1>
+<section id="hadware-setup">
+<h2>Hadware setup<a class="headerlink" href="#hadware-setup" title="Link to this heading">#</a></h2>
+<p>Shopping List:</p>
+<a class="reference internal image-reference" href="../../_images/setup_ad4080eval_m2k.jpg"><img alt="../../_images/setup_ad4080eval_m2k.jpg" class="align-right" src="../../_images/setup_ad4080eval_m2k.jpg" style="width: 30em;" />
+</a>
+<ul class="simple">
+<li><p>Raspberry Pi 400 (or 4)</p></li>
+<li><p>EVAL-AD4080-ARDZ eval board</p></li>
+<li><p>Tensility 16-00078 / DigiKey 839-1671-ND 12 V adapter</p></li>
+<li><p>ST Nucleo-H563ZI</p></li>
+<li><p>ADALM2000 &amp; Nucleo plugged in to the Pi</p></li>
+<li><p>Either 1k series resistor, or 2k/3k attenuator between the M2k and AD4080</p></li>
+</ul>
+<p>Connections:</p>
+<a class="reference internal image-reference" href="../../_images/setup_connections.png"><img alt="../../_images/setup_connections.png" class="align-right" src="../../_images/setup_connections.png" style="width: 30em;" />
+</a>
+<ul class="simple">
+<li><p>W1 - IN- on adapter (mislabeled)</p></li>
+<li><p>W2 - IN+ on adapter (mislabeled)</p></li>
+<li><p>1+ to P2, pin 1</p></li>
+<li><p>1- to P2, pin 7</p></li>
+<li><p>1-, 2- to m2k GND pins</p></li>
+</ul>
+<img alt="" class="clear-both" src="learning/sw_infrastructure/clearfix" />
+</section>
+<section id="used-software">
+<h2>Used software<a class="headerlink" href="#used-software" title="Link to this heading">#</a></h2>
+<section id="scopy-2-0">
+<h3>Scopy 2.0<a class="headerlink" href="#scopy-2-0" title="Link to this heading">#</a></h3>
+<p>Click the Scopy shortcut on the desktop (#1) and then choose “Execute” when
+prompted (#2). Once opened, it should detect the attached M2k. Click “Connect”
+(#3).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not open scopy from the start menu, because that will open an older
+version.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/m2k_connect.png"><img alt="../../_images/m2k_connect.png" src="../../_images/m2k_connect.png" style="width: 30em;" />
+</a>
+<p>It is possible to load and store a known hardware and software configurations.
+For this workshop, load the
+<a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/blob/main/docs/m2k_and_ad408_scopy_ini">m2k_and_ad4080_scopi_ini</a>
+file (#4, #5):</p>
+<a class="reference internal image-reference" href="../../_images/m2k_load_ini.png"><img alt="../../_images/m2k_load_ini.png" src="../../_images/m2k_load_ini.png" style="width: 30em;" />
+</a>
+</section>
+<section id="thonny">
+<h3>Thonny<a class="headerlink" href="#thonny" title="Link to this heading">#</a></h3>
+<p>Most examples in this workshop are Python scripts. Thonny is a Python IDE and
+will allow you to edit and run them easily. Launch Thony from the start menu:</p>
+<a class="reference internal image-reference" href="../../_images/thonny_open.png"><img alt="../../_images/thonny_open.png" src="../../_images/thonny_open.png" style="width: 20em;" />
+</a>
+</section>
+<section id="command-line">
+<h3>Command line<a class="headerlink" href="#command-line" title="Link to this heading">#</a></h3>
+<p>Multiple examples require running Linux commands. For those, open the terminal
+from the task bar:</p>
+<a class="reference internal image-reference" href="../../_images/terminal_open.png"><img alt="../../_images/terminal_open.png" src="../../_images/terminal_open.png" style="width: 15em;" />
+</a>
+</section>
+</section>
+<section id="iio-info">
+<h2>IIO Info<a class="headerlink" href="#iio-info" title="Link to this heading">#</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">iio_info</span></code> utility to display information about…</p>
+<p>…the <code class="docutils literal notranslate"><span class="pre">local:</span></code> context (raspberry pi cpu_thermal):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span>
+</pre></div>
+</div>
+<p>Expected output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span> <span class="n">version</span><span class="p">:</span> <span class="mf">0.26</span> <span class="p">(</span><span class="n">git</span> <span class="n">tag</span><span class="p">:</span><span class="n">a0eca0d2</span><span class="p">)</span>
+<span class="n">Libiio</span> <span class="n">version</span><span class="p">:</span> <span class="mf">0.26</span> <span class="p">(</span><span class="n">git</span> <span class="n">tag</span><span class="p">:</span> <span class="n">a0eca0d</span><span class="p">)</span> <span class="n">backends</span><span class="p">:</span> <span class="n">local</span> <span class="n">xml</span> <span class="n">ip</span> <span class="n">usb</span> <span class="n">serial</span>
+<span class="n">IIO</span> <span class="n">context</span> <span class="n">created</span> <span class="k">with</span> <span class="n">local</span> <span class="n">backend</span><span class="o">.</span>
+<span class="n">Backend</span> <span class="n">version</span><span class="p">:</span> <span class="mf">0.26</span> <span class="p">(</span><span class="n">git</span> <span class="n">tag</span><span class="p">:</span> <span class="n">a0eca0d</span><span class="p">)</span>
+<span class="n">Backend</span> <span class="n">description</span> <span class="n">string</span><span class="p">:</span> <span class="n">Linux</span> <span class="n">kuiper</span><span class="o">-</span><span class="n">ioan</span> <span class="mf">6.1.54</span><span class="o">-</span><span class="n">v7l</span><span class="o">+</span> <span class="c1">#1 SMP Fri Sep 20 07:21:36 UTC 2024 armv7l</span>
+<span class="n">IIO</span> <span class="n">context</span> <span class="n">has</span> <span class="mi">4</span> <span class="n">attributes</span><span class="p">:</span>
+        <span class="n">hw_carrier</span><span class="p">:</span> <span class="n">Raspberry</span> <span class="n">Pi</span> <span class="mi">4</span> <span class="n">Model</span> <span class="n">B</span> <span class="n">Rev</span> <span class="mf">1.4</span>
+        <span class="n">dtoverlay</span><span class="p">:</span> <span class="n">vc4</span><span class="o">-</span><span class="n">kms</span><span class="o">-</span><span class="n">v3d</span>
+        <span class="n">local</span><span class="p">,</span><span class="n">kernel</span><span class="p">:</span> <span class="mf">6.1.54</span><span class="o">-</span><span class="n">v7l</span><span class="o">+</span>
+        <span class="n">uri</span><span class="p">:</span> <span class="n">local</span><span class="p">:</span>
+<span class="n">IIO</span> <span class="n">context</span> <span class="n">has</span> <span class="mi">2</span> <span class="n">devices</span><span class="p">:</span>
+        <span class="n">hwmon0</span><span class="p">:</span> <span class="n">cpu_thermal</span>
+                <span class="mi">1</span> <span class="n">channels</span> <span class="n">found</span><span class="p">:</span>
+                        <span class="n">temp1</span><span class="p">:</span>  <span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+                        <span class="mi">2</span> <span class="n">channel</span><span class="o">-</span><span class="n">specific</span> <span class="n">attributes</span> <span class="n">found</span><span class="p">:</span>
+                                <span class="n">attr</span>  <span class="mi">0</span><span class="p">:</span> <span class="n">crit</span> <span class="n">value</span><span class="p">:</span> <span class="mi">110000</span>
+                                <span class="n">attr</span>  <span class="mi">1</span><span class="p">:</span> <span class="nb">input</span> <span class="n">value</span><span class="p">:</span> <span class="mi">49173</span>
+                <span class="n">No</span> <span class="n">trigger</span> <span class="n">on</span> <span class="n">this</span> <span class="n">device</span>
+        <span class="n">hwmon1</span><span class="p">:</span> <span class="n">rpi_volt</span>
+                <span class="mi">1</span> <span class="n">channels</span> <span class="n">found</span><span class="p">:</span>
+                        <span class="n">in0</span><span class="p">:</span>  <span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+                        <span class="mi">1</span> <span class="n">channel</span><span class="o">-</span><span class="n">specific</span> <span class="n">attributes</span> <span class="n">found</span><span class="p">:</span>
+                                <span class="n">attr</span>  <span class="mi">0</span><span class="p">:</span> <span class="n">lcrit_alarm</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+                <span class="n">No</span> <span class="n">trigger</span> <span class="n">on</span> <span class="n">this</span> <span class="n">device</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>…the <code class="docutils literal notranslate"><span class="pre">usb:</span></code> context (ADALM2000):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span> <span class="o">-</span><span class="n">u</span> <span class="n">usb</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Expected output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span> <span class="n">version</span><span class="p">:</span> <span class="mf">0.26</span> <span class="p">(</span><span class="n">git</span> <span class="n">tag</span><span class="p">:</span><span class="n">a0eca0d2</span><span class="p">)</span>
+<span class="n">Libiio</span> <span class="n">version</span><span class="p">:</span> <span class="mf">0.26</span> <span class="p">(</span><span class="n">git</span> <span class="n">tag</span><span class="p">:</span> <span class="n">a0eca0d</span><span class="p">)</span> <span class="n">backends</span><span class="p">:</span> <span class="n">local</span> <span class="n">xml</span> <span class="n">ip</span> <span class="n">usb</span> <span class="n">serial</span>
+<span class="n">IIO</span> <span class="n">context</span> <span class="n">created</span> <span class="k">with</span> <span class="n">usb</span> <span class="n">backend</span><span class="o">.</span>
+<span class="n">Backend</span> <span class="n">version</span><span class="p">:</span> <span class="mf">0.26</span> <span class="p">(</span><span class="n">git</span> <span class="n">tag</span><span class="p">:</span> <span class="n">v0</span><span class="mf">.26</span><span class="p">)</span>
+<span class="n">Backend</span> <span class="n">description</span> <span class="n">string</span><span class="p">:</span> <span class="n">Linux</span> <span class="p">(</span><span class="n">none</span><span class="p">)</span> <span class="mf">5.15.36</span><span class="o">-</span><span class="mi">182064</span><span class="o">-</span><span class="n">g7aa63204d396</span> <span class="c1">#10 SMP PREEMPT Fri Oct 11 13:17:19 CEST 2024 armv7l</span>
+<span class="n">IIO</span> <span class="n">context</span> <span class="n">has</span> <span class="mi">21</span> <span class="n">attributes</span><span class="p">:</span>
+        <span class="n">hw_model</span><span class="p">:</span> <span class="n">Analog</span> <span class="n">Devices</span> <span class="n">M2k</span> <span class="n">Rev</span><span class="o">.</span><span class="n">D</span> <span class="p">(</span><span class="n">Z7010</span><span class="p">)</span>
+        <span class="n">hw_model_variant</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="n">hw_serial</span><span class="p">:</span> <span class="mi">10447384</span><span class="n">b904000cebff120015b3dbc2d7</span>
+        <span class="n">fw_version</span><span class="p">:</span> <span class="n">v0</span><span class="mf">.33</span>
+<span class="p">[</span><span class="o">...</span> <span class="n">snip</span> <span class="o">...</span><span class="p">]</span>
+<span class="n">IIO</span> <span class="n">context</span> <span class="n">has</span> <span class="mi">14</span> <span class="n">devices</span><span class="p">:</span>
+        <span class="n">iio</span><span class="p">:</span><span class="n">device0</span><span class="p">:</span> <span class="n">xadc</span>
+                <span class="mi">10</span> <span class="n">channels</span> <span class="n">found</span><span class="p">:</span>
+                        <span class="n">voltage5</span><span class="p">:</span> <span class="n">vccoddr</span> <span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+                        <span class="mi">3</span> <span class="n">channel</span><span class="o">-</span><span class="n">specific</span> <span class="n">attributes</span> <span class="n">found</span><span class="p">:</span>
+                                <span class="n">attr</span>  <span class="mi">0</span><span class="p">:</span> <span class="n">label</span> <span class="n">value</span><span class="p">:</span> <span class="n">vccoddr</span>
+                                <span class="n">attr</span>  <span class="mi">1</span><span class="p">:</span> <span class="n">raw</span> <span class="n">value</span><span class="p">:</span> <span class="mi">1841</span>
+                                <span class="n">attr</span>  <span class="mi">2</span><span class="p">:</span> <span class="n">scale</span> <span class="n">value</span><span class="p">:</span> <span class="mf">0.732421875</span>
+<span class="p">[</span><span class="o">...</span> <span class="n">snip</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>…the <code class="docutils literal notranslate"><span class="pre">serial:/dev/ttyACM0,230400,8n1</span></code> context (EVAL-AD4080):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span> <span class="o">-</span><span class="n">u</span> <span class="n">serial</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyACM0</span><span class="p">,</span><span class="mi">230400</span><span class="p">,</span><span class="mi">8</span><span class="n">n1</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="simple-sine-wave-from-the-m2k-to-the-ad4080">
+<h2>Simple sine wave from the M2K to the AD4080<a class="headerlink" href="#simple-sine-wave-from-the-m2k-to-the-ad4080" title="Link to this heading">#</a></h2>
+<p>Start generating a sine wave using Scopy. In Thonny, load
+<a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_hw/hello_ad4080.py">Desktop/ftc24-ws/hello_hw/hello_ad4080.py</a>
+and click Run:</p>
+<img alt="../../_images/hello_ad4080.png" src="../../_images/hello_ad4080.png" />
+</section>
+<section id="performance-metrics-with-genalyzer">
+<h2>Performance metrics with Genalyzer<a class="headerlink" href="#performance-metrics-with-genalyzer" title="Link to this heading">#</a></h2>
+<p>Stop the M2k waveform generator and close Scopy, because this demo will generate
+a signal programaticaly. In Thonny, load
+<a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_genalyzer/m2k_source_ad4080_sink.py">Desktop/ftc24-ws/hello_genalyzer/m2k_source_ad4080_sink.py</a>
+and Run:</p>
+<img alt="../../_images/m2k_source_ad4080_sink.png" src="../../_images/m2k_source_ad4080_sink.png" />
+</section>
+<section id="sinc1-frequency-response">
+<h2>Sinc1 frequency response<a class="headerlink" href="#sinc1-frequency-response" title="Link to this heading">#</a></h2>
+<p>In Thonny, load and run
+<a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_genalyzer/sinc_folding_interactive.py">Desktop/ftc24-ws/hello_genalyzer/sinc_folding_interactive.py</a>.
+Drag the slider controlling the frequency of the transmitted noise and interpret
+the resulting FFT for different frequencies:</p>
+<img alt="../../_images/sinc_folding_interactive.png" src="../../_images/sinc_folding_interactive.png" />
+</section>
+<section id="obspy">
+<h2>ObsPy<a class="headerlink" href="#obspy" title="Link to this heading">#</a></h2>
+<p>In Thonny, load and run <a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_seismograph/seismograph.py">Desktop/ftc24-ws/hello_seismograph/seismograph.py</a>:</p>
+<img alt="../../_images/seismograph.png" src="../../_images/seismograph.png" />
+</section>
+<section id="using-libiio-in-c">
+<h2>Using libiio in C<a class="headerlink" href="#using-libiio-in-c" title="Link to this heading">#</a></h2>
+<p>In a terminal, navigate to <a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/tree/main/hello_iio">Desktop/ftc24-ws/hello_iio</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">ftc24</span><span class="o">-</span><span class="n">ws</span><span class="o">/</span><span class="n">hello_iio</span>
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-la</span></code> to check the contents of this directory. Expected output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="mi">24</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">2</span> <span class="n">analog</span> <span class="n">analog</span> <span class="mi">4096</span> <span class="n">Oct</span> <span class="mi">29</span> <span class="mi">15</span><span class="p">:</span><span class="mi">51</span> <span class="o">.</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">9</span> <span class="n">analog</span> <span class="n">analog</span> <span class="mi">4096</span> <span class="n">Oct</span> <span class="mi">29</span> <span class="mi">15</span><span class="p">:</span><span class="mi">51</span> <span class="o">..</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">analog</span> <span class="n">analog</span>  <span class="mi">132</span> <span class="n">Oct</span> <span class="mi">29</span> <span class="mi">16</span><span class="p">:</span><span class="mi">03</span> <span class="n">CMakeLists</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">analog</span> <span class="n">analog</span>  <span class="mi">733</span> <span class="n">Oct</span> <span class="mi">29</span> <span class="mi">16</span><span class="p">:</span><span class="mi">03</span> <span class="n">hello_iio</span><span class="o">.</span><span class="n">c</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">analog</span> <span class="n">analog</span>  <span class="mi">204</span> <span class="n">Oct</span> <span class="mi">29</span> <span class="mi">16</span><span class="p">:</span><span class="mi">03</span> <span class="n">how_2_build_cmake</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">analog</span> <span class="n">analog</span>   <span class="mi">35</span> <span class="n">Oct</span> <span class="mi">29</span> <span class="mi">16</span><span class="p">:</span><span class="mi">03</span> <span class="n">how_2_build_cmdline</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Take a look at the source code using the command <code class="docutils literal notranslate"><span class="pre">geany</span> <span class="pre">hello_iio.c</span></code>. Check
+the <code class="docutils literal notranslate"><span class="pre">how_2_build_cmake.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">how_2_build_cmdline.txt</span></code> files for build
+instructions.</p>
+<p>Copy the command from <code class="docutils literal notranslate"><span class="pre">how_2_build_cmdline.txt</span></code> into the command line
+(Ctrl-Shift-C, Ctrl-Shift-V) and run it (there should be no console output):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="n">hello_iio</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">hello_iio</span> <span class="o">-</span><span class="n">liio</span>
+</pre></div>
+</div>
+<p>Alternatively, you can use the CMake build system. For this project, run the
+following commands (also in <code class="docutils literal notranslate"><span class="pre">how_2_build_cmake.txt</span></code>):</p>
+<blockquote>
+<div><p>mkdir build
+cd build
+cmake ..
+make</p>
+</div></blockquote>
+<p>Both will have compiled an executable called hello_iio, which can be run in the
+command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">hello_iio</span>
+</pre></div>
+</div>
+<p>Expected output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">102.979400</span> <span class="n">Fahrenheit</span> <span class="n">Degrees</span>
+<span class="mf">39.433000</span> <span class="n">Celsius</span> <span class="n">Degrees</span>
+</pre></div>
+</div>
+</section>
+<section id="iiod-and-context-forwarding">
+<h2>IIOD and context forwarding<a class="headerlink" href="#iiod-and-context-forwarding" title="Link to this heading">#</a></h2>
+<p>IIOD (IIO Daemon) is a program that creates libiio network contexts (<code class="docutils literal notranslate"><span class="pre">ip:...</span></code>)
+that are bound to any kind of context (could be <code class="docutils literal notranslate"><span class="pre">local:</span></code>, <code class="docutils literal notranslate"><span class="pre">usb:</span></code>,
+<code class="docutils literal notranslate"><span class="pre">serial:</span></code>, etc.), acting like a middleman between the two, forwarding commands
+and data both ways. It is a great tool in managing connectivity in projects with
+multiple iio devices, which may potentially be connected to multiple hosts,
+allowing seamless communication between all of them. Some <strong>example use cases</strong>:</p>
+<ul class="simple">
+<li><p>Exposing an iio context only visible to a Raspberry Pi’s (such as the AD4080
+serial context) to other computers on the network</p></li>
+<li><p>Connecting to multiple iio contexts through a single internet connection,
+using different ports for each device (four Phasers example in the slide deck)</p></li>
+<li><p>Backend compatibility: some libiio builds (such as the one bundled in MATLAB
+Toolboxes) don’t support the serial backend. IIOD can forward the serial
+context to a port on the local (or loopback) network, allowing the MATLAB
+Toolbox to connect to that and access the device</p></li>
+</ul>
+<p>IIOD runs on the computer that has access to the context you want to forward. In
+the case of this workshop, that is the Raspberry Pi to which the M2K and AD4080
+are connected.</p>
+<p>To check which backends your build of libiio (which IIOD is part of) supports,
+run <code class="docutils literal notranslate"><span class="pre">iio_info</span> <span class="pre">-V</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span> <span class="n">version</span><span class="p">:</span> <span class="mf">0.26</span> <span class="p">(</span><span class="n">git</span> <span class="n">tag</span><span class="p">:</span><span class="n">a0eca0d</span><span class="p">)</span>
+<span class="n">Libiio</span> <span class="n">version</span><span class="p">:</span> <span class="mf">0.26</span> <span class="p">(</span><span class="n">git</span> <span class="n">tag</span><span class="p">:</span> <span class="n">a0eca0d</span><span class="p">)</span> <span class="n">backends</span><span class="p">:</span> <span class="n">local</span> <span class="n">xml</span> <span class="n">ip</span> <span class="n">usb</span> <span class="n">serial</span>
+</pre></div>
+</div>
+<p>To forward a context, first identify its URI:</p>
+<ul class="simple">
+<li><p>For the M2K, use <code class="docutils literal notranslate"><span class="pre">usb:</span></code> or <code class="docutils literal notranslate"><span class="pre">ip:192.168.2.1</span></code></p></li>
+<li><p>For the AD4080, use <code class="docutils literal notranslate"><span class="pre">serial:/dev/ttyACM0,230400,8n1</span></code> (or ACM1, depending on
+the order in which the Pi assigns serial device numbers)</p></li>
+</ul>
+<p>Then choose a port on which iiod will listen. Kuiper linux already has an
+instance of iiod running on the default port (30431) forwarding the <code class="docutils literal notranslate"><span class="pre">local:</span></code>
+context.</p>
+<p>Examples:</p>
+<p>To forward the M2K connection to port 50905, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iiod</span> <span class="o">-</span><span class="n">u</span> <span class="n">ip</span><span class="p">:</span><span class="mf">192.168.2.1</span> <span class="o">-</span><span class="n">p</span> <span class="mi">50905</span>
+</pre></div>
+</div>
+<p>To forward the AD4080 connection to port 50907, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iiod</span> <span class="o">-</span><span class="n">u</span> <span class="n">serial</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyACM0</span><span class="p">,</span><span class="mi">230400</span><span class="p">,</span><span class="mi">8</span><span class="n">n1</span> <span class="o">-</span><span class="n">p</span> <span class="mi">50907</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Leave them running. Closing these processes (or their terminal window) will stop forwarding the context.</p>
+</div>
+<p>You can now use the context from any libiio application (e.g. the workshop
+scripts, Scopy, iio-oscilloscope, iio_info, etc.).</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">iio_info</span></code> can now display the AD4080 context by connecting to
+the IIOD port (even from another computer on the network), instead of directly
+to the board:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span> <span class="o">-</span><span class="n">u</span> <span class="n">ip</span><span class="p">:</span><span class="mf">12.34.56.78</span><span class="p">:</span><span class="mi">50907</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the above command, you must replace 12.34.56.78 with the address of the
+Raspberry Pi. Find it by running <code class="docutils literal notranslate"><span class="pre">hostname</span> <span class="pre">-I</span></code> on the Pi.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../converter_connectivity_tutorial/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Converter Connectivity Tutorial</a>
+    <a href="../tools_for_ls/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Tools for Low Speed Mixed Signal System Design</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <div id="vertical-border"></div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2024, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
