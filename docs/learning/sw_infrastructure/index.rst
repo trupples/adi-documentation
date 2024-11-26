@@ -1,5 +1,22 @@
-Key ADI's Software Infrastructure for designing with ADCs, DACs, and Sensors
+ADI's Software Infrastructure for designing with ADCs, DACs, and Sensors
 ===============================================================================
+
+
+Slide Deck and Video
+~~~~~~~~~~~~~~~~~~~~
+
+Since this tutorial is also designed to be presented as a live, hands-on
+workshop, a slide deck is provided here:
+
+.. ADMONITION:: Download
+
+   :download:`Slide Deck: ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors <ADI_Software_Infrastructure_for_ADCs_DACs_Sensors.pptx>`
+
+A complete video run-through will also provided, either as a companion to
+following the tutorial yourself, or to practice before presenting as a
+hands-on workshop. This video is a placeholder, but many of the concepts apply directly to this workshop. We'll re-do it in the near future:
+
+.. video:: https://www.youtube.com/watch?v=UHX1njMQ7V0
 
 Hadware setup
 ~~~~~~~~~~~~~
