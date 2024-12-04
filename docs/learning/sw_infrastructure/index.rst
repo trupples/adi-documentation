@@ -1,28 +1,102 @@
-Key ADI's Software Infrastructure for designing with ADCs, DACs, and Sensors
+ADI's Software Infrastructure for designing with ADCs, DACs, and Sensors
 ===============================================================================
 
-Hadware setup
-~~~~~~~~~~~~~
+Introduction
+~~~~~~~~~~~~
 
+Analog Devices manufactures a dizzying array of products from simple, 2-terminal shunt voltage references to some of the most complicated communication and instrumentation devices in existence. ADCs, DACs, and sensors comprise a large subset of this space, and devices from the slow, jellybean LM75 temperature sensor to the Apollo MXfE share many of the same frameworks, programming interfaces, design and development tools.
 
-Shopping List:
+This tutorial will use a part “somewhere in the middle” in terms of complexity, the AD4080 40 Msps Oversampling SAR ADC, as a launchpad for learning about the powerful tools available for supporting such a broad range of devices. This part’s versatility is ideal for illustrating several key software and hardware concepts:
 
-.. image:: setup_ad4080eval_m2k.jpg
-    :width: 30 em
-    :align: right
+- Microcontroller / FPGA decision factors
+- Linux / no-OS / Zephyr support
+- Language support
+- Customer Enablement and System Prototyping
+- Signal chain architecture
+
+This tutorial will cover each of these in summary, accompanied by hands-on exercises with hardware. We’ll test drive key software utilities, run example programs, take some basic performance measurements, and prototype a simple seismic application example for strategic and key (S&K) customer Fred in the Shed Instruments. Finally, we’ll show how concepts can be applied to other data converter products – PLLs, DDS, IMUs, and more.
+
+The tutorial can be most easily run on a Raspberry Pi 4 or 400, but we’ll leave you with instructions on how to install everything on your ADI laptop, your co-worker’s Mac, and your other co-worker’s Linux box. You will walk away knowing how to bring up this portable, economical setup in customer lobbies, labs, and conference rooms. 
+
+You may recognize some of the material; this tutorial builds upon two previous ones:
+
+`Tools for Low-Speed Mixed Signal System Design <../tools_for_ls/index.html>`_
+
+where we connected an AD5592r to a Raspberry Pi and built a transistor curve tracer, and
+
+`Tools for Precision Wideband Mixed Signal System Design <../tools_for_prec_wb/index.html>`_
+
+where we used an ADALM2000 as part of a colorimeter proof of concept, then demonstrated how easy it was to replace the ADALM2000 with an AD4630-24 ADC.
+This tutorial also serves as a testing ground for elements that can be used in a future mixed-mode signal chain tutorial.
+
+Slide Deck and Video
+~~~~~~~~~~~~~~~~~~~~
+
+Since this tutorial is also designed to be presented as a live, hands-on
+workshop, a slide deck is provided here:
+
+.. ADMONITION:: Download
+
+   :download:`Slide Deck: ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors <ADI_Software_Infrastructure_for_ADCs_DACs_Sensors.pptx>`
+
+A complete video run-through will also be provided, either as a companion to following the tutorial yourself, or to practice before presenting as a hands-on workshop. This video is a placeholder for the time being, but many of the concepts apply directly to this workshop:
+
+.. video:: https://www.youtube.com/watch?v=UHX1njMQ7V0
+
+Materials
+---------
 
 - Raspberry Pi 400 (or 4)
+- 32 GB or larger, Class 10 or greater SD card
 - EVAL-AD4080-ARDZ eval board
 - Tensility 16-00078 / DigiKey 839-1671-ND 12 V adapter
 - ST Nucleo-H563ZI
-- ADALM2000 & Nucleo plugged in to the Pi
-- Either 1k series resistor, or 2k/3k attenuator between the M2k and AD4080
+- ADALM2000 Multi-function USB instrument
+   - ADALM2000 will be referred to as "m2k"
+- Either 1k series resistors, or 2k/3k attenuators between the M2k and AD4080
 
-Connections:
+Hardware setup
+~~~~~~~~~~~~~~
 
-.. image:: setup_connections.png
-    :width: 30 em
-    :align: right
+Jump the ST Nucleo's SB70 with a blob of solder. This jumper is near pin 1 of the main processor chip.
+
+Update the ST Nucleo-H563ZI management firmware using the utility at `ST-LINK boards firmware upgrade <https://www.st.com/en/development-tools/stsw-link007.html>`_ 
+
+Program the ST Nucleo-H563ZI board with the AD4080 tinyiiod server binary file.
+
+.. NOTE::
+
+   ToDo: Replace with link to controlled file when released. In the meantime, use this file.
+   
+   .. ADMONITION:: Download
+
+      :download:`ST Nucleo Programming File <ad4080_stm32_nucleo_h563.bin>`
+	  
+   MD5 checksum: 637690bad1d489a5429f8bc518336aaf
+   
+   (On Windows: ``certutil -hashfile .\ad4080_stm32_nucleo_h563.bin MD5``)
+
+
+Mount the EVAL-AD4080-ARDZ to the Nucleo-H563ZI board. Pin connections are unambiguous; it will only plug in in one location. Connect the m2k's W1 and W2 waveform generator  outputs to the EVAL-AD4080-ARDZ inputs with the 1k series resistors or 2k/3k attenuator, and optionally connect the m2k's 1+ and 1- to the ADC inputs as shown in :numref:`fig-m2k_ad4080_nucleo`.
+
+.. _fig-m2k_ad4080_nucleo:
+
+.. figure:: setup_ad4080eval_m2k.jpg
+   :width: 30 em
+   :align: center
+
+   AD4080-ARDZ mounting and ADALM2000 connections.
+
+For reference, the connector pinouts are shown in :numref:`fig-m2k_ad4080_pinout`.
+
+
+.. _fig-m2k_ad4080_pinout:
+
+.. figure:: setup_connections.png
+   :width: 30 em
+   :align: center
+
+   EVAL-AD4080 Connector Pinouts.
 
 - W1 - IN- on adapter (mislabeled)
 - W2 - IN+ on adapter (mislabeled)
@@ -30,46 +104,33 @@ Connections:
 - 1- to P2, pin 7
 - 1-, 2- to m2k GND pins
 
-.. image:: clearfix
-    :alt: 
-    :class: clear-both
 
-Used software
-~~~~~~~~~~~~~
+Software Setup
+~~~~~~~~~~~~~~
+.. important::
 
-Scopy 2.0
----------
+   The setup script installs several software packages, it is recommended to use a dedicated SD card for this exercise to avoid conflicts or overwriting anything important.
 
-Click the Scopy shortcut on the desktop (#1) and then choose “Execute” when
-prompted (#2). Once opened, it should detect the attached M2k. Click “Connect”
-(#3).
+Write the ADI Kuiper Linux image onto the SD card. Directions and the image download are available at:
 
-.. warning::
-    Do not open scopy from the start menu, because that will open an older
-    version.
+`Analog Devices Kuiper Linux <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_
 
-.. image:: m2k_connect.png
-    :width: 30 em
- 
-It is possible to load and store a known hardware and software configurations.
-For this workshop, load the
-`m2k_and_ad4080_scopi_ini <https://github.com/cristina-suteu/ftc24-ws/blob/main/docs/m2k_and_ad408_scopy_ini>`_
-file (#4, #5):
+In theory the latest Kuiper Linux release should always work, but this tutorial is tested with the 2023_r2 release. All previous releases are archived and available.
 
-.. image:: m2k_load_ini.png
-    :width: 30 em
+Boot up the Raspberry Pi and connect to the internet. Clone or download the ftc24-ws repository from:
 
-Thonny
-------
+`ftc24-ws Workshop Files <https://github.com/cristina-suteu/ftc24-ws/>`_
 
-Most examples in this workshop are Python scripts. Thonny is a Python IDE and
-will allow you to edit and run them easily. Launch Thony from the start menu:
+Open a termial and ``cd ftc24-ws``. Run the following command:
 
-.. image:: thonny_open.png
-    :width: 20 em
+::
 
-Command line
-------------
+   sudo ./workshopsetup.sh
+   
+This will download and install all of the prerequisite software needed for the rest of the exercise.
+
+Exercise 1: Command line
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Multiple examples require running Linux commands. For those, open the terminal
 from the task bar:
@@ -78,7 +139,7 @@ from the task bar:
     :width: 15 em
 
 IIO Info
-~~~~~~~~
+--------
 
 Use the ``iio_info`` utility to display information about...
 
@@ -151,6 +212,45 @@ Use the ``iio_info`` utility to display information about...
         iio_info -u serial:/dev/ttyACM0,230400,8n1
 
 
+
+Exercise 2: Scopy (2.0!)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Click the Scopy shortcut on the desktop as shown in :numref:`fig-open_scopy` (Note #1) and then choose “Execute” when prompted (#2). Once opened, it should detect the attached M2k. Click “Connect”
+(#3).
+
+.. warning::
+    Do not open scopy from the start menu, because that will open an older
+    version.
+
+
+.. _fig-open_scopy:
+.. figure:: m2k_connect.png
+   :width: 30 em
+   :align: center
+
+   Opening Scopy and Connecting to ADALM2000
+
+A Scopy profile is available to set up the initial configuration. Load the **m2k_and_ad408_scopy_ini** file as shown in :numref:`fig-load_ini`. 
+
+.. _fig-load_ini:
+.. figure:: m2k_load_ini.png
+   :width: 30 em
+   :align: center
+
+   Loading Scopy Profile
+
+Connect to the AD4080.
+
+Exercise 3: Python and the Thonny IDE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Most examples in this workshop are Python scripts. Thonny is a Python IDE and will allow you to edit and run them easily. Launch Thony from the start menu:
+
+.. image:: thonny_open.png
+    :width: 20 em
+
+
 Simple sine wave from the M2K to the AD4080
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -175,8 +275,7 @@ Sinc1 frequency response
 
 In Thonny, load and run
 `Desktop/ftc24-ws/hello_genalyzer/sinc_folding_interactive.py <https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_genalyzer/sinc_folding_interactive.py>`_.
-Drag the slider controlling the frequency of the transmitted noise and interpret
-the resulting FFT for different frequencies:
+Drag the slider controlling the frequency of the transmitted noise and interpret the resulting FFT for different frequencies:
 
 .. image:: sinc_folding_interactive.png
 
