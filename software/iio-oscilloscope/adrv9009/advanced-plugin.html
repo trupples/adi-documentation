@@ -7,11 +7,11 @@
 
     <title>Advanced plugin &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/style.min.css?v=95305861" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.min.css?v=ab97267f" />
     <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../../_static/app.umd.js?v=c93eadd1"></script>
+    <script defer="" src="../../../_static/app.umd.js?v=689b8755"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -93,7 +93,7 @@
     <div class="localtoc">
       <div class="tocwrapper">
         <div>
-          <div class="localtoc-header">On this page</div>
+          <div class="localtoc-header"></div>
           <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
         </div>
         <nav>
@@ -243,7 +243,7 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
@@ -269,7 +269,7 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="advanced-plugin">
-<span id="iio-oscilloscope-adrv9009-advanced-plugin"></span><h1>Advanced plugin<a class="headerlink" href="#advanced-plugin" title="Link to this heading">#</a></h1>
+<span id="iio-oscilloscope-adrv9009-advanced-plugin"></span><h1>Advanced plugin<a class="headerlink" href="#advanced-plugin" title="Link to this heading"></a></h1>
 <p>The ADRV9009/ADRV9008 Advanced plugin works with the
 <a class="reference internal" href="../index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a>.
 You always use the latest version if possible. Changing any field will immediately
@@ -299,7 +299,7 @@ all values from the Linux debugfs:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/sys/bus/iio/devices/iio:device3$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>/sys/bus/iio/devices/iio:device3
@@ -308,13 +308,13 @@ all values from the Linux debugfs:</p>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/sys/bus/iio/devices/iio:device3$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/sys/kernel/debug/iio/iio<span class="se">\:</span>device3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/sys/kernel/debug/iio/iio<span class="se">\:</span>device3
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/sys/kernel/debug/iio/iio:device3$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>*<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s2">&quot;s/:/ = &lt;/g&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $0&quot;&gt;;&quot;}&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>*<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s2">&quot;s/:/ = &lt;/g&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $0&quot;&gt;;&quot;}&#39;</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>adi,arm-gpio-config-en-tx-tracking-cals-enable = &lt;0&gt;;
@@ -345,65 +345,65 @@ adi,aux-dac-resolution1 = &lt;0&gt;;
 <p>For the No-OS driver the mapping can be found at
 <a class="reference internal" href="../../../linux/drivers/iio-transceiver/adrv9009/customization.html#iio-transceiver-adrv9009-customization"><span class="std std-ref">ADRV9009/ADRV9008 Device Driver Customization</span></a>.</p>
 <section id="screenshots-descriptions">
-<h2>Screenshots / Descriptions<a class="headerlink" href="#screenshots-descriptions" title="Link to this heading">#</a></h2>
+<h2>Screenshots / Descriptions<a class="headerlink" href="#screenshots-descriptions" title="Link to this heading"></a></h2>
 <section id="clock-settings">
-<h3>Clock Settings<a class="headerlink" href="#clock-settings" title="Link to this heading">#</a></h3>
+<h3>Clock Settings<a class="headerlink" href="#clock-settings" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_1.png" src="../../../_images/adrv9009_adv_plugin_1.png" />
 </section>
 <section id="calibrations">
-<h3>Calibrations<a class="headerlink" href="#calibrations" title="Link to this heading">#</a></h3>
+<h3>Calibrations<a class="headerlink" href="#calibrations" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_2.png" src="../../../_images/adrv9009_adv_plugin_2.png" />
 </section>
 <section id="tx-settings">
-<h3>TX Settings<a class="headerlink" href="#tx-settings" title="Link to this heading">#</a></h3>
+<h3>TX Settings<a class="headerlink" href="#tx-settings" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_3.png" src="../../../_images/adrv9009_adv_plugin_3.png" />
 </section>
 <section id="rx-settings">
-<h3>RX Settings<a class="headerlink" href="#rx-settings" title="Link to this heading">#</a></h3>
+<h3>RX Settings<a class="headerlink" href="#rx-settings" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_4.png" src="../../../_images/adrv9009_adv_plugin_4.png" />
 </section>
 <section id="observation-rx-settings">
-<h3>Observation RX Settings<a class="headerlink" href="#observation-rx-settings" title="Link to this heading">#</a></h3>
+<h3>Observation RX Settings<a class="headerlink" href="#observation-rx-settings" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_5.png" src="../../../_images/adrv9009_adv_plugin_5.png" />
 </section>
 <section id="frequency-hopping-mode-setup">
-<h3>Frequency Hopping Mode Setup<a class="headerlink" href="#frequency-hopping-mode-setup" title="Link to this heading">#</a></h3>
+<h3>Frequency Hopping Mode Setup<a class="headerlink" href="#frequency-hopping-mode-setup" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_6.png" src="../../../_images/adrv9009_adv_plugin_6.png" />
 </section>
 <section id="pa-protection-settings">
-<h3>PA Protection Settings<a class="headerlink" href="#pa-protection-settings" title="Link to this heading">#</a></h3>
+<h3>PA Protection Settings<a class="headerlink" href="#pa-protection-settings" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_7.png" src="../../../_images/adrv9009_adv_plugin_7.png" />
 </section>
 <section id="gain-settings">
-<h3>Gain Settings<a class="headerlink" href="#gain-settings" title="Link to this heading">#</a></h3>
+<h3>Gain Settings<a class="headerlink" href="#gain-settings" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_8.png" src="../../../_images/adrv9009_adv_plugin_8.png" />
 </section>
 <section id="agc-settings">
-<h3>AGC Settings<a class="headerlink" href="#agc-settings" title="Link to this heading">#</a></h3>
+<h3>AGC Settings<a class="headerlink" href="#agc-settings" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_9.png" src="../../../_images/adrv9009_adv_plugin_9.png" />
 </section>
 <section id="arm-gpio-settings">
-<h3>ARM GPIO Settings<a class="headerlink" href="#arm-gpio-settings" title="Link to this heading">#</a></h3>
+<h3>ARM GPIO Settings<a class="headerlink" href="#arm-gpio-settings" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_10.png" src="../../../_images/adrv9009_adv_plugin_10.png" />
 </section>
 <section id="aux-dac-settings">
-<h3>AUX DAC Settings<a class="headerlink" href="#aux-dac-settings" title="Link to this heading">#</a></h3>
+<h3>AUX DAC Settings<a class="headerlink" href="#aux-dac-settings" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_11.png" src="../../../_images/adrv9009_adv_plugin_11.png" />
 </section>
 <section id="jesd204b-settings">
-<h3>JESD204B Settings<a class="headerlink" href="#jesd204b-settings" title="Link to this heading">#</a></h3>
+<h3>JESD204B Settings<a class="headerlink" href="#jesd204b-settings" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_12.png" src="../../../_images/adrv9009_adv_plugin_12.png" />
 </section>
 <section id="jesd204b-framer-settings">
-<h3>JESD204B Framer Settings<a class="headerlink" href="#jesd204b-framer-settings" title="Link to this heading">#</a></h3>
+<h3>JESD204B Framer Settings<a class="headerlink" href="#jesd204b-framer-settings" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_13.png" src="../../../_images/adrv9009_adv_plugin_13.png" />
 </section>
 <section id="jesd204b-deframer-settings">
-<h3>JESD204B Deframer Settings<a class="headerlink" href="#jesd204b-deframer-settings" title="Link to this heading">#</a></h3>
+<h3>JESD204B Deframer Settings<a class="headerlink" href="#jesd204b-deframer-settings" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_14.png" src="../../../_images/adrv9009_adv_plugin_14.png" />
 </section>
 <section id="bist">
-<h3>BIST<a class="headerlink" href="#bist" title="Link to this heading">#</a></h3>
+<h3>BIST<a class="headerlink" href="#bist" title="Link to this heading"></a></h3>
 <img alt="../../../_images/adrv9009_adv_plugin_15.png" src="../../../_images/adrv9009_adv_plugin_15.png" />
 <p>BIST stands for Build-In Self-Test. Selections on this Tab take immediately
 effect and therefore don’t require the Save Settings Button. Functionality
@@ -411,12 +411,12 @@ exposed here is only meant to inject test patterns/data than can be used to
 validate the Digital Interface or functionality of the device.</p>
 <p>There are three major facilities.</p>
 <section id="bist-tx-nco-tone">
-<h4>BIST TX NCO Tone<a class="headerlink" href="#bist-tx-nco-tone" title="Link to this heading">#</a></h4>
+<h4>BIST TX NCO Tone<a class="headerlink" href="#bist-tx-nco-tone" title="Link to this heading"></a></h4>
 <p>User selectable tone with frequency in kHz, that can be injected into the TX
 path.</p>
 </section>
 <section id="bist-prbs">
-<h4>BIST PRBS<a class="headerlink" href="#bist-prbs" title="Link to this heading">#</a></h4>
+<h4>BIST PRBS<a class="headerlink" href="#bist-prbs" title="Link to this heading"></a></h4>
 <p>Patterns and Pseudorandom Binary Sequence (PRBS) that can be injected into the
 RX path.</p>
 </section>

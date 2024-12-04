@@ -7,11 +7,11 @@
 
     <title>iio-trig-bfin-timer driver &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/style.min.css?v=95305861" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.min.css?v=ab97267f" />
     <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../../_static/app.umd.js?v=c93eadd1"></script>
+    <script defer="" src="../../../_static/app.umd.js?v=689b8755"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -93,7 +93,7 @@
     <div class="localtoc">
       <div class="tocwrapper">
         <div>
-          <div class="localtoc-header">On this page</div>
+          <div class="localtoc-header"></div>
           <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
         </div>
         <nav>
@@ -224,7 +224,7 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
@@ -250,7 +250,7 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="iio-trig-bfin-timer-driver">
-<span id="iio-iio-trig-bfin-timer"></span><h1>iio-trig-bfin-timer driver<a class="headerlink" href="#iio-trig-bfin-timer-driver" title="Link to this heading">#</a></h1>
+<span id="iio-iio-trig-bfin-timer"></span><h1>iio-trig-bfin-timer driver<a class="headerlink" href="#iio-trig-bfin-timer-driver" title="Link to this heading"></a></h1>
 <p>This driver allows any Blackfin system timer to be used as IIO trigger. It
 supports trigger rates from 0 to 100kHz in Hz resolution.</p>
 <div class="admonition tip">
@@ -258,7 +258,7 @@ supports trigger rates from 0 to 100kHz in Hz resolution.</p>
 <p>This driver depends on <code class="docutils literal notranslate"><span class="pre">BLACKFIN</span></code></p>
 </div>
 <section id="adding-linux-driver-support">
-<h2>Adding Linux driver support<a class="headerlink" href="#adding-linux-driver-support" title="Link to this heading">#</a></h2>
+<h2>Adding Linux driver support<a class="headerlink" href="#adding-linux-driver-support" title="Link to this heading"></a></h2>
 <p>Configure kernel with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> (alternatively use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">xconfig</span></code> or
 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">qconfig</span></code>)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Linux</span> <span class="n">Kernel</span> <span class="n">Configuration</span>
@@ -281,7 +281,7 @@ supports trigger rates from 0 to 100kHz in Hz resolution.</p>
 </div>
 </section>
 <section id="example-platform-device-initialization">
-<h2>Example platform device initialization<a class="headerlink" href="#example-platform-device-initialization" title="Link to this heading">#</a></h2>
+<h2>Example platform device initialization<a class="headerlink" href="#example-platform-device-initialization" title="Link to this heading"></a></h2>
 <p>One or multiple instances of this driver can be declared by adding appropriate
 platform device data. An example is shown below:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">resource</span><span class="w"> </span><span class="n">iio_bfin_trigger_resources</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -320,17 +320,17 @@ platform device data. An example is shown below:</p>
 </div>
 </section>
 <section id="driver-testing">
-<h2>Driver testing<a class="headerlink" href="#driver-testing" title="Link to this heading">#</a></h2>
+<h2>Driver testing<a class="headerlink" href="#driver-testing" title="Link to this heading"></a></h2>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/sys/bus/iio/devices
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/sys/bus/iio/devices
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/sys/bus/iio/devices$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>device0                  device0:buffer0:event0   device1:buffer0:access0
@@ -341,13 +341,13 @@ device0:buffer0:access0  device1:buffer0          trigger0
 <div class="clear-left"></div></div></div><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/sys/bus/iio/devices$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>trigger0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>trigger0
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/sys/bus/iio/devices/trigger0$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>name         subsystem    frequency  uevent
@@ -356,7 +356,7 @@ device0:buffer0:access0  device1:buffer0          trigger0
 <div class="clear-left"></div></div></div><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/sys/devices/trigger0$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>name
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>name
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>bfintmr3
@@ -365,13 +365,13 @@ device0:buffer0:access0  device1:buffer0          trigger0
 <div class="clear-left"></div></div></div><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/sys/devices/trigger0$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">1000</span><span class="w"> </span>&gt;<span class="w"> </span>frequency
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">1000</span><span class="w"> </span>&gt;<span class="w"> </span>frequency
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/sys/devices/trigger0$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>frequency
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>frequency
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></section>

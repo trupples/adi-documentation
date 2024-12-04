@@ -7,11 +7,11 @@
 
     <title>Quickstart &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/style.min.css?v=95305861" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/style.min.css?v=ab97267f" />
     <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../../../_static/app.umd.js?v=c93eadd1"></script>
+    <script defer="" src="../../../../_static/app.umd.js?v=689b8755"></script>
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -93,7 +93,7 @@
     <div class="localtoc">
       <div class="tocwrapper">
         <div>
-          <div class="localtoc-header">On this page</div>
+          <div class="localtoc-header"></div>
           <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
         </div>
         <nav>
@@ -228,7 +228,7 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
@@ -254,7 +254,7 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="quickstart">
-<span id="adrv9009-quickstart"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">#</a></h1>
+<span id="adrv9009-quickstart"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading"></a></h1>
 <p>The Quick Start Guides provide a simple step by step instruction on how to do an
 initial system setup for the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9008-9009">ADRV9009-W/PCBZ</a>,
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9008-9009">ADRV9008-1W/PCBZ</a> and
@@ -276,7 +276,7 @@ boot a Linux distribution.</p>
 </ul>
 </div>
 <section id="supported-carriers">
-<span id="adrv9009-carriers"></span><h2>Supported carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading">#</a></h2>
+<span id="adrv9009-carriers"></span><h2>Supported carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9008-9009">ADRV9009-W/PCBZ</a>,
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9008-9009">ADRV9008-1W/PCBZ</a> and
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9008-9009">ADRV9008-2W/PCBZ</a> is, by definition a “FPGA
@@ -327,7 +327,7 @@ The carriers we support are:</p>
 </div>
 </section>
 <section id="supported-environments">
-<h2>Supported Environments<a class="headerlink" href="#supported-environments" title="Link to this heading">#</a></h2>
+<h2>Supported Environments<a class="headerlink" href="#supported-environments" title="Link to this heading"></a></h2>
 <p>The supported OS are:</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -374,7 +374,7 @@ The carriers we support are:</p>
 </div>
 </section>
 <section id="hardware-setup">
-<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading">#</a></h2>
+<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
 <p>In most carriers, the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9008-9009">ADRV9009-W/PCBZ</a>,
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9008-9009">ADRV9008-1W/PCBZ</a> and
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9008-9009">ADRV9008-2W/PCBZ</a> boards connects to the HPC1
@@ -382,11 +382,11 @@ connector (unless otherwise noted). The carrier setup requires power, UART
 (115200), ethernet (Linux), HDMI (if available) and/or JTAG (no-OS) connections.
 A few typical setups are shown below.</p>
 <section id="zcu102-adrv9009-pcbz">
-<h3>ZCU102 + ADRV9009/PCBZ<a class="headerlink" href="#zcu102-adrv9009-pcbz" title="Link to this heading">#</a></h3>
+<h3>ZCU102 + ADRV9009/PCBZ<a class="headerlink" href="#zcu102-adrv9009-pcbz" title="Link to this heading"></a></h3>
 <img alt="../../../../_images/adrv9009_zcu102_quickstart.png" src="../../../../_images/adrv9009_zcu102_quickstart.png" />
 </section>
 <section id="unboxing-guide">
-<h3>Unboxing guide<a class="headerlink" href="#unboxing-guide" title="Link to this heading">#</a></h3>
+<h3>Unboxing guide<a class="headerlink" href="#unboxing-guide" title="Link to this heading"></a></h3>
 <p><a class="icon ez reference external" href="https://ez.analog.com/cfs-file/__key/communityserver-discussions-components-files/703/AD9371-and-ADRV9009-setup-with-ZCU102-or-ZC706-April2019.pdf">Detailed unboxing guide</a></p>
 </section>
 </section>

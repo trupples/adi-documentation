@@ -7,11 +7,11 @@
 
     <title>Linux Industrial I/O Subsystem &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/style.min.css?v=95305861" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.min.css?v=ab97267f" />
     <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../../_static/app.umd.js?v=c93eadd1"></script>
+    <script defer="" src="../../../_static/app.umd.js?v=689b8755"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -93,7 +93,7 @@
     <div class="localtoc">
       <div class="tocwrapper">
         <div>
-          <div class="localtoc-header">On this page</div>
+          <div class="localtoc-header"></div>
           <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
         </div>
         <nav>
@@ -232,7 +232,7 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
@@ -258,7 +258,7 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="linux-industrial-i-o-subsystem">
-<span id="iio"></span><h1>Linux Industrial I/O Subsystem<a class="headerlink" href="#linux-industrial-i-o-subsystem" title="Link to this heading">#</a></h1>
+<span id="iio"></span><h1>Linux Industrial I/O Subsystem<a class="headerlink" href="#linux-industrial-i-o-subsystem" title="Link to this heading"></a></h1>
 <img alt="../../../_images/iio.png" class="align-right" src="../../../_images/iio.png" />
 <p>The Industrial I/O subsystem is intended to provide support for devices that
 in some sense are analog to digital or digital to analog converters (ADCs,
@@ -300,11 +300,11 @@ PPI) or FPGA peripherals are also subject to this subsystem.
 Since latter ones unlike SPI or I2C are not generally abstracted by Linux bus
 drivers they are subject to processor platform dependent implementations.</p>
 <section id="iio-subsystem-overview">
-<h2>IIO Subsystem Overview<a class="headerlink" href="#iio-subsystem-overview" title="Link to this heading">#</a></h2>
+<h2>IIO Subsystem Overview<a class="headerlink" href="#iio-subsystem-overview" title="Link to this heading"></a></h2>
 <a class="reference internal image-reference" href="../../../_images/iio_block_view.png"><img alt="../../../_images/iio_block_view.png" src="../../../_images/iio_block_view.png" style="width: 500px;" />
 </a>
 <section id="functionality-of-iio">
-<h3>Functionality of IIO<a class="headerlink" href="#functionality-of-iio" title="Link to this heading">#</a></h3>
+<h3>Functionality of IIO<a class="headerlink" href="#functionality-of-iio" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>Basic device registration and handling.</p></li>
 <li><p>Polled access to device channels via sysfs.</p></li>
@@ -336,7 +336,7 @@ via which the raw data it self may be read back.</p></li>
 </ul>
 </section>
 <section id="trigger-and-software-ring-buffer-support">
-<h3>Trigger and software ring buffer support<a class="headerlink" href="#trigger-and-software-ring-buffer-support" title="Link to this heading">#</a></h3>
+<h3>Trigger and software ring buffer support<a class="headerlink" href="#trigger-and-software-ring-buffer-support" title="Link to this heading"></a></h3>
 <p>In many data analysis applications it is useful to be able to capture data
 based on some external signal (trigger).</p>
 <p>These triggers might be a:</p>
@@ -352,7 +352,7 @@ These triggers are used in iio to fill software ring buffers acting in a very
 similar fashion to the hardware buffers described above.
 Triggers can be completely unrelated to the sensor itself.</p>
 <section id="standalone-trigger-drivers">
-<h4>Standalone trigger drivers<a class="headerlink" href="#standalone-trigger-drivers" title="Link to this heading">#</a></h4>
+<h4>Standalone trigger drivers<a class="headerlink" href="#standalone-trigger-drivers" title="Link to this heading"></a></h4>
 <div class="toctree-wrapper compound">
 </div>
 <div class="table-wrapper docutils container">
@@ -382,13 +382,13 @@ triggers.</p></td>
 </section>
 </section>
 <section id="industrial-i-o-subsystem-in-kernel-interfaces">
-<h3>Industrial I/O Subsystem In-Kernel Interfaces<a class="headerlink" href="#industrial-i-o-subsystem-in-kernel-interfaces" title="Link to this heading">#</a></h3>
+<h3>Industrial I/O Subsystem In-Kernel Interfaces<a class="headerlink" href="#industrial-i-o-subsystem-in-kernel-interfaces" title="Link to this heading"></a></h3>
 <p>The IIO subsystem can act as a layer under other elements of the kernel
 providing a means of obtaining ADC type readings or of driving DAC type signals.
 The functionality supported will grow as use cases arise.</p>
 </section>
 <section id="iio-ring-buffer-kfifo">
-<h3>IIO Ring Buffer / kfifo<a class="headerlink" href="#iio-ring-buffer-kfifo" title="Link to this heading">#</a></h3>
+<h3>IIO Ring Buffer / kfifo<a class="headerlink" href="#iio-ring-buffer-kfifo" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="../../../_images/ringbuffer.png"><img alt="../../../_images/ringbuffer.png" class="align-left" src="../../../_images/ringbuffer.png" style="width: 400px;" />
 </a>
 <p>IIO uses a ring buffer also called circular buffer which is a data structure
@@ -402,7 +402,7 @@ circumstance should never happen.</p>
 <div class="clear-both"></div></section>
 </section>
 <section id="pointers">
-<h2>Pointers<a class="headerlink" href="#pointers" title="Link to this heading">#</a></h2>
+<h2>Pointers<a class="headerlink" href="#pointers" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>IIO mailing list: <a class="reference external" href="mailto:linux-iio&#37;&#52;&#48;vger&#46;kernel&#46;org">linux-iio<span>&#64;</span>vger<span>&#46;</span>kernel<span>&#46;</span>org</a></p></li>
 <li><p><a class="reference external" href="https://www.kernel.org/doc/Documentation/ABI/testing">IIO Linux Kernel Documentation sysfs-bus-iio-*</a></p></li>

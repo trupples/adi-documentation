@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors &#8212; System Level Documentation  documentation</title>
+    <title>ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=95305861" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=ab97267f" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../_static/app.umd.js?v=c93eadd1"></script>
+    <script defer="" src="../../_static/app.umd.js?v=689b8755"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -93,20 +93,25 @@
     <div class="localtoc">
       <div class="tocwrapper">
         <div>
-          <div class="localtoc-header">On this page</div>
+          <div class="localtoc-header"></div>
           <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a><ul>
-<li><a class="reference internal" href="#hadware-setup">Hadware setup</a></li>
-<li><a class="reference internal" href="#used-software">Used software</a><ul>
-<li><a class="reference internal" href="#scopy-2-0">Scopy 2.0</a></li>
-<li><a class="reference internal" href="#thonny">Thonny</a></li>
-<li><a class="reference internal" href="#command-line">Command line</a></li>
+<li><a class="reference internal" href="#">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#slide-deck-and-video">Slide Deck and Video</a><ul>
+<li><a class="reference internal" href="#materials">Materials</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#hardware-setup">Hardware setup</a></li>
+<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#exercise-1-command-line">Exercise 1: Command line</a><ul>
 <li><a class="reference internal" href="#iio-info">IIO Info</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exercise-2-scopy-2-0">Exercise 2: Scopy (2.0!)</a></li>
+<li><a class="reference internal" href="#exercise-3-python-and-the-thonny-ide">Exercise 3: Python and the Thonny IDE</a></li>
 <li><a class="reference internal" href="#simple-sine-wave-from-the-m2k-to-the-ad4080">Simple sine wave from the M2K to the AD4080</a></li>
 <li><a class="reference internal" href="#performance-metrics-with-genalyzer">Performance metrics with Genalyzer</a></li>
 <li><a class="reference internal" href="#sinc1-frequency-response">Sinc1 frequency response</a></li>
@@ -235,7 +240,7 @@ Content on this topic
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
@@ -260,24 +265,89 @@ Content on this topic
         <div class="bodywrapper" id="top-anchor">
           <div class="body" role="main">
             
-  <section id="key-adi-s-software-infrastructure-for-designing-with-adcs-dacs-and-sensors">
-<h1>Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors<a class="headerlink" href="#key-adi-s-software-infrastructure-for-designing-with-adcs-dacs-and-sensors" title="Link to this heading">#</a></h1>
-<section id="hadware-setup">
-<h2>Hadware setup<a class="headerlink" href="#hadware-setup" title="Link to this heading">#</a></h2>
-<p>Shopping List:</p>
-<a class="reference internal image-reference" href="../../_images/setup_ad4080eval_m2k.jpg"><img alt="../../_images/setup_ad4080eval_m2k.jpg" class="align-right" src="../../_images/setup_ad4080eval_m2k.jpg" style="width: 30em;" />
-</a>
+  <section id="adi-s-software-infrastructure-for-designing-with-adcs-dacs-and-sensors">
+<h1>ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors<a class="headerlink" href="#adi-s-software-infrastructure-for-designing-with-adcs-dacs-and-sensors" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Analog Devices manufactures a dizzying array of products from simple, 2-terminal shunt voltage references to some of the most complicated communication and instrumentation devices in existence. ADCs, DACs, and sensors comprise a large subset of this space, and devices from the slow, jellybean LM75 temperature sensor to the Apollo MXfE share many of the same frameworks, programming interfaces, design and development tools.</p>
+<p>This tutorial will use a part “somewhere in the middle” in terms of complexity, the AD4080 40 Msps Oversampling SAR ADC, as a launchpad for learning about the powerful tools available for supporting such a broad range of devices. This part’s versatility is ideal for illustrating several key software and hardware concepts:</p>
+<ul class="simple">
+<li><p>Microcontroller / FPGA decision factors</p></li>
+<li><p>Linux / no-OS / Zephyr support</p></li>
+<li><p>Language support</p></li>
+<li><p>Customer Enablement and System Prototyping</p></li>
+<li><p>Signal chain architecture</p></li>
+</ul>
+<p>This tutorial will cover each of these in summary, accompanied by hands-on exercises with hardware. We’ll test drive key software utilities, run example programs, take some basic performance measurements, and prototype a simple seismic application example for strategic and key (S&amp;K) customer Fred in the Shed Instruments. Finally, we’ll show how concepts can be applied to other data converter products – PLLs, DDS, IMUs, and more.</p>
+<p>The tutorial can be most easily run on a Raspberry Pi 4 or 400, but we’ll leave you with instructions on how to install everything on your ADI laptop, your co-worker’s Mac, and your other co-worker’s Linux box. You will walk away knowing how to bring up this portable, economical setup in customer lobbies, labs, and conference rooms.</p>
+<p>You may recognize some of the material; this tutorial builds upon two previous ones:</p>
+<p><a class="reference external" href="../tools_for_ls/index.html">Tools for Low-Speed Mixed Signal System Design</a></p>
+<p>where we connected an AD5592r to a Raspberry Pi and built a transistor curve tracer, and</p>
+<p><a class="reference external" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></p>
+<p>where we used an ADALM2000 as part of a colorimeter proof of concept, then demonstrated how easy it was to replace the ADALM2000 with an AD4630-24 ADC.
+This tutorial also serves as a testing ground for elements that can be used in a future mixed-mode signal chain tutorial.</p>
+</section>
+<section id="slide-deck-and-video">
+<h2>Slide Deck and Video<a class="headerlink" href="#slide-deck-and-video" title="Link to this heading"></a></h2>
+<p>Since this tutorial is also designed to be presented as a live, hands-on
+workshop, a slide deck is provided here:</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="reference download internal" download="" href="../../_downloads/8afea4cc77741aed8206d5cfae477087/ADI_Software_Infrastructure_for_ADCs_DACs_Sensors.pptx"><code class="xref download docutils literal notranslate"><span class="pre">Slide</span> <span class="pre">Deck:</span> <span class="pre">ADI’s</span> <span class="pre">Software</span> <span class="pre">Infrastructure</span> <span class="pre">for</span> <span class="pre">designing</span> <span class="pre">with</span> <span class="pre">ADCs,</span> <span class="pre">DACs,</span> <span class="pre">and</span> <span class="pre">Sensors</span></code></a></p>
+</div>
+<p>A complete video run-through will also be provided, either as a companion to following the tutorial yourself, or to practice before presenting as a hands-on workshop. This video is a placeholder for the time being, but many of the concepts apply directly to this workshop:</p>
+<div class="iframe-video"><iframe class="only-screen" src="https://www.youtube-nocookie.com/embed/UHX1njMQ7V0"></iframe><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
+<p><a href="https://www.youtube.com/watch?v=UHX1njMQ7V0"><span>https://www.youtube.com/watch?v=UHX1njMQ7V0</span></a></p>
+</div></div><section id="materials">
+<h3>Materials<a class="headerlink" href="#materials" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>Raspberry Pi 400 (or 4)</p></li>
+<li><p>32 GB or larger, Class 10 or greater SD card</p></li>
 <li><p>EVAL-AD4080-ARDZ eval board</p></li>
 <li><p>Tensility 16-00078 / DigiKey 839-1671-ND 12 V adapter</p></li>
 <li><p>ST Nucleo-H563ZI</p></li>
-<li><p>ADALM2000 &amp; Nucleo plugged in to the Pi</p></li>
-<li><p>Either 1k series resistor, or 2k/3k attenuator between the M2k and AD4080</p></li>
+<li><dl class="simple">
+<dt>ADALM2000 Multi-function USB instrument</dt><dd><ul>
+<li><p>ADALM2000 will be referred to as “m2k”</p></li>
 </ul>
-<p>Connections:</p>
-<a class="reference internal image-reference" href="../../_images/setup_connections.png"><img alt="../../_images/setup_connections.png" class="align-right" src="../../_images/setup_connections.png" style="width: 30em;" />
+</dd>
+</dl>
+</li>
+<li><p>Either 1k series resistors, or 2k/3k attenuators between the M2k and AD4080</p></li>
+</ul>
+</section>
+</section>
+<section id="hardware-setup">
+<h2>Hardware setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<p>Jump the ST Nucleo’s SB70 with a blob of solder. This jumper is near pin 1 of the main processor chip.</p>
+<p>Update the ST Nucleo-H563ZI management firmware using the utility at <a class="reference external" href="https://www.st.com/en/development-tools/stsw-link007.html">ST-LINK boards firmware upgrade</a></p>
+<p>Program the ST Nucleo-H563ZI board with the AD4080 tinyiiod server binary file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ToDo: Replace with link to controlled file when released. In the meantime, use this file.</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="reference download internal" download="" href="../../_downloads/a97a518a6e204714685a5511b05836e3/ad4080_stm32_nucleo_h563.bin"><code class="xref download docutils literal notranslate"><span class="pre">ST</span> <span class="pre">Nucleo</span> <span class="pre">Programming</span> <span class="pre">File</span></code></a></p>
+</div>
+<p>MD5 checksum: 637690bad1d489a5429f8bc518336aaf</p>
+<p>(On Windows: <code class="docutils literal notranslate"><span class="pre">certutil</span> <span class="pre">-hashfile</span> <span class="pre">.\ad4080_stm32_nucleo_h563.bin</span> <span class="pre">MD5</span></code>)</p>
+</div>
+<p>Mount the EVAL-AD4080-ARDZ to the Nucleo-H563ZI board. Pin connections are unambiguous; it will only plug in in one location. Connect the m2k’s W1 and W2 waveform generator  outputs to the EVAL-AD4080-ARDZ inputs with the 1k series resistors or 2k/3k attenuator, and optionally connect the m2k’s 1+ and 1- to the ADC inputs as shown in <a class="reference internal" href="#fig-m2k-ad4080-nucleo"><span class="std std-numref">Figure 1</span></a>.</p>
+<figure class="align-center" id="id1">
+<span id="fig-m2k-ad4080-nucleo"></span><a class="reference internal image-reference" href="../../_images/setup_ad4080eval_m2k.jpg"><img alt="../../_images/setup_ad4080eval_m2k.jpg" src="../../_images/setup_ad4080eval_m2k.jpg" style="width: 30em;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD4080-ARDZ mounting and ADALM2000 connections.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>For reference, the connector pinouts are shown in <a class="reference internal" href="#fig-m2k-ad4080-pinout"><span class="std std-numref">Figure 2</span></a>.</p>
+<figure class="align-center" id="id2">
+<span id="fig-m2k-ad4080-pinout"></span><a class="reference internal image-reference" href="../../_images/setup_connections.png"><img alt="../../_images/setup_connections.png" src="../../_images/setup_connections.png" style="width: 30em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-AD4080 Connector Pinouts.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>W1 - IN- on adapter (mislabeled)</p></li>
 <li><p>W2 - IN+ on adapter (mislabeled)</p></li>
@@ -285,46 +355,32 @@ Content on this topic
 <li><p>1- to P2, pin 7</p></li>
 <li><p>1-, 2- to m2k GND pins</p></li>
 </ul>
-<img alt="" class="clear-both" src="learning/sw_infrastructure/clearfix" />
 </section>
-<section id="used-software">
-<h2>Used software<a class="headerlink" href="#used-software" title="Link to this heading">#</a></h2>
-<section id="scopy-2-0">
-<h3>Scopy 2.0<a class="headerlink" href="#scopy-2-0" title="Link to this heading">#</a></h3>
-<p>Click the Scopy shortcut on the desktop (#1) and then choose “Execute” when
-prompted (#2). Once opened, it should detect the attached M2k. Click “Connect”
-(#3).</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Do not open scopy from the start menu, because that will open an older
-version.</p>
+<section id="software-setup">
+<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The setup script installs several software packages, it is recommended to use a dedicated SD card for this exercise to avoid conflicts or overwriting anything important.</p>
 </div>
-<a class="reference internal image-reference" href="../../_images/m2k_connect.png"><img alt="../../_images/m2k_connect.png" src="../../_images/m2k_connect.png" style="width: 30em;" />
-</a>
-<p>It is possible to load and store a known hardware and software configurations.
-For this workshop, load the
-<a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/blob/main/docs/m2k_and_ad408_scopy_ini">m2k_and_ad4080_scopi_ini</a>
-file (#4, #5):</p>
-<a class="reference internal image-reference" href="../../_images/m2k_load_ini.png"><img alt="../../_images/m2k_load_ini.png" src="../../_images/m2k_load_ini.png" style="width: 30em;" />
-</a>
+<p>Write the ADI Kuiper Linux image onto the SD card. Directions and the image download are available at:</p>
+<p><a class="reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux">Analog Devices Kuiper Linux</a></p>
+<p>In theory the latest Kuiper Linux release should always work, but this tutorial is tested with the 2023_r2 release. All previous releases are archived and available.</p>
+<p>Boot up the Raspberry Pi and connect to the internet. Clone or download the ftc24-ws repository from:</p>
+<p><a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/">ftc24-ws Workshop Files</a></p>
+<p>Open a termial and <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">ftc24-ws</span></code>. Run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">./</span><span class="n">workshopsetup</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>This will download and install all of the prerequisite software needed for the rest of the exercise.</p>
 </section>
-<section id="thonny">
-<h3>Thonny<a class="headerlink" href="#thonny" title="Link to this heading">#</a></h3>
-<p>Most examples in this workshop are Python scripts. Thonny is a Python IDE and
-will allow you to edit and run them easily. Launch Thony from the start menu:</p>
-<a class="reference internal image-reference" href="../../_images/thonny_open.png"><img alt="../../_images/thonny_open.png" src="../../_images/thonny_open.png" style="width: 20em;" />
-</a>
-</section>
-<section id="command-line">
-<h3>Command line<a class="headerlink" href="#command-line" title="Link to this heading">#</a></h3>
+<section id="exercise-1-command-line">
+<h2>Exercise 1: Command line<a class="headerlink" href="#exercise-1-command-line" title="Link to this heading"></a></h2>
 <p>Multiple examples require running Linux commands. For those, open the terminal
 from the task bar:</p>
 <a class="reference internal image-reference" href="../../_images/terminal_open.png"><img alt="../../_images/terminal_open.png" src="../../_images/terminal_open.png" style="width: 15em;" />
 </a>
-</section>
-</section>
 <section id="iio-info">
-<h2>IIO Info<a class="headerlink" href="#iio-info" title="Link to this heading">#</a></h2>
+<h3>IIO Info<a class="headerlink" href="#iio-info" title="Link to this heading"></a></h3>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">iio_info</span></code> utility to display information about…</p>
 <p>…the <code class="docutils literal notranslate"><span class="pre">local:</span></code> context (raspberry pi cpu_thermal):</p>
 <blockquote>
@@ -395,15 +451,48 @@ from the task bar:</p>
 </div>
 </div></blockquote>
 </section>
+</section>
+<section id="exercise-2-scopy-2-0">
+<h2>Exercise 2: Scopy (2.0!)<a class="headerlink" href="#exercise-2-scopy-2-0" title="Link to this heading"></a></h2>
+<p>Click the Scopy shortcut on the desktop as shown in <a class="reference internal" href="#fig-open-scopy"><span class="std std-numref">Figure 3</span></a> (Note #1) and then choose “Execute” when prompted (#2). Once opened, it should detect the attached M2k. Click “Connect”
+(#3).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not open scopy from the start menu, because that will open an older
+version.</p>
+</div>
+<figure class="align-center" id="id3">
+<span id="fig-open-scopy"></span><a class="reference internal image-reference" href="../../_images/m2k_connect.png"><img alt="../../_images/m2k_connect.png" src="../../_images/m2k_connect.png" style="width: 30em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Opening Scopy and Connecting to ADALM2000</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>A Scopy profile is available to set up the initial configuration. Load the <strong>m2k_and_ad408_scopy_ini</strong> file as shown in <a class="reference internal" href="#fig-load-ini"><span class="std std-numref">Figure 4</span></a>.</p>
+<figure class="align-center" id="id4">
+<span id="fig-load-ini"></span><a class="reference internal image-reference" href="../../_images/m2k_load_ini.png"><img alt="../../_images/m2k_load_ini.png" src="../../_images/m2k_load_ini.png" style="width: 30em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Loading Scopy Profile</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Connect to the AD4080.</p>
+</section>
+<section id="exercise-3-python-and-the-thonny-ide">
+<h2>Exercise 3: Python and the Thonny IDE<a class="headerlink" href="#exercise-3-python-and-the-thonny-ide" title="Link to this heading"></a></h2>
+<p>Most examples in this workshop are Python scripts. Thonny is a Python IDE and will allow you to edit and run them easily. Launch Thony from the start menu:</p>
+<a class="reference internal image-reference" href="../../_images/thonny_open.png"><img alt="../../_images/thonny_open.png" src="../../_images/thonny_open.png" style="width: 20em;" />
+</a>
+</section>
 <section id="simple-sine-wave-from-the-m2k-to-the-ad4080">
-<h2>Simple sine wave from the M2K to the AD4080<a class="headerlink" href="#simple-sine-wave-from-the-m2k-to-the-ad4080" title="Link to this heading">#</a></h2>
+<h2>Simple sine wave from the M2K to the AD4080<a class="headerlink" href="#simple-sine-wave-from-the-m2k-to-the-ad4080" title="Link to this heading"></a></h2>
 <p>Start generating a sine wave using Scopy. In Thonny, load
 <a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_hw/hello_ad4080.py">Desktop/ftc24-ws/hello_hw/hello_ad4080.py</a>
 and click Run:</p>
 <img alt="../../_images/hello_ad4080.png" src="../../_images/hello_ad4080.png" />
 </section>
 <section id="performance-metrics-with-genalyzer">
-<h2>Performance metrics with Genalyzer<a class="headerlink" href="#performance-metrics-with-genalyzer" title="Link to this heading">#</a></h2>
+<h2>Performance metrics with Genalyzer<a class="headerlink" href="#performance-metrics-with-genalyzer" title="Link to this heading"></a></h2>
 <p>Stop the M2k waveform generator and close Scopy, because this demo will generate
 a signal programaticaly. In Thonny, load
 <a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_genalyzer/m2k_source_ad4080_sink.py">Desktop/ftc24-ws/hello_genalyzer/m2k_source_ad4080_sink.py</a>
@@ -411,20 +500,19 @@ and Run:</p>
 <img alt="../../_images/m2k_source_ad4080_sink.png" src="../../_images/m2k_source_ad4080_sink.png" />
 </section>
 <section id="sinc1-frequency-response">
-<h2>Sinc1 frequency response<a class="headerlink" href="#sinc1-frequency-response" title="Link to this heading">#</a></h2>
+<h2>Sinc1 frequency response<a class="headerlink" href="#sinc1-frequency-response" title="Link to this heading"></a></h2>
 <p>In Thonny, load and run
 <a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_genalyzer/sinc_folding_interactive.py">Desktop/ftc24-ws/hello_genalyzer/sinc_folding_interactive.py</a>.
-Drag the slider controlling the frequency of the transmitted noise and interpret
-the resulting FFT for different frequencies:</p>
+Drag the slider controlling the frequency of the transmitted noise and interpret the resulting FFT for different frequencies:</p>
 <img alt="../../_images/sinc_folding_interactive.png" src="../../_images/sinc_folding_interactive.png" />
 </section>
 <section id="obspy">
-<h2>ObsPy<a class="headerlink" href="#obspy" title="Link to this heading">#</a></h2>
+<h2>ObsPy<a class="headerlink" href="#obspy" title="Link to this heading"></a></h2>
 <p>In Thonny, load and run <a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_seismograph/seismograph.py">Desktop/ftc24-ws/hello_seismograph/seismograph.py</a>:</p>
 <img alt="../../_images/seismograph.png" src="../../_images/seismograph.png" />
 </section>
 <section id="using-libiio-in-c">
-<h2>Using libiio in C<a class="headerlink" href="#using-libiio-in-c" title="Link to this heading">#</a></h2>
+<h2>Using libiio in C<a class="headerlink" href="#using-libiio-in-c" title="Link to this heading"></a></h2>
 <p>In a terminal, navigate to <a class="reference external" href="https://github.com/cristina-suteu/ftc24-ws/tree/main/hello_iio">Desktop/ftc24-ws/hello_iio</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">ftc24</span><span class="o">-</span><span class="n">ws</span><span class="o">/</span><span class="n">hello_iio</span>
 </pre></div>
@@ -467,7 +555,7 @@ command line:</p>
 </div>
 </section>
 <section id="iiod-and-context-forwarding">
-<h2>IIOD and context forwarding<a class="headerlink" href="#iiod-and-context-forwarding" title="Link to this heading">#</a></h2>
+<h2>IIOD and context forwarding<a class="headerlink" href="#iiod-and-context-forwarding" title="Link to this heading"></a></h2>
 <p>IIOD (IIO Daemon) is a program that creates libiio network contexts (<code class="docutils literal notranslate"><span class="pre">ip:...</span></code>)
 that are bound to any kind of context (could be <code class="docutils literal notranslate"><span class="pre">local:</span></code>, <code class="docutils literal notranslate"><span class="pre">usb:</span></code>,
 <code class="docutils literal notranslate"><span class="pre">serial:</span></code>, etc.), acting like a middleman between the two, forwarding commands

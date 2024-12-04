@@ -7,11 +7,11 @@
 
     <title>Basic IQ Datafiles &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/style.min.css?v=95305861" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.min.css?v=ab97267f" />
     <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../../_static/app.umd.js?v=c93eadd1"></script>
+    <script defer="" src="../../../_static/app.umd.js?v=689b8755"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -93,7 +93,7 @@
     <div class="localtoc">
       <div class="tocwrapper">
         <div>
-          <div class="localtoc-header">On this page</div>
+          <div class="localtoc-header"></div>
           <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
         </div>
         <nav>
@@ -228,7 +228,7 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
@@ -254,13 +254,13 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="basic-iq-datafiles">
-<h1>Basic IQ Datafiles<a class="headerlink" href="#basic-iq-datafiles" title="Link to this heading">#</a></h1>
+<h1>Basic IQ Datafiles<a class="headerlink" href="#basic-iq-datafiles" title="Link to this heading"></a></h1>
 <p>DDS Mode - DAC Buffer Output allows loading of Matlab MAT, Binary and ASCII TEXT
 sample files.</p>
 <a class="reference internal image-reference" href="../../../_images/adrv9009_dac_data.png"><img alt="../../../_images/adrv9009_dac_data.png" src="../../../_images/adrv9009_dac_data.png" style="width: 600px;" />
 </a>
 <section id="example-files">
-<h2>Example files<a class="headerlink" href="#example-files" title="Link to this heading">#</a></h2>
+<h2>Example files<a class="headerlink" href="#example-files" title="Link to this heading"></a></h2>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -370,7 +370,7 @@ This is expected, and normal.</p>
 </div>
 </section>
 <section id="matlab-format">
-<h2>MATLAB format<a class="headerlink" href="#matlab-format" title="Link to this heading">#</a></h2>
+<h2>MATLAB format<a class="headerlink" href="#matlab-format" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">./osc</span></code> application uses the
 <a class="reference external" href="http://sourceforge.net/projects/matio/">MAT File I/O Library</a>
 to be able to read
@@ -392,7 +392,7 @@ assumed to be full scale.</p></li>
 in <a class="reference external" href="https://www.mathworks.com/products/matlab">MATLAB</a> for further explanation.</p>
 </section>
 <section id="binary-format">
-<h2>Binary Format<a class="headerlink" href="#binary-format" title="Link to this heading">#</a></h2>
+<h2>Binary Format<a class="headerlink" href="#binary-format" title="Link to this heading"></a></h2>
 <p>In binary format each I or Q word is in 16-bit signed format.</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -462,7 +462,7 @@ therefore 64-bit wide.</p>
 </div>
 </section>
 <section id="ascii-format">
-<h2>ASCII Format<a class="headerlink" href="#ascii-format" title="Link to this heading">#</a></h2>
+<h2>ASCII Format<a class="headerlink" href="#ascii-format" title="Link to this heading"></a></h2>
 <p>A valid ASCII file is prefixed with a ‘TEXT’ magic string. Values are delimited
 by either comma, spaces or tabs.</p>
 <p>Samples are separated by rows.</p>
@@ -507,7 +507,7 @@ valid range with the ‘TEXTU’ option is:</p>
 </div>
 </section>
 <section id="sample-c-code-application">
-<h2>Sample C code Application<a class="headerlink" href="#sample-c-code-application" title="Link to this heading">#</a></h2>
+<h2>Sample C code Application<a class="headerlink" href="#sample-c-code-application" title="Link to this heading"></a></h2>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span>
@@ -583,20 +583,20 @@ valid range with the ‘TEXTU’ option is:</p>
 </div>
 </section>
 <section id="compiling-the-sample-application">
-<h2>Compiling the Sample Application<a class="headerlink" href="#compiling-the-sample-application" title="Link to this heading">#</a></h2>
+<h2>Compiling the Sample Application<a class="headerlink" href="#compiling-the-sample-application" title="Link to this heading"></a></h2>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>gcc<span class="w"> </span>do_iq.c<span class="w"> </span>-o<span class="w"> </span>do_iq<span class="w"> </span>-lm
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gcc<span class="w"> </span>do_iq.c<span class="w"> </span>-o<span class="w"> </span>do_iq<span class="w"> </span>-lm
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="usage-examples">
-<h2>Usage Examples<a class="headerlink" href="#usage-examples" title="Link to this heading">#</a></h2>
+<h2>Usage Examples<a class="headerlink" href="#usage-examples" title="Link to this heading"></a></h2>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>./do_iq<span class="w"> </span>-a<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>-f<span class="w"> </span><span class="m">20</span><span class="w"> </span>cw_fullscale_f20.bin
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./do_iq<span class="w"> </span>-a<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>-f<span class="w"> </span><span class="m">20</span><span class="w"> </span>cw_fullscale_f20.bin
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>32-bit Word: I : Q
@@ -625,7 +625,7 @@ valid range with the ‘TEXTU’ option is:</p>
 <div class="clear-left"></div></div></div><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>./do_iq<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span>-f<span class="w"> </span><span class="m">20</span><span class="w"> </span>cw_halfscale_f20.bin
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./do_iq<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span>-f<span class="w"> </span><span class="m">20</span><span class="w"> </span>cw_halfscale_f20.bin
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>32-bit Word: I : Q

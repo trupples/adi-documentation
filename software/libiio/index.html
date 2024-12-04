@@ -7,11 +7,11 @@
 
     <title>Libiio &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=95305861" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=ab97267f" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../_static/app.umd.js?v=c93eadd1"></script>
+    <script defer="" src="../../_static/app.umd.js?v=689b8755"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -93,7 +93,7 @@
     <div class="localtoc">
       <div class="tocwrapper">
         <div>
-          <div class="localtoc-header">On this page</div>
+          <div class="localtoc-header"></div>
           <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
         </div>
         <nav>
@@ -249,7 +249,7 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/sw_infrastructure/index.html">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
@@ -275,7 +275,7 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="libiio">
-<span id="id1"></span><h1>Libiio<a class="headerlink" href="#libiio" title="Link to this heading">#</a></h1>
+<span id="id1"></span><h1>Libiio<a class="headerlink" href="#libiio" title="Link to this heading"></a></h1>
 <p>Libiio is a library that has been developed by Analog Devices to ease the
 development of software interfacing <a class="reference internal" href="../../linux/drivers/iio/index.html#iio"><span class="std std-ref">Linux Industrial I/O Subsystem</span></a> devices.</p>
 <p>The library abstracts the low-level details of the hardware, and provides a
@@ -295,7 +295,7 @@ libiio and connected to the server.</p>
 <a class="reference internal image-reference" href="../../_images/libiio_diagram.png"><img alt="../../_images/libiio_diagram.png" src="../../_images/libiio_diagram.png" style="width: 400px;" />
 </a>
 <section id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="internals.html">About libiio</a></li>
@@ -320,7 +320,7 @@ and within the <a class="reference external" href="http://analogdevicesinc.githu
 </ul>
 </section>
 <section id="network-backends">
-<h2>Network Backends<a class="headerlink" href="#network-backends" title="Link to this heading">#</a></h2>
+<h2>Network Backends<a class="headerlink" href="#network-backends" title="Link to this heading"></a></h2>
 <p>If you just want to use libiio and iiod, which may be on a pre-compiled image -
 there are many places you can stream data to.</p>
 <ul class="simple">
@@ -332,30 +332,30 @@ there are many places you can stream data to.</p>
 </ul>
 </section>
 <section id="source-code-and-releases">
-<h2>Source code and releases<a class="headerlink" href="#source-code-and-releases" title="Link to this heading">#</a></h2>
+<h2>Source code and releases<a class="headerlink" href="#source-code-and-releases" title="Link to this heading"></a></h2>
 <p>The libiio library source code can be obtained on <a class="icon git reference external" href="https://github.com/analogdevicesinc/libiio/tree/main/">ADI libiio repository</a>.</p>
 <p>Stable releases are available at <a class="icon git reference external" href="https://github.com/analogdevicesinc/libiio/releases">ADI libiio repository (releases)</a>.</p>
 <p>Continuous integrations pipelines run <a class="reference external" href="https://dev.azure.com/AnalogDevices/OpenSource/_build?definitionId=9&amp;branchFilter=5798%2C5798%2C5798%2C5798">here</a>,
 where installers for every platform can also be found, but may be unstable/buggy.</p>
 </section>
 <section id="building-libiio">
-<span id="libiio-build"></span><h2>Building libiio<a class="headerlink" href="#building-libiio" title="Link to this heading">#</a></h2>
+<span id="libiio-build"></span><h2>Building libiio<a class="headerlink" href="#building-libiio" title="Link to this heading"></a></h2>
 <section id="building-on-the-linux-zynq-target">
-<h3>Building on the Linux/Zynq Target<a class="headerlink" href="#building-on-the-linux-zynq-target" title="Link to this heading">#</a></h3>
+<h3>Building on the Linux/Zynq Target<a class="headerlink" href="#building-on-the-linux-zynq-target" title="Link to this heading"></a></h3>
 <p>Check out how to <a class="reference internal" href="../../linux/kuiper/update.html#kuiper-update"><span class="std std-ref">stay up to date</span></a>.
 This will check out and build the latest version.</p>
 </section>
 <section id="building-on-the-linux-host-target">
-<h3>Building on the Linux Host Target<a class="headerlink" href="#building-on-the-linux-host-target" title="Link to this heading">#</a></h3>
+<h3>Building on the Linux Host Target<a class="headerlink" href="#building-on-the-linux-host-target" title="Link to this heading"></a></h3>
 <p>Building libiio is pretty straightforward.</p>
 <p>The first step is to fetch the dependencies, which as of now is only libxml2.</p>
 <section id="debian-based-distributions">
-<h4>Debian based distributions<a class="headerlink" href="#debian-based-distributions" title="Link to this heading">#</a></h4>
+<h4>Debian based distributions<a class="headerlink" href="#debian-based-distributions" title="Link to this heading"></a></h4>
 <p>On a Debian-flavoured GNU/Linux distribution, like Ubuntu for instance:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>libxml2<span class="w"> </span>libzstd-dev<span class="w"> </span><span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>libxml2<span class="w"> </span>libzstd-dev<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>libxml2-dev<span class="w"> </span>bison<span class="w"> </span>flex<span class="w"> </span>libcdk5-dev<span class="w"> </span>cmake
 </pre></div>
 </div>
@@ -364,17 +364,17 @@ at least one of:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libaio-dev<span class="w"> </span>libusb-1.0-0-dev<span class="w"> </span><span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libaio-dev<span class="w"> </span>libusb-1.0-0-dev<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>libserialport-dev<span class="w"> </span>libxml2-dev<span class="w"> </span>libavahi-client-dev<span class="w"> </span>doxygen<span class="w"> </span>graphviz
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="redhat-based-distributions">
-<h4>RedHAT based distributions<a class="headerlink" href="#redhat-based-distributions" title="Link to this heading">#</a></h4>
+<h4>RedHAT based distributions<a class="headerlink" href="#redhat-based-distributions" title="Link to this heading"></a></h4>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>libxml2<span class="w"> </span>libzstd-dev<span class="w"> </span><span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>libxml2<span class="w"> </span>libzstd-dev<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>libxml2-devel<span class="w"> </span>bison<span class="w"> </span>flex<span class="w"> </span>make<span class="w"> </span>gcc<span class="w"> </span>cmake<span class="w"> </span>rpmdevtools
 </pre></div>
 </div>
@@ -383,17 +383,17 @@ at least one of:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>libaio-devel<span class="w"> </span>libusb1-devel<span class="w"> </span><span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>libaio-devel<span class="w"> </span>libusb1-devel<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>libserialport-devel<span class="w"> </span>avahi-devel<span class="w"> </span>doxygen<span class="w"> </span>graphviz
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="freebsd-based-distributions">
-<h4>FreeBSD based distributions<a class="headerlink" href="#freebsd-based-distributions" title="Link to this heading">#</a></h4>
+<h4>FreeBSD based distributions<a class="headerlink" href="#freebsd-based-distributions" title="Link to this heading"></a></h4>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pkg<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>pkg<span class="w"> </span>upgrade<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>pkg<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pkg<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>pkg<span class="w"> </span>upgrade<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>pkg<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>libzstd<span class="w"> </span>libxml2<span class="w"> </span>bison<span class="w"> </span>flex<span class="w"> </span>gcc<span class="w"> </span>cmake<span class="w"> </span>git
 </pre></div>
 </div>
@@ -402,7 +402,7 @@ at least one of:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pkg<span class="w"> </span>install<span class="w"> </span>libserialport<span class="w"> </span>avahi<span class="w"> </span>doxygen<span class="w"> </span>graphviz
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pkg<span class="w"> </span>install<span class="w"> </span>libserialport<span class="w"> </span>avahi<span class="w"> </span>doxygen<span class="w"> </span>graphviz
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>Add these lines to <code class="docutils literal notranslate"><span class="pre">/etc/rc.conf</span></code>:</p>
@@ -416,12 +416,12 @@ automounter:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pkg<span class="w"> </span>install<span class="w"> </span>automount
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pkg<span class="w"> </span>install<span class="w"> </span>automount
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="remaining-steps">
-<h4>Remaining steps<a class="headerlink" href="#remaining-steps" title="Link to this heading">#</a></h4>
+<h4>Remaining steps<a class="headerlink" href="#remaining-steps" title="Link to this heading"></a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>At this time the main branch of libiio in under heavy development.
@@ -433,26 +433,26 @@ GIT repository:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/libiio.git<span class="w"> </span>--branch<span class="w"> </span>v0.26
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/libiio.git<span class="w"> </span>--branch<span class="w"> </span>v0.26
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>In the <em>libiio/</em> directory,</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/libiio$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/libiio/build$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/libiio/build$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>make<span class="w"> </span>install
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>make<span class="w"> </span>install
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>This will build <em>libiio</em> in the <em>build</em> subdirectory, and install it to
@@ -464,18 +464,18 @@ sessions PATH:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PATH</span><span class="o">=</span>/usr/lib/:<span class="nv">$PATH</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PATH</span><span class="o">=</span>/usr/lib/:<span class="nv">$PATH</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="understanding-which-libiio-is-being-used">
-<h4>Understanding which libiio is being used<a class="headerlink" href="#understanding-which-libiio-is-being-used" title="Link to this heading">#</a></h4>
+<h4>Understanding which libiio is being used<a class="headerlink" href="#understanding-which-libiio-is-being-used" title="Link to this heading"></a></h4>
 <p>During development, sometimes it can be a puzzle which version of libiio is
 being used. An easy way to tell is to do something like:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/libiio$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>describe<span class="w"> </span>--tags
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>describe<span class="w"> </span>--tags
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>v0.8-13-g6847e22
@@ -485,7 +485,7 @@ being used. An easy way to tell is to do something like:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/libiio/build$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Library version: 0.8 (git tag: 6847e22)
@@ -496,7 +496,7 @@ Unable to create IIO context
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/libiio/build$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>strace<span class="w"> </span>-ofoo<span class="w"> </span>iio_info
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>strace<span class="w"> </span>-ofoo<span class="w"> </span>iio_info
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Library version: 0.8 (git tag: 6847e22)
@@ -506,7 +506,7 @@ Unable to create IIO context
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/libiio/build$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-e<span class="w"> </span>^open<span class="w">  </span>foo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>libiio
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-e<span class="w"> </span>^open<span class="w">  </span>foo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>libiio
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>open(&quot;./tls/x86_64/libiio.so.0&quot;, O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
@@ -518,7 +518,7 @@ open(&quot;./libiio.so.0&quot;, O_RDONLY|O_CLOEXEC) = 3
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/libiio/build$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>./libiio.so.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>./libiio.so.0
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>lrwxrwxrwx 1 analog analog 13 Nov 15 10:36 ./libiio.so.0 -&gt; libiio.so.0.8
@@ -530,7 +530,7 @@ analog@imhotep:~/github/libiio/build$ ls -l ./libiio.so.0.8
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>strace<span class="w"> </span>-ofoo<span class="w"> </span>iio_info
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>strace<span class="w"> </span>-ofoo<span class="w"> </span>iio_info
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Library version: 0.8 (git tag: 6847e22)
@@ -540,7 +540,7 @@ Unable to create IIO context
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-e<span class="w"> </span>^open<span class="w">  </span>foo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>libiio
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-e<span class="w"> </span>^open<span class="w">  </span>foo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>libiio
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>open(&quot;./tls/x86_64/libiio.so.0&quot;, O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
@@ -553,7 +553,7 @@ open(&quot;/usr/lib/x86_64-linux-gnu/libiio.so.0&quot;, O_RDONLY|O_CLOEXEC) = 3
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>/usr/lib/x86_64-linux-gnu/libiio.so.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>/usr/lib/x86_64-linux-gnu/libiio.so.0
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>lrwxrwxrwx 1 root root 13 Nov  9 21:05 /usr/lib/x86_64-linux-gnu/libiio.so.0 -&gt; libiio.so.0.8
@@ -562,7 +562,7 @@ open(&quot;/usr/lib/x86_64-linux-gnu/libiio.so.0&quot;, O_RDONLY|O_CLOEXEC) = 3
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>/usr/lib/x86_64-linux-gnu/libiio.so.0.8
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>/usr/lib/x86_64-linux-gnu/libiio.so.0.8
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>-rw-r--r-- 1 root root 408432 Nov 15 10:36 /usr/lib/x86_64-linux-gnu/libiio.so.0.8
@@ -572,7 +572,7 @@ open(&quot;/usr/lib/x86_64-linux-gnu/libiio.so.0&quot;, O_RDONLY|O_CLOEXEC) = 3
 </section>
 </section>
 <section id="cross-compilation">
-<h3>Cross-compilation<a class="headerlink" href="#cross-compilation" title="Link to this heading">#</a></h3>
+<h3>Cross-compilation<a class="headerlink" href="#cross-compilation" title="Link to this heading"></a></h3>
 <p>If you want to cross-compile libiio, you can do so by passing the corresponding
 toolchain information file to cmake. Normally this is done by creating a
 toolchain file, and passing this to Cmake with a
@@ -581,13 +581,13 @@ set values for the compilers. This is described in the
 <a class="reference external" href="https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html#cross-compiling">mainline cmake doc</a>.</p>
 </section>
 <section id="building-on-windows">
-<h3>Building on Windows<a class="headerlink" href="#building-on-windows" title="Link to this heading">#</a></h3>
+<h3>Building on Windows<a class="headerlink" href="#building-on-windows" title="Link to this heading"></a></h3>
 <p>The instructions for building libiio with Visual Studio are available
 <a class="reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/building_libiio_for_windows">here</a>.</p>
 </section>
 </section>
 <section id="enabling-iiod-usb-backend">
-<h2>Enabling IIOD USB Backend<a class="headerlink" href="#enabling-iiod-usb-backend" title="Link to this heading">#</a></h2>
+<h2>Enabling IIOD USB Backend<a class="headerlink" href="#enabling-iiod-usb-backend" title="Link to this heading"></a></h2>
 <p>In order to use the libIIO USB Backend - support must be built into IIOD. A
 simple check is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@analog</span><span class="p">:</span><span class="o">~</span><span class="c1"># iiod -F foo</span>
@@ -612,68 +612,68 @@ one.</p></li>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/usr/include/linux/usb
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/usr/include/linux/usb
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/usr/include/linux/usb$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>functionfs.h
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>functionfs.h
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/usr/include/linux/usb$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/usb/functionfs.h
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/usb/functionfs.h
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><section id="rebuild-libiio">
-<h3>Rebuild LibIIO<a class="headerlink" href="#rebuild-libiio" title="Link to this heading">#</a></h3>
+<h3>Rebuild LibIIO<a class="headerlink" href="#rebuild-libiio" title="Link to this heading"></a></h3>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/usr/local/src
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/usr/local/src
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/usr/local/src$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/libiio.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/libiio.git
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/usr/local/src$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/usr/local/src/libiio/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/usr/local/src/libiio/
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/usr/local/src/libiio$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clean<span class="w"> </span>-xdf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clean<span class="w"> </span>-xdf
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/usr/local/src/libiio$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>.
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/usr/local/src/libiio$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>make
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/usr/local/src/libiio$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>make<span class="w"> </span>install
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>make<span class="w"> </span>install
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="usb-device-mode-kernel-support">
-<h3>USB Device Mode Kernel Support<a class="headerlink" href="#usb-device-mode-kernel-support" title="Link to this heading">#</a></h3>
+<h3>USB Device Mode Kernel Support<a class="headerlink" href="#usb-device-mode-kernel-support" title="Link to this heading"></a></h3>
 <p>In order to use the libIIO USB Backend, the target must support USB Device Mode.</p>
 <p>Kernel compiled with USB UDC Gadget support.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG_USB_CHIPIDEA</span><span class="o">=</span><span class="n">y</span>
@@ -686,7 +686,7 @@ one.</p></li>
 </div>
 </section>
 <section id="starting-iiod-with-usb-support">
-<h3>Starting IIOD with USB Support<a class="headerlink" href="#starting-iiod-with-usb-support" title="Link to this heading">#</a></h3>
+<h3>Starting IIOD with USB Support<a class="headerlink" href="#starting-iiod-with-usb-support" title="Link to this heading"></a></h3>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="reference external" href="http://swdownloads.analog.com/cse/share/iiod-usb.conf">iiod-usb.conf</a></p>
@@ -694,13 +694,13 @@ one.</p></li>
 <p>Copy (and replace) iiod.conf upstart script into /etc/init</p>
 </section>
 <section id="testing">
-<h3>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h3>
+<h3>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h3>
 <p>If everything works out well the USB context should be included in the available
 context list.</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/devel/pshare/iiod usb$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-s
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-s
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Library version: 0.10 (git tag: c95ff6a)
@@ -713,9 +713,9 @@ Available contexts:
 <div class="clear-left"></div></div></div></section>
 </section>
 <section id="libiio-examples">
-<h2>libiio Examples<a class="headerlink" href="#libiio-examples" title="Link to this heading">#</a></h2>
+<h2>libiio Examples<a class="headerlink" href="#libiio-examples" title="Link to this heading"></a></h2>
 <section id="libiio-ad9361-iio-streaming-example">
-<h3>libiio - AD9361 IIO streaming example<a class="headerlink" href="#libiio-ad9361-iio-streaming-example" title="Link to this heading">#</a></h3>
+<h3>libiio - AD9361 IIO streaming example<a class="headerlink" href="#libiio-ad9361-iio-streaming-example" title="Link to this heading"></a></h3>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>

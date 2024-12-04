@@ -7,17 +7,17 @@
 
     <title>Tools for Low Speed Mixed Signal System Design &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=95305861" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=ab97267f" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../_static/app.umd.js?v=c93eadd1"></script>
+    <script defer="" src="../../_static/app.umd.js?v=689b8755"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Tools for Precision Wideband Mixed Signal System Design" href="../tools_for_prec_wb/index.html" />
-    <link rel="prev" title="Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors" href="../sw_infrastructure/index.html" />
+    <link rel="prev" title="ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors" href="../sw_infrastructure/index.html" />
    
   
   <meta name="global_root" content="../../../">
@@ -94,7 +94,7 @@
     <div class="localtoc">
       <div class="tocwrapper">
         <div>
-          <div class="localtoc-header">On this page</div>
+          <div class="localtoc-header"></div>
           <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
         </div>
         <nav>
@@ -248,7 +248,7 @@ Content on this topic
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
@@ -274,13 +274,13 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="tools-for-low-speed-mixed-signal-system-design">
-<h1>Tools for Low Speed Mixed Signal System Design<a class="headerlink" href="#tools-for-low-speed-mixed-signal-system-design" title="Link to this heading">#</a></h1>
+<h1>Tools for Low Speed Mixed Signal System Design<a class="headerlink" href="#tools-for-low-speed-mixed-signal-system-design" title="Link to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is a work in progress.</p>
 </div>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>The goal of this tutorial is to equip the reader with a collection of hardware
 and software tools for developing low-speed mixed-signal applications.
 Content Guide: This tutorial includes complete written instructions, a video
@@ -318,7 +318,7 @@ interact with the ADC, and the popular NumPy and Matplotlib Python libraries.
 Thus this exercise also serves as a mini-tutorial on Python.</p>
 </section>
 <section id="materials">
-<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
+<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading"></a></h2>
 <ul>
 <li><p>Raspberry Pi 4; 2G, 4G, or 8G version. (3B, 3B Plus will work, but
 you will want the 4 :-) )</p></li>
@@ -352,7 +352,7 @@ you will want the 4 :-) )</p></li>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/pyadi-iio.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/pyadi-iio.git
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></li>
@@ -365,7 +365,7 @@ pins</p></li>
 </div>
 </section>
 <section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
 <p>This tutorial builds on the concepts covered in:
 <a class="reference external" href="https://wiki.analog.com/university/labs/software/iio_intro_toolbox">Converter Connectivity Tutorial</a>
 It also serves as a preview to this tutorial that starts to deal with
@@ -373,7 +373,7 @@ analyzing time series data:
 <a class="reference external" href="https://wiki.analog.com/university/labs/software/precision_adc_toolbox">Precision ADC Tutorial</a></p>
 </section>
 <section id="slide-deck-and-video">
-<h2>Slide Deck and Video<a class="headerlink" href="#slide-deck-and-video" title="Link to this heading">#</a></h2>
+<h2>Slide Deck and Video<a class="headerlink" href="#slide-deck-and-video" title="Link to this heading"></a></h2>
 <p>Since this tutorial is also designed to be presented as a live, hands-on
 workshop, a slide deck is provided here:</p>
 <div class="admonition-download admonition">
@@ -394,28 +394,28 @@ with photos, diagrams, etc.)</p>
 </div>
 </section>
 <section id="preparation-a-few-resources-for-learning-python">
-<h2>Preparation - a few resources for learning Python<a class="headerlink" href="#preparation-a-few-resources-for-learning-python" title="Link to this heading">#</a></h2>
+<h2>Preparation - a few resources for learning Python<a class="headerlink" href="#preparation-a-few-resources-for-learning-python" title="Link to this heading"></a></h2>
 </section>
 <section id="what-does-just-enough-software-look-like">
-<h2>What does “Just Enough Software” look like?<a class="headerlink" href="#what-does-just-enough-software-look-like" title="Link to this heading">#</a></h2>
+<h2>What does “Just Enough Software” look like?<a class="headerlink" href="#what-does-just-enough-software-look-like" title="Link to this heading"></a></h2>
 </section>
 <section id="software-stack-background">
-<h2>Software Stack Background<a class="headerlink" href="#software-stack-background" title="Link to this heading">#</a></h2>
+<h2>Software Stack Background<a class="headerlink" href="#software-stack-background" title="Link to this heading"></a></h2>
 </section>
 <section id="introducing-an-exciting-new-product-that-we-ll-apply-our-skills">
-<h2>Introducing an exciting new product that we’ll apply our skills<a class="headerlink" href="#introducing-an-exciting-new-product-that-we-ll-apply-our-skills" title="Link to this heading">#</a></h2>
+<h2>Introducing an exciting new product that we’ll apply our skills<a class="headerlink" href="#introducing-an-exciting-new-product-that-we-ll-apply-our-skills" title="Link to this heading"></a></h2>
 </section>
 <section id="component-selection-based-on-software-support-rather-than-pure-analog-performance">
-<h2>Component selection based on software support (rather than pure analog performance)<a class="headerlink" href="#component-selection-based-on-software-support-rather-than-pure-analog-performance" title="Link to this heading">#</a></h2>
+<h2>Component selection based on software support (rather than pure analog performance)<a class="headerlink" href="#component-selection-based-on-software-support-rather-than-pure-analog-performance" title="Link to this heading"></a></h2>
 </section>
 <section id="hardware-setup">
-<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading">#</a></h2>
+<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
 </section>
 <section id="booting-the-system">
-<h2>Booting the system<a class="headerlink" href="#booting-the-system" title="Link to this heading">#</a></h2>
+<h2>Booting the system<a class="headerlink" href="#booting-the-system" title="Link to this heading"></a></h2>
 </section>
 <section id="post-boot-housekeeping">
-<h2>Post-boot housekeeping<a class="headerlink" href="#post-boot-housekeeping" title="Link to this heading">#</a></h2>
+<h2>Post-boot housekeeping<a class="headerlink" href="#post-boot-housekeeping" title="Link to this heading"></a></h2>
 <p>The Raspberry Pi-based hardware and Linux setup mirrors that of the ADXL345
 used in the <a class="reference external" href="https://wiki.analog.com/university/labs/software/iio_intro_toolbox">Converter Connectivity Toolbox and Tutorial</a>,
 including bringing up the pyadi-iio example. Follow the instructions for downloading and
@@ -427,31 +427,31 @@ this exercise, add the following line to config.txt:</p>
 </div>
 </section>
 <section id="configuring-the-system-and-rebooting">
-<h2>Configuring the System (and rebooting!)<a class="headerlink" href="#configuring-the-system-and-rebooting" title="Link to this heading">#</a></h2>
+<h2>Configuring the System (and rebooting!)<a class="headerlink" href="#configuring-the-system-and-rebooting" title="Link to this heading"></a></h2>
 </section>
 <section id="command-line-tools-hello-ad5592r">
-<h2>Command Line Tools (Hello, AD5592r!)<a class="headerlink" href="#command-line-tools-hello-ad5592r" title="Link to this heading">#</a></h2>
+<h2>Command Line Tools (Hello, AD5592r!)<a class="headerlink" href="#command-line-tools-hello-ad5592r" title="Link to this heading"></a></h2>
 </section>
 <section id="iio-oscilloscope">
-<h2>IIO Oscilloscope<a class="headerlink" href="#iio-oscilloscope" title="Link to this heading">#</a></h2>
+<h2>IIO Oscilloscope<a class="headerlink" href="#iio-oscilloscope" title="Link to this heading"></a></h2>
 </section>
 <section id="device-trees-telling-linux-what-s-connected">
-<h2>Device Trees: Telling Linux what’s connected<a class="headerlink" href="#device-trees-telling-linux-what-s-connected" title="Link to this heading">#</a></h2>
+<h2>Device Trees: Telling Linux what’s connected<a class="headerlink" href="#device-trees-telling-linux-what-s-connected" title="Link to this heading"></a></h2>
 </section>
 <section id="pyadi-iio-and-examples">
-<h2>Pyadi-iio And examples<a class="headerlink" href="#pyadi-iio-and-examples" title="Link to this heading">#</a></h2>
+<h2>Pyadi-iio And examples<a class="headerlink" href="#pyadi-iio-and-examples" title="Link to this heading"></a></h2>
 </section>
 <section id="hands-on-working-through-a-simple-but-complete-case-study">
-<h2><strong>Hands-On!</strong> Working through a simple, but complete case study<a class="headerlink" href="#hands-on-working-through-a-simple-but-complete-case-study" title="Link to this heading">#</a></h2>
+<h2><strong>Hands-On!</strong> Working through a simple, but complete case study<a class="headerlink" href="#hands-on-working-through-a-simple-but-complete-case-study" title="Link to this heading"></a></h2>
 </section>
 <section id="next-steps-developing-on-a-remote-host">
-<h2>Next Steps: Developing on a remote host<a class="headerlink" href="#next-steps-developing-on-a-remote-host" title="Link to this heading">#</a></h2>
+<h2>Next Steps: Developing on a remote host<a class="headerlink" href="#next-steps-developing-on-a-remote-host" title="Link to this heading"></a></h2>
 </section>
 <section id="next-steps-other-languages-c-c-matlab-etc">
-<h2>Next Steps: Other languages (C++, C#, MATLAB, etc.)<a class="headerlink" href="#next-steps-other-languages-c-c-matlab-etc" title="Link to this heading">#</a></h2>
+<h2>Next Steps: Other languages (C++, C#, MATLAB, etc.)<a class="headerlink" href="#next-steps-other-languages-c-c-matlab-etc" title="Link to this heading"></a></h2>
 </section>
 <section id="next-steps-no-os-development-on-linux-you-bet">
-<h2>Next Steps: No-OS development on Linux? You bet!<a class="headerlink" href="#next-steps-no-os-development-on-linux-you-bet" title="Link to this heading">#</a></h2>
+<h2>Next Steps: No-OS development on Linux? You bet!<a class="headerlink" href="#next-steps-no-os-development-on-linux-you-bet" title="Link to this heading"></a></h2>
 <p>…but I’m Confused… No-OS means no Operating System, but we’re using Kuiper
 Linux, and that’s an Operating System. What gives?</p>
 <p>Unlike the IIO drivers used in the previous tutorial , which
@@ -476,19 +476,19 @@ but will be documented in a future tutorial.</p>
 </div>
 </section>
 <section id="next-steps-porting-to-a-fully-embedded-system">
-<h2>Next Steps: Porting to a fully embedded system<a class="headerlink" href="#next-steps-porting-to-a-fully-embedded-system" title="Link to this heading">#</a></h2>
+<h2>Next Steps: Porting to a fully embedded system<a class="headerlink" href="#next-steps-porting-to-a-fully-embedded-system" title="Link to this heading"></a></h2>
 </section>
 <section id="more-just-enough-software-examples">
-<h2>More “Just Enough Software” examples<a class="headerlink" href="#more-just-enough-software-examples" title="Link to this heading">#</a></h2>
+<h2>More “Just Enough Software” examples<a class="headerlink" href="#more-just-enough-software-examples" title="Link to this heading"></a></h2>
 </section>
 <section id="drawing-parallels-to-other-software-flows">
-<h2>Drawing parallels to other software flows<a class="headerlink" href="#drawing-parallels-to-other-software-flows" title="Link to this heading">#</a></h2>
+<h2>Drawing parallels to other software flows<a class="headerlink" href="#drawing-parallels-to-other-software-flows" title="Link to this heading"></a></h2>
 </section>
 <section id="wrapup">
-<h2>Wrapup<a class="headerlink" href="#wrapup" title="Link to this heading">#</a></h2>
+<h2>Wrapup<a class="headerlink" href="#wrapup" title="Link to this heading"></a></h2>
 </section>
 <section id="additional-references">
-<h2>Additional References<a class="headerlink" href="#additional-references" title="Link to this heading">#</a></h2>
+<h2>Additional References<a class="headerlink" href="#additional-references" title="Link to this heading"></a></h2>
 </section>
 </section>
 
@@ -496,7 +496,7 @@ but will be documented in a future tutorial.</p>
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../sw_infrastructure/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a>
+    <a href="../sw_infrastructure/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a>
     <a href="../tools_for_prec_wb/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Tools for Precision Wideband Mixed Signal System Design</a>
               </div>
           

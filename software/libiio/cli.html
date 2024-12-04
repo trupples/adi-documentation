@@ -7,11 +7,11 @@
 
     <title>Libiio command line utility &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=95305861" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=ab97267f" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../_static/app.umd.js?v=c93eadd1"></script>
+    <script defer="" src="../../_static/app.umd.js?v=689b8755"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -93,7 +93,7 @@
     <div class="localtoc">
       <div class="tocwrapper">
         <div>
-          <div class="localtoc-header">On this page</div>
+          <div class="localtoc-header"></div>
           <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
         </div>
         <nav>
@@ -250,7 +250,7 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/sw_infrastructure/index.html">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
@@ -276,7 +276,7 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="libiio-command-line-utility">
-<span id="libiio-cli"></span><h1>Libiio command line utility<a class="headerlink" href="#libiio-command-line-utility" title="Link to this heading">#</a></h1>
+<span id="libiio-cli"></span><h1>Libiio command line utility<a class="headerlink" href="#libiio-command-line-utility" title="Link to this heading"></a></h1>
 <p>Libiio provides five main userspace help/utilities to ease
 development of software interfacing <a class="reference internal" href="../../linux/drivers/iio/index.html#iio"><span class="std std-ref">Linux Industrial I/O</span></a> (IIO) devices:</p>
 <ul class="simple">
@@ -290,13 +290,13 @@ development of software interfacing <a class="reference internal" href="../../li
 <blockquote>
 <div></div></blockquote>
 <section id="iio-reg">
-<span id="libiio-iio-reg"></span><h2>iio_reg<a class="headerlink" href="#iio-reg" title="Link to this heading">#</a></h2>
+<span id="libiio-iio-reg"></span><h2>iio_reg<a class="headerlink" href="#iio-reg" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">iio_reg</span></code> is part of the <a class="reference internal" href="index.html#libiio"><span class="std std-ref">Libiio</span></a> package and allows to
 read or write SPI or I2C registers in an IIO device (useful to debug drivers):</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_reg<span class="w"> </span>-h
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_reg<span class="w"> </span>-h
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Usage:
@@ -305,18 +305,18 @@ iio_reg &lt;device&gt; &lt;register&gt; [&lt;value&gt;]
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><section id="running-remote">
-<h3>Running Remote<a class="headerlink" href="#running-remote" title="Link to this heading">#</a></h3>
+<h3>Running Remote<a class="headerlink" href="#running-remote" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">iio_reg</span></code> application can also connect to a libiio remote device via IP.
 Prior in running <code class="docutils literal notranslate"><span class="pre">iio_reg</span></code> set the <code class="docutils literal notranslate"><span class="pre">IIOD_REMOTE</span></code> environmental variable.</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">IIOD_REMOTE</span><span class="o">=</span>IP<span class="w"> </span>address<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>remote<span class="w"> </span>platform
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">IIOD_REMOTE</span><span class="o">=</span>IP<span class="w"> </span>address<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>remote<span class="w"> </span>platform
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="finding">
-<h3>Finding<a class="headerlink" href="#finding" title="Link to this heading">#</a></h3>
+<h3>Finding<a class="headerlink" href="#finding" title="Link to this heading"></a></h3>
 <p>An IIO context can have multiple logical devices, and sometimes not all devices
 will have a specific register interface. To find out which IIO device support
 register access, try (remember that <code class="docutils literal notranslate"><span class="pre">iio_attr</span></code> supports a <code class="docutils literal notranslate"><span class="pre">-D</span></code> option to
@@ -324,7 +324,7 @@ look for debug attributes).</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w">  </span>-u<span class="w"> </span>ip:192.168.2.1<span class="w"> </span>-D
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w">  </span>-u<span class="w"> </span>ip:192.168.2.1<span class="w"> </span>-D
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>IIO context has 4 devices:
@@ -337,7 +337,7 @@ look for debug attributes).</p>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w">  </span>-u<span class="w"> </span>ip:192.168.2.1<span class="w"> </span>-D<span class="w"> </span>.<span class="w"> </span>direct_reg_access
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w">  </span>-u<span class="w"> </span>ip:192.168.2.1<span class="w"> </span>-D<span class="w"> </span>.<span class="w"> </span>direct_reg_access
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>dev &#39;ad9361-phy&#39;, debug attr &#39;direct_reg_access&#39;, value :&#39;0x0&#39;
@@ -349,11 +349,11 @@ dev &#39;cf-ad9361-lpc&#39;, debug attr &#39;direct_reg_access&#39;, value :&#39
 tool.</p>
 </section>
 <section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_reg<span class="w"> </span>ad9361-phy<span class="w"> </span>0x3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_reg<span class="w"> </span>ad9361-phy<span class="w"> </span>0x3
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>0x5c
@@ -362,13 +362,13 @@ tool.</p>
 <div class="clear-left"></div></div></div></section>
 </section>
 <section id="iio-attr">
-<span id="libiio-iio-attr"></span><h2>iio_attr<a class="headerlink" href="#iio-attr" title="Link to this heading">#</a></h2>
+<span id="libiio-iio-attr"></span><h2>iio_attr<a class="headerlink" href="#iio-attr" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">iio_attr</span></code> is part of the <a class="reference internal" href="index.html#libiio"><span class="std std-ref">Libiio</span></a> package, and allows to
 read and write IIO attributes:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-h
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-h
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Usage:
@@ -396,13 +396,13 @@ Attribute types:
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><section id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h3>
 <section id="look-at-context-attributes">
-<h4>Look at Context Attributes<a class="headerlink" href="#look-at-context-attributes" title="Link to this heading">#</a></h4>
+<h4>Look at Context Attributes<a class="headerlink" href="#look-at-context-attributes" title="Link to this heading"></a></h4>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-C
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-C
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Using auto-detected IIO context at URI &quot;usb:3.8.5&quot;
@@ -425,11 +425,11 @@ usb,libusb: 1.0.22.11312
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="list-devices-in-a-context">
-<h4>List Devices in a Context<a class="headerlink" href="#list-devices-in-a-context" title="Link to this heading">#</a></h4>
+<h4>List Devices in a Context<a class="headerlink" href="#list-devices-in-a-context" title="Link to this heading"></a></h4>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>usb:3.8.5<span class="w"> </span>-d
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>usb:3.8.5<span class="w"> </span>-d
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>IIO context has 5 devices:
@@ -443,7 +443,7 @@ usb,libusb: 1.0.22.11312
 <div class="clear-left"></div></div></div><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>usb:3.8.5<span class="w"> </span>-c
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>usb:3.8.5<span class="w"> </span>-c
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>IIO context has 5 devices:
@@ -456,12 +456,12 @@ usb,libusb: 1.0.22.11312
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="list-channel-attributes">
-<h4>List Channel attributes<a class="headerlink" href="#list-channel-attributes" title="Link to this heading">#</a></h4>
+<h4>List Channel attributes<a class="headerlink" href="#list-channel-attributes" title="Link to this heading"></a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">.</span></code> can be used as a wildcard if you don’t know the name.</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>ip:192.168.2.1<span class="w"> </span>-c<span class="w"> </span>adm1177<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>ip:192.168.2.1<span class="w"> </span>-c<span class="w"> </span>adm1177<span class="w"> </span>.
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>dev &#39;adm1177&#39;, channel &#39;voltage0&#39; (input), attr &#39;raw&#39;, value &#39;771&#39;
@@ -472,11 +472,11 @@ dev &#39;adm1177&#39;, channel &#39;current0&#39; (input), attr &#39;scale&#39;,
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="read-a-channel-attributes">
-<h4>Read a channel attributes<a class="headerlink" href="#read-a-channel-attributes" title="Link to this heading">#</a></h4>
+<h4>Read a channel attributes<a class="headerlink" href="#read-a-channel-attributes" title="Link to this heading"></a></h4>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>ip:192.168.2.1<span class="w"> </span>-c<span class="w"> </span>ad9361-phy<span class="w"> </span>RX_LO
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>ip:192.168.2.1<span class="w"> </span>-c<span class="w"> </span>ad9361-phy<span class="w"> </span>RX_LO
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>dev &#39;ad9361-phy&#39;, channel &#39;altvoltage0&#39; (output), id &#39;RX_LO&#39;, attr &#39;external&#39;, value &#39;0&#39;
@@ -492,7 +492,7 @@ dev &#39;ad9361-phy&#39;, channel &#39;altvoltage0&#39; (output), id &#39;RX_LO&
 <div class="clear-left"></div></div></div><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>ip:192.168.2.1<span class="w"> </span>-c<span class="w"> </span>ad9361-phy<span class="w"> </span>RX_LO<span class="w"> </span>frequency
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>ip:192.168.2.1<span class="w"> </span>-c<span class="w"> </span>ad9361-phy<span class="w"> </span>RX_LO<span class="w"> </span>frequency
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>dev &#39;ad9361-phy&#39;, channel &#39;altvoltage0&#39; (output), id &#39;RX_LO&#39;, attr &#39;frequency&#39;, value &#39;2400000000&#39;
@@ -500,11 +500,11 @@ dev &#39;ad9361-phy&#39;, channel &#39;altvoltage0&#39; (output), id &#39;RX_LO&
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="write-to-a-channel-attribute">
-<h4>Write to a channel attribute<a class="headerlink" href="#write-to-a-channel-attribute" title="Link to this heading">#</a></h4>
+<h4>Write to a channel attribute<a class="headerlink" href="#write-to-a-channel-attribute" title="Link to this heading"></a></h4>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>ip:192.168.2.1<span class="w"> </span>-c<span class="w"> </span>ad9361-phy<span class="w"> </span>RX_LO<span class="w"> </span>frequency<span class="w"> </span><span class="m">2400000100</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>ip:192.168.2.1<span class="w"> </span>-c<span class="w"> </span>ad9361-phy<span class="w"> </span>RX_LO<span class="w"> </span>frequency<span class="w"> </span><span class="m">2400000100</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>dev &#39;ad9361-phy&#39;, channel &#39;altvoltage0&#39; (output), id &#39;RX_LO&#39;, attr &#39;frequency&#39;, value &#39;2400000000&#39;
@@ -516,13 +516,13 @@ dev &#39;ad9361-phy&#39;, channel &#39;altvoltage0&#39; (output), id &#39;RX_LO&
 </section>
 </section>
 <section id="iio-info">
-<span id="libiio-iio-info"></span><h2>iio_info<a class="headerlink" href="#iio-info" title="Link to this heading">#</a></h2>
+<span id="libiio-iio-info"></span><h2>iio_info<a class="headerlink" href="#iio-info" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">iio_info</span></code> is part of the <a class="reference internal" href="index.html#libiio"><span class="std std-ref">Libiio</span></a> package and allows to
 dump the IIO attributes:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-h
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-h
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Usage:
@@ -546,14 +546,14 @@ Options:
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><section id="id1">
-<h3>Example<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3>Example<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
 <div><div class="collapsible docutils container">
 <input class="collapsible_input" id="20eeebffa5c069540b123340058322a2ca558a8e" name="20eeebffa5c069540b123340058322a2ca558a8e" type="checkbox"></input><label for="20eeebffa5c069540b123340058322a2ca558a8e"><p>iio_info example</p>
 <div class="icon"></div></label><div class="collapsible_content docutils container">
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Library version: 0.15 (git tag: v0.15)
@@ -994,13 +994,13 @@ CH1 : PN9 : Out of Sync : PN Error
 </div></section>
 </section>
 <section id="iio-readdev">
-<span id="libiio-iio-readdev"></span><h2>iio_readdev<a class="headerlink" href="#iio-readdev" title="Link to this heading">#</a></h2>
+<span id="libiio-iio-readdev"></span><h2>iio_readdev<a class="headerlink" href="#iio-readdev" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">iio_readdev</span></code> is part of the <a class="reference internal" href="index.html#libiio"><span class="std std-ref">Libiio</span></a> package and allows to
 read an IIO buffer device:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_readdev<span class="w"> </span>-h
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_readdev<span class="w"> </span>-h
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Usage:
@@ -1026,7 +1026,7 @@ Options:
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><section id="id2">
-<h3>Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3>Example<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <p>A quick example, captures 4 frames of 256 samples, (1024 samples in total), from
 the receive side of the ADALM-PLUTO.</p>
 <ol class="arabic">
@@ -1034,7 +1034,7 @@ the receive side of the ADALM-PLUTO.</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-s
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-s
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Library version: 0.9 (git tag: 263bd08)
@@ -1048,7 +1048,7 @@ Available contexts:
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>usb:3.80.5<span class="w"> </span>-s<span class="w"> </span>-c<span class="w"> </span>ad
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>usb:3.80.5<span class="w"> </span>-s<span class="w"> </span>-c<span class="w"> </span>ad
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>dev &#39;cf-ad9361-dds-core-lpc&#39;, channel &#39;voltage0&#39; (output, index: 0, format: le:S16/16&gt;&gt;0)
@@ -1065,7 +1065,7 @@ seeing</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>usb:3.80.5<span class="w">  </span>-D<span class="w"> </span>ad9361-phy<span class="w"> </span>loopback<span class="w"> </span><span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-u<span class="w"> </span>usb:3.80.5<span class="w">  </span>-D<span class="w"> </span>ad9361-phy<span class="w"> </span>loopback<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>dev &#39;ad9361-phy&#39;, debug attr &#39;loopback&#39;, value :&#39;0&#39;
@@ -1079,7 +1079,7 @@ when looking at things in the time domain.</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-c<span class="w"> </span>cf-ad9361-dds-core-lpc<span class="w"> </span>altvoltage0<span class="w"> </span>frequency<span class="w"> </span><span class="m">50000</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-c<span class="w"> </span>cf-ad9361-dds-core-lpc<span class="w"> </span>altvoltage0<span class="w"> </span>frequency<span class="w"> </span><span class="m">50000</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Using auto-detected IIO context at URI &quot;usb:2.26.5&quot;
@@ -1091,7 +1091,7 @@ dev &#39;cf-ad9361-dds-core-lpc&#39;, channel &#39;altvoltage0&#39; (output), id
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-c<span class="w"> </span>cf-ad9361-dds-core-lpc<span class="w"> </span>altvoltage2<span class="w"> </span>frequency<span class="w"> </span><span class="m">50000</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-c<span class="w"> </span>cf-ad9361-dds-core-lpc<span class="w"> </span>altvoltage2<span class="w"> </span>frequency<span class="w"> </span><span class="m">50000</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Using auto-detected IIO context at URI &quot;usb:2.26.5&quot;
@@ -1105,7 +1105,7 @@ dev &#39;cf-ad9361-dds-core-lpc&#39;, channel &#39;altvoltage2&#39; (output), id
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-c<span class="w"> </span>cf-ad9361-dds-core-lpc<span class="w"> </span>altvoltage0<span class="w"> </span>scale<span class="w"> </span><span class="m">0</span>.4
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-c<span class="w"> </span>cf-ad9361-dds-core-lpc<span class="w"> </span>altvoltage0<span class="w"> </span>scale<span class="w"> </span><span class="m">0</span>.4
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Using auto-detected IIO context at URI &quot;usb:2.26.5&quot;
@@ -1117,7 +1117,7 @@ dev &#39;cf-ad9361-dds-core-lpc&#39;, channel &#39;altvoltage0&#39; (output), id
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-c<span class="w"> </span>cf-ad9361-dds-core-lpc<span class="w"> </span>altvoltage1<span class="w"> </span>scale<span class="w"> </span><span class="m">0</span>.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-c<span class="w"> </span>cf-ad9361-dds-core-lpc<span class="w"> </span>altvoltage1<span class="w"> </span>scale<span class="w"> </span><span class="m">0</span>.0
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Using auto-detected IIO context at URI &quot;usb:2.26.5&quot;
@@ -1129,7 +1129,7 @@ dev &#39;cf-ad9361-dds-core-lpc&#39;, channel &#39;altvoltage1&#39; (output), id
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-c<span class="w"> </span>cf-ad9361-dds-core-lpc<span class="w"> </span>altvoltage2<span class="w"> </span>scale<span class="w"> </span><span class="m">0</span>.4
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-c<span class="w"> </span>cf-ad9361-dds-core-lpc<span class="w"> </span>altvoltage2<span class="w"> </span>scale<span class="w"> </span><span class="m">0</span>.4
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Using auto-detected IIO context at URI &quot;usb:2.26.5&quot;
@@ -1141,7 +1141,7 @@ dev &#39;cf-ad9361-dds-core-lpc&#39;, channel &#39;altvoltage2&#39; (output), id
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-c<span class="w"> </span>cf-ad9361-dds-core-lpc<span class="w"> </span>altvoltage3<span class="w"> </span>scale<span class="w"> </span><span class="m">0</span>.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-c<span class="w"> </span>cf-ad9361-dds-core-lpc<span class="w"> </span>altvoltage3<span class="w"> </span>scale<span class="w"> </span><span class="m">0</span>.0
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Using auto-detected IIO context at URI &quot;usb:2.26.5&quot;
@@ -1155,7 +1155,7 @@ dev &#39;cf-ad9361-dds-core-lpc&#39;, channel &#39;altvoltage3&#39; (output), id
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-i<span class="w"> </span>-c<span class="w"> </span>ad9361-phy<span class="w"> </span>voltage0<span class="w"> </span>sampling_frequency<span class="w"> </span><span class="m">3000000</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-i<span class="w"> </span>-c<span class="w"> </span>ad9361-phy<span class="w"> </span>voltage0<span class="w"> </span>sampling_frequency<span class="w"> </span><span class="m">3000000</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Using auto-detected IIO context at URI &quot;usb:2.29.5&quot;
@@ -1169,7 +1169,7 @@ dev &#39;ad9361-phy&#39;, channel &#39;voltage0&#39; (input), attr &#39;sampling
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_readdev<span class="w"> </span>-u<span class="w"> </span>usb:3.80.5<span class="w"> </span>-b<span class="w"> </span><span class="m">256</span><span class="w"> </span>-s<span class="w"> </span><span class="m">1024</span><span class="w"> </span>cf-ad9361-lpc<span class="w"> </span>&gt;<span class="w"> </span>samples.dat
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_readdev<span class="w"> </span>-u<span class="w"> </span>usb:3.80.5<span class="w"> </span>-b<span class="w"> </span><span class="m">256</span><span class="w"> </span>-s<span class="w"> </span><span class="m">1024</span><span class="w"> </span>cf-ad9361-lpc<span class="w"> </span>&gt;<span class="w"> </span>samples.dat
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></li>
@@ -1177,7 +1177,7 @@ dev &#39;ad9361-phy&#39;, channel &#39;voltage0&#39; (input), attr &#39;sampling
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>hexdump<span class="w"> </span>-d<span class="w"> </span>./samples.dat<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hexdump<span class="w"> </span>-d<span class="w"> </span>./samples.dat<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>0000000   64086   65499   64097   65352   64124   65206   64165   65064
@@ -1206,7 +1206,7 @@ that.</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-i<span class="w"> </span>-c<span class="w"> </span>ad9361-phy<span class="w"> </span>voltage0<span class="w"> </span>sampling_frequency
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-i<span class="w"> </span>-c<span class="w"> </span>ad9361-phy<span class="w"> </span>voltage0<span class="w"> </span>sampling_frequency
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>dev &#39;ad9361-phy&#39;, channel &#39;voltage0&#39; (input), attr &#39;sampling_frequency&#39;, value &#39;30720000&#39;
@@ -1219,13 +1219,13 @@ between buffers. Increasing the buffer length is the best thing to do.</p>
 </section>
 </section>
 <section id="iio-writedev">
-<span id="libiio-iio-writedev"></span><h2>iio_writedev<a class="headerlink" href="#iio-writedev" title="Link to this heading">#</a></h2>
+<span id="libiio-iio-writedev"></span><h2>iio_writedev<a class="headerlink" href="#iio-writedev" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">iio_writedev</span></code> is part of the <a class="reference internal" href="index.html#libiio"><span class="std std-ref">Libiio</span></a> package and allows to
 write an IIO buffer device:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_writedev<span class="w"> </span>-h
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_writedev<span class="w"> </span>-h
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Usage:
@@ -1253,11 +1253,11 @@ Options:
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><section id="id3">
-<h3>Example<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3>Example<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_readdev<span class="w"> </span>-b<span class="w"> </span><span class="m">100000</span><span class="w"> </span>cf-ad9361-lpc<span class="w"> </span><span class="p">|</span><span class="w"> </span>iio_writedev<span class="w"> </span>-b<span class="w"> </span><span class="m">100000</span><span class="w"> </span>cf-ad9361-dds-core-lpc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_readdev<span class="w"> </span>-b<span class="w"> </span><span class="m">100000</span><span class="w"> </span>cf-ad9361-lpc<span class="w"> </span><span class="p">|</span><span class="w"> </span>iio_writedev<span class="w"> </span>-b<span class="w"> </span><span class="m">100000</span><span class="w"> </span>cf-ad9361-dds-core-lpc
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></section>

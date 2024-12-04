@@ -7,11 +7,11 @@
 
     <title>IIO System Considerations Tips &amp; Tricks &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=95305861" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=ab97267f" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../_static/app.umd.js?v=c93eadd1"></script>
+    <script defer="" src="../../_static/app.umd.js?v=689b8755"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -93,7 +93,7 @@
     <div class="localtoc">
       <div class="tocwrapper">
         <div>
-          <div class="localtoc-header">On this page</div>
+          <div class="localtoc-header"></div>
           <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
         </div>
         <nav>
@@ -232,7 +232,7 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/sw_infrastructure/index.html">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
@@ -258,9 +258,9 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="iio-system-considerations-tips-tricks">
-<h1>IIO System Considerations Tips &amp; Tricks<a class="headerlink" href="#iio-system-considerations-tips-tricks" title="Link to this heading">#</a></h1>
+<h1>IIO System Considerations Tips &amp; Tricks<a class="headerlink" href="#iio-system-considerations-tips-tricks" title="Link to this heading"></a></h1>
 <section id="iio-context-timeout-libiio">
-<h2>IIO context timeout (libiio)<a class="headerlink" href="#iio-context-timeout-libiio" title="Link to this heading">#</a></h2>
+<h2>IIO context timeout (libiio)<a class="headerlink" href="#iio-context-timeout-libiio" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>May be triggered by low sample rates and large buffers</p></li>
 <li><p>Long blocking calls (some calibration, profile load, etc.)</p></li>
@@ -272,7 +272,7 @@ disable the timeout.</p>
 </div>
 </section>
 <section id="buffer-handling-sizes-and-counts">
-<h2>Buffer handling, sizes and counts<a class="headerlink" href="#buffer-handling-sizes-and-counts" title="Link to this heading">#</a></h2>
+<h2>Buffer handling, sizes and counts<a class="headerlink" href="#buffer-handling-sizes-and-counts" title="Link to this heading"></a></h2>
 <p>Typically set to a frame or chunk size suitable for signal processing (e.g. N x
 FFT_size)</p>
 <ul class="simple">
@@ -297,7 +297,7 @@ Can change this using <code class="docutils literal notranslate"><span class="pr
 fast enough!</p>
 </div>
 <section id="iio-buffer-dma-max-block-size">
-<h3>IIO buffer DMA max block size<a class="headerlink" href="#iio-buffer-dma-max-block-size" title="Link to this heading">#</a></h3>
+<h3>IIO buffer DMA max block size<a class="headerlink" href="#iio-buffer-dma-max-block-size" title="Link to this heading"></a></h3>
 <p>Max buffer size is limited by the max_block_size parameter</p>
 <ul class="simple">
 <li><p>Default 16M</p></li>
@@ -305,19 +305,19 @@ fast enough!</p>
 </ul>
 <p>There are two ways to adjust the max block size</p>
 <section id="sysfs">
-<h4>sysfs<a class="headerlink" href="#sysfs" title="Link to this heading">#</a></h4>
+<h4>sysfs<a class="headerlink" href="#sysfs" title="Link to this heading"></a></h4>
 <p>Set via <em>/sys/module/industrialio_buffer_dma/parameters/max_block_size</em> in
 bytes</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">67108864</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/module/industrialio_buffer_dma/parameters/max_block_size
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">67108864</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/module/industrialio_buffer_dma/parameters/max_block_size
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/sys/module/industrialio_buffer_dma/parameters/max_block_size
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/sys/module/industrialio_buffer_dma/parameters/max_block_size
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>67108864
@@ -326,12 +326,12 @@ bytes</p>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="kernel-command-line">
-<h4>Kernel command line<a class="headerlink" href="#kernel-command-line" title="Link to this heading">#</a></h4>
+<h4>Kernel command line<a class="headerlink" href="#kernel-command-line" title="Link to this heading"></a></h4>
 <p>Append the following to your kernel command line</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">industrialio_buffer_dma</span><span class="o">.</span><span class="n">max_block_size</span><span class="o">=</span><span class="n">size_in_bytes</span>
 </pre></div>
@@ -339,7 +339,7 @@ bytes</p>
 </section>
 </section>
 <section id="linux-contiguous-memory-allocator-or-cma">
-<h3>Linux Contiguous Memory Allocator (or CMA)<a class="headerlink" href="#linux-contiguous-memory-allocator-or-cma" title="Link to this heading">#</a></h3>
+<h3>Linux Contiguous Memory Allocator (or CMA)<a class="headerlink" href="#linux-contiguous-memory-allocator-or-cma" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Allocation</span> <span class="n">of</span> <span class="n">big</span><span class="p">,</span> <span class="n">physically</span><span class="o">-</span><span class="n">contiguous</span> <span class="n">memory</span> <span class="n">blocks</span>
 <span class="n">Reserve</span> <span class="n">memory</span> <span class="n">early</span> <span class="n">at</span> <span class="n">boot</span> <span class="n">time</span>
 <span class="n">Kconfig</span> <span class="n">menu</span> <span class="s2">&quot;Device Drivers&quot;</span> <span class="o">-&gt;</span> <span class="s2">&quot;Generic Driver Options&quot;</span><span class="o">-&gt;</span> <span class="s2">&quot;Contiguous Memory Allocator&quot;</span>
@@ -355,7 +355,7 @@ buffer count you may need to CMA size.</p>
 </section>
 </section>
 <section id="capturing-large-contiguous-buffers">
-<h2>Capturing large contiguous buffers<a class="headerlink" href="#capturing-large-contiguous-buffers" title="Link to this heading">#</a></h2>
+<h2>Capturing large contiguous buffers<a class="headerlink" href="#capturing-large-contiguous-buffers" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Set kernel buffer count to 1</p></li>
 <li><p>Increase IIO buffer DMA max block size parameter to at least the size of your

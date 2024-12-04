@@ -7,15 +7,15 @@
 
     <title>Converter Connectivity Tutorial &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=95305861" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=ab97267f" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../_static/app.umd.js?v=c93eadd1"></script>
+    <script defer="" src="../../_static/app.umd.js?v=689b8755"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors" href="../sw_infrastructure/index.html" />
+    <link rel="next" title="ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors" href="../sw_infrastructure/index.html" />
     <link rel="prev" title="Precision ADC Tutorial" href="../tutorial_prec_adc/index.html" />
    
   
@@ -93,7 +93,7 @@
     <div class="localtoc">
       <div class="tocwrapper">
         <div>
-          <div class="localtoc-header">On this page</div>
+          <div class="localtoc-header"></div>
           <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
         </div>
         <nav>
@@ -235,7 +235,7 @@ Content on this topic
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
@@ -261,9 +261,9 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="converter-connectivity-tutorial">
-<h1>Converter Connectivity Tutorial<a class="headerlink" href="#converter-connectivity-tutorial" title="Link to this heading">#</a></h1>
+<h1>Converter Connectivity Tutorial<a class="headerlink" href="#converter-connectivity-tutorial" title="Link to this heading"></a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>You don’t have to be a software engineer in order to leverage device drivers
 and example code as you are evaluating and prototyping with Analog Devices’
 data converters and converter-like products. Selection of an ADC, DAC, or
@@ -321,7 +321,7 @@ required is:</p>
 <span id="fig-simple-iio-hardware"></span><a class="reference internal image-reference" href="../../_images/simple_iio_hardware.png"><img alt="../../_images/simple_iio_hardware.png" src="../../_images/simple_iio_hardware.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">Ultra-simple IIO-based system</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Ultra-simple IIO-based system</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>A Note on Security:</strong> The Raspberry Pi is a fantastic tool, but it can
@@ -340,7 +340,7 @@ Worst case, you’ll need to re-burn your SD card to get back to the starting
 point.</p>
 </section>
 <section id="representative-systems">
-<h2>Representative systems<a class="headerlink" href="#representative-systems" title="Link to this heading">#</a></h2>
+<h2>Representative systems<a class="headerlink" href="#representative-systems" title="Link to this heading"></a></h2>
 <p>We are intentionally starting with an extremely simple example. But once you
 understand how to communicate with an LM74, ADXL345, or ADXL355, you’re well
 over the initial learning curve to understanding much more complicated
@@ -351,7 +351,7 @@ and much more. Even the simplified block diagram is pretty daunting:</p>
 <span id="fig-pluto-medium-block-diagram"></span><a class="reference internal image-reference" href="../../_images/pluto_medium_block_diagram.png"><img alt="../../_images/pluto_medium_block_diagram.png" src="../../_images/pluto_medium_block_diagram.png" style="width: 200px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">Pluto Simplified Block Diagram</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Pluto Simplified Block Diagram</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>If the Pluto wasn’t scary enough, the <a class="icon adi reference external" href="https://www.analog.com/cn0566">Phased Array (Phaser) Development
@@ -366,7 +366,7 @@ more complex devices both physically and in software.</p>
 <span id="fig-2-23-2023-4-37-00-pm"></span><a class="reference internal image-reference" href="../../_images/2-23-2023_4-37-00_pm.png"><img alt="../../_images/2-23-2023_4-37-00_pm.png" src="../../_images/2-23-2023_4-37-00_pm.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 3 </span><span class="caption-text">Phaser System Overview</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Phaser System Overview</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>But - all of the phaser’s devices work together, and by the time you finish
@@ -374,7 +374,7 @@ this tutorial you’ll be able to chip away at understanding how the individual
 devices work, and eventually, how they whole system works.</p>
 </section>
 <section id="connecting-the-hardware">
-<h2>Connecting the Hardware<a class="headerlink" href="#connecting-the-hardware" title="Link to this heading">#</a></h2>
+<h2>Connecting the Hardware<a class="headerlink" href="#connecting-the-hardware" title="Link to this heading"></a></h2>
 <p>Before we dig too deep into software stuff, let’s prepare the hardware. There
 are lots of ways to connect boards together, custom adapters, Raspberry Pi
 prototyping hats, etc. The <a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ">PMD-RPI-INTZ</a> is an interposer
@@ -389,7 +389,7 @@ CS0 and has the interrupt pin connected to GPIO 19g</p>
 <span id="fig-adxl354-pmd-rpi-intz"></span><a class="reference internal image-reference" href="../../_images/adxl354_pmd-rpi-intz.jpg"><img alt="../../_images/adxl354_pmd-rpi-intz.jpg" src="../../_images/adxl354_pmd-rpi-intz.jpg" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 4 </span><span class="caption-text">ADXL345 Pmod Mounted to PMD-RPI-INTZ Interposer</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">ADXL345 Pmod Mounted to PMD-RPI-INTZ Interposer</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Another option that generally applies to eval boards with test points on the
@@ -409,7 +409,7 @@ Note that there are TWO SPI ports - SPI0 and SPI1. We will be using SPI0
 <span id="fig-rpi-adxl345-connections"></span><a class="reference internal image-reference" href="../../_images/rpi_adxl345_connections.png"><img alt="../../_images/rpi_adxl345_connections.png" src="../../_images/rpi_adxl345_connections.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 5 </span><span class="caption-text">RPi-Pmod connections</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">RPi-Pmod connections</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition-todo admonition" id="id1">
@@ -434,7 +434,7 @@ favorite online vendors that should work fineg</p></li>
 </div>
 </section>
 <section id="burning-sd-cards">
-<h2>Burning SD cards<a class="headerlink" href="#burning-sd-cards" title="Link to this heading">#</a></h2>
+<h2>Burning SD cards<a class="headerlink" href="#burning-sd-cards" title="Link to this heading"></a></h2>
 <p>In order to boot the Raspberry Pi, you will need to obtain an SD card
 “image”, and write (or “burn”) it to a card. We’ll talk about where to get the
 correct image shortly. This is a fairly common step in bringing up embedded
@@ -450,7 +450,7 @@ files! (More on that later…)</p>
 <span id="fig-raspberry-pi-imager"></span><a class="reference internal image-reference" href="../../_images/raspberry_pi_imager.png"><img alt="../../_images/raspberry_pi_imager.png" src="../../_images/raspberry_pi_imager.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 6 </span><span class="caption-text">Raspberry Pi Imager Screenshot</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Raspberry Pi Imager Screenshot</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>A new SD card is usually preformatted as a single EXFAT partition, usable by
@@ -466,7 +466,7 @@ will show the ext4 partition as “unknown”.</p>
 <span id="fig-sd-card-partitions"></span><a class="reference internal image-reference" href="../../_images/sd_card_partitions.png"><img alt="../../_images/sd_card_partitions.png" src="../../_images/sd_card_partitions.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 7 </span><span class="caption-text">SD card partitions before and after “burning”</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">SD card partitions before and after “burning”</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Helpful Hint: It may happen that an SD card becomes corrupted somehow. This can
@@ -479,7 +479,7 @@ camera’s (such as a Nikon D90) SD card formatting feature will often resurrect
 a “bricked” cardg</p>
 </section>
 <section id="adi-kuiper-linux">
-<h2>ADI Kuiper Linux<a class="headerlink" href="#adi-kuiper-linux" title="Link to this heading">#</a></h2>
+<h2>ADI Kuiper Linux<a class="headerlink" href="#adi-kuiper-linux" title="Link to this heading"></a></h2>
 <p>What is “ADI Kuiper Linux”? Here’s a little glossary:</p>
 <ul class="simple">
 <li><p>Debian = A Popular Linux Distribution</p></li>
@@ -525,7 +525,7 @@ IIO Oscilloscope (or open a terminal and run IIO Oscilloscope):</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>osc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>osc
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>(Enter the root password, “analog” by default unless you followed the advice
@@ -538,7 +538,7 @@ ADXL3x5’s sampling frequency, or LM75’s over/under temperature thresholdsg</
 <span id="fig-rpi-desktop"></span><a class="reference internal image-reference" href="../../_images/rpi_desktop.png"><img alt="../../_images/rpi_desktop.png" src="../../_images/rpi_desktop.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 8 </span><span class="caption-text">Raspberry Pi w/ ADI Kuiper Linux desktop</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Raspberry Pi w/ ADI Kuiper Linux desktop</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>But… if you look at the IIO oscilloscope panels, where’s the ADXL3x5 or LM75?
@@ -549,7 +549,7 @@ Yup, the authore has suppressed that memory, too.) One of them,
 the default is NOT the ADXL345… so let’s fix thatg</p>
 </section>
 <section id="device-tree-overlays">
-<h2>Device Tree Overlays<a class="headerlink" href="#device-tree-overlays" title="Link to this heading">#</a></h2>
+<h2>Device Tree Overlays<a class="headerlink" href="#device-tree-overlays" title="Link to this heading"></a></h2>
 <p>When we first powered up the Raspberry Pi and ran IIO Oscilloscope it didn’t
 find anything. While we do have our ADXL3x5/LM75 physically connected to the
 board, Linux doesn’t know about it yet because UNlike USB, PCI, SCSI, Firewire,
@@ -571,7 +571,7 @@ above.)</p>
 <span id="fig-device-tree"></span><a class="reference internal image-reference" href="../../_images/device_tree.png"><img alt="../../_images/device_tree.png" src="../../_images/device_tree.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 9 </span><span class="caption-text">Partial ADXL345 overlay source (dts)</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Partial ADXL345 overlay source (dts)</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The device tree source is then compiled into a “flattened” device tree that the
@@ -606,7 +606,7 @@ on the Pi! Just open a command prompt, and type:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>mousepad<span class="w"> </span>/boot/config.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>mousepad<span class="w"> </span>/boot/config.txt
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>Which will bring up the file in the Mousepad editor. Scroll down until you find
@@ -623,7 +623,7 @@ it to:</p>
 <span id="fig-edit-config"></span><a class="reference internal image-reference" href="../../_images/edit_config.png"><img alt="../../_images/edit_config.png" src="../../_images/edit_config.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 10 </span><span class="caption-text">Editing config.txt directly on Raspberry Pi</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Editing config.txt directly on Raspberry Pi</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Notice the two commented lines beginning with <strong>#</strong>. As you might expect, you
@@ -660,7 +660,7 @@ can do this from the start menu, or from a terminal type:</p>
 </div>
 </section>
 <section id="hello-adxl345-adxl355-or-lm75">
-<h2>Hello, ADXL345, ADXL355, or LM75!<a class="headerlink" href="#hello-adxl345-adxl355-or-lm75" title="Link to this heading">#</a></h2>
+<h2>Hello, ADXL345, ADXL355, or LM75!<a class="headerlink" href="#hello-adxl345-adxl355-or-lm75" title="Link to this heading"></a></h2>
 <p>If all went well, Linux should have booted, found the ADXL3x5 or LM75, and
 loaded its driver. Run IIO Oscilloscope again. locate the DMM screen, check the
 ADXL345, select all channels, and click the triangular “play” button. You
@@ -669,7 +669,7 @@ should see acceleration values displayed as shown in <a class="reference interna
 <span id="fig-iio-scope-adxl345"></span><a class="reference internal image-reference" href="../../_images/iio_scope_adxl345.png"><img alt="../../_images/iio_scope_adxl345.png" src="../../_images/iio_scope_adxl345.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 11 </span><span class="caption-text">IIO Oscilloscope showing ADXL345 channels</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">IIO Oscilloscope showing ADXL345 channels</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>IIO Oscilloscope is a great tool for establishing signs of life, but really
@@ -679,7 +679,7 @@ open a terminal and enter:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>You should see the screen filled with information about the ADXL345 - sample
@@ -695,7 +695,7 @@ Mac / Linuxg</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>iiod
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>iiod
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>Which means “list all processes from all users, but only display ones that
@@ -708,7 +708,7 @@ include the text “iiod””. You should see a process running as shown in
 <span id="fig-iiod-process-screenshot"></span><a class="reference internal image-reference" href="../../_images/iiod_process_screenshot.png"><img alt="../../_images/iiod_process_screenshot.png" src="../../_images/iiod_process_screenshot.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 12 </span><span class="caption-text">IIOD process</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">IIOD process</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The other piece is libiio on the remote host. LibIIO can be obtained from:
@@ -719,7 +719,7 @@ open a command prompt, and enter:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>ip:analog.local
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>ip:analog.local
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>(Where the IP address may be different, depending on how you’ve connected.) If
@@ -730,7 +730,7 @@ Linux / Mac machine! <em>(How cool is that?)</em></p>
 <span id="fig-iio-info-local-remote"></span><a class="reference internal image-reference" href="../../_images/iio_info_local_remote.png"><img alt="../../_images/iio_info_local_remote.png" src="../../_images/iio_info_local_remote.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 13 </span><span class="caption-text">iio_info run locally and remotely</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">iio_info run locally and remotely</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>NOW you’ve got all the pieces for some fun hacking - you can write software
@@ -743,7 +743,7 @@ to run on the host, or if you want to grab large amounts of data for analysis</p
 Python. Let’s use Python..g</p>
 </section>
 <section id="python">
-<h2>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h2>
+<h2>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h2>
 <p>Any language that can call a shared library can communicate with libiio. But
 Python is attractive for getting started for several reasons:</p>
 <p>It’s FREE It’s tremendously popular It’s got tons of number crunching
@@ -780,20 +780,20 @@ procedure for setting the default to Python 3 is to run the following commands:<
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python2.7<span class="w"> </span><span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python2.7<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python3.7<span class="w"> </span><span class="m">2</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python3.7<span class="w"> </span><span class="m">2</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>(This only needs to be done once.)</p>
 </div>
 </section>
 <section id="pyadi-iio">
-<h2>PyADI-IIO<a class="headerlink" href="#pyadi-iio" title="Link to this heading">#</a></h2>
+<h2>PyADI-IIO<a class="headerlink" href="#pyadi-iio" title="Link to this heading"></a></h2>
 <p>PyADI-IIO (pronounced “Py-odi” <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> is like <a class="reference external" href="https://en.wikipedia.org/wiki/peyote">peyote</a>,
 but with a Py) is a python  abstraction module for ADI hardware with IIO drivers
 to make them easier to use.
@@ -808,19 +808,19 @@ to update.) Let’s install pyadi-iio.</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/pyadi-iio.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/pyadi-iio.git
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>pyadi-iio
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>pyadi-iio
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/pyadi-iio$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>Note: This requires that your Raspberry Pi be able to access the internet. If
@@ -832,7 +832,7 @@ on as you would on any other machine, supplying a password if necessary</p>
 <span id="fig-rpi-wifi-login"></span><a class="reference internal image-reference" href="../../_images/rpi_wifi_login.png"><img alt="../../_images/rpi_wifi_login.png" src="../../_images/rpi_wifi_login.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 14 </span><span class="caption-text">WiFi logon</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">WiFi logon</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Now it’s (almost) trivial to grab data from the ADXL345 used in this tutorial,
@@ -857,13 +857,13 @@ directory:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/pyadi-iio$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>examples
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>examples
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/pyadi-iio/examples$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>adxl345_example.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>adxl345_example.py
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>The example program takes a few acceleration readings, shows how to set the
@@ -896,18 +896,18 @@ line argument. From the command line, run the following for the ADXL355:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/pyadi-iio/examples$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>adxl355_example.py<span class="w"> </span>ip:localhost
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>adxl355_example.py<span class="w"> </span>ip:localhost
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>And this for the LM75:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/pyadi-iio/examples$
 </pre></div>
 </div>
-<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>lm75_example.py<span class="w"> </span>ip:localhost
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>lm75_example.py<span class="w"> </span>ip:localhost
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><section id="tools-for-your-toolbox-ssh-scp-vnc">
-<h3>Tools for your Toolbox: SSH, SCP, VNC<a class="headerlink" href="#tools-for-your-toolbox-ssh-scp-vnc" title="Link to this heading">#</a></h3>
+<h3>Tools for your Toolbox: SSH, SCP, VNC<a class="headerlink" href="#tools-for-your-toolbox-ssh-scp-vnc" title="Link to this heading"></a></h3>
 <p>Putty and TeraTerm are popular (and free) SSH clients that let you log into a
 console on your Raspberry Pi (or other remote client). They are available at
 <a class="reference external" href="https://www.putty.org/">PuTTY Homepage</a> and <a class="reference external" href="https://ttssh2.osdn.jp/index.html.en">TeraTerm Homepage</a>,
@@ -927,13 +927,13 @@ A screenshot of VNC logged into the Raspberry Pi is shown in <a class="reference
 <span id="fig-rpi-vnc"></span><a class="reference internal image-reference" href="../../_images/rpi_vnc.png"><img alt="../../_images/rpi_vnc.png" src="../../_images/rpi_vnc.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 15 </span><span class="caption-text">VNC desktop</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">VNC desktop</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="going-headless">
-<h2>Going “Headless”<a class="headerlink" href="#going-headless" title="Link to this heading">#</a></h2>
+<h2>Going “Headless”<a class="headerlink" href="#going-headless" title="Link to this heading"></a></h2>
 <p>(Ignore if you’re using a monitor / keyboard / mouse) If it happens that you
 don’t have a spare monitor / keyboard / mouse, or it’s just inconvenient, you
 can operate the Raspberry Pi with only a network connection. By default, the
@@ -965,7 +965,7 @@ Make sure the last octet in the IP address is DIFFERENT from that set on the Ras
 <span id="fig-static-ip-host"></span><a class="reference internal image-reference" href="../../_images/static_ip_host.png"><img alt="../../_images/static_ip_host.png" src="../../_images/static_ip_host.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 16 </span><span class="caption-text">Setting Up Static IP on Windows Host</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">Setting Up Static IP on Windows Host</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Finally, open a command prompt, and ping your Raspberry Pi as shown in
@@ -974,7 +974,7 @@ Make sure the last octet in the IP address is DIFFERENT from that set on the Ras
 <span id="fig-ping-rpi"></span><a class="reference internal image-reference" href="../../_images/ping_rpi.png"><img alt="../../_images/ping_rpi.png" src="../../_images/ping_rpi.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 17 </span><span class="caption-text">Pinging the Headless Pi</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">Pinging the Headless Pi</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>If you get a reply, you’re all set! You can now log into the Raspberry Pi using
@@ -985,7 +985,7 @@ way) is the same for using any network connected embedded computer, test
 equipment, etc.</p>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
 <p>You’re now armed to start building interesting application circuits with the
 ADXL345, starting with a solid software foundation. Applications can either be
 connected to a host computer, or can run remotely on the Raspberry Pi itself.
@@ -1013,7 +1013,7 @@ great! A good starting point would be
               <div class="related">
                 &nbsp;
     <a href="../tutorial_prec_adc/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Precision ADC Tutorial</a>
-    <a href="../sw_infrastructure/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a>
+    <a href="../sw_infrastructure/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a>
               </div>
           
         </div>
