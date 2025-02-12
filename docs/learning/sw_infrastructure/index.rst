@@ -1,5 +1,9 @@
-ADI's Software Infrastructure for designing with ADCs, DACs, and Sensors
+Software Infrastructure for designing with ADCs, DACs, and Sensors
 ===============================================================================
+
+.. note::
+
+   This is a work in progress.
 
 Introduction
 ~~~~~~~~~~~~
@@ -11,12 +15,12 @@ This tutorial will use a part “somewhere in the middle” in terms of complexi
 - Microcontroller / FPGA decision factors
 - Linux / no-OS / Zephyr support
 - Language support
-- Customer Enablement and System Prototyping
+- Hardware and Software Enablement,  System Prototyping
 - Signal chain architecture
 
 This tutorial will cover each of these in summary, accompanied by hands-on exercises with hardware. We’ll test drive key software utilities, run example programs, take some basic performance measurements, and prototype a simple seismic application example for strategic and key (S&K) customer Fred in the Shed Instruments. Finally, we’ll show how concepts can be applied to other data converter products – PLLs, DDS, IMUs, and more.
 
-The tutorial can be most easily run on a Raspberry Pi 4 or 400, but we’ll leave you with instructions on how to install everything on your ADI laptop, your co-worker’s Mac, and your other co-worker’s Linux box. You will walk away knowing how to bring up this portable, economical setup in customer lobbies, labs, and conference rooms. 
+The tutorial can be most easily run on a Raspberry Pi 4 or 400, but we’ll leave you with instructions on how to install everything on your ADI laptop, your co-worker’s Mac, and your other co-worker’s Linux box. You will walk away knowing how to bring up this portable, economical setup in customer lobbies, labs, and conference rooms. It also serves as a testing ground for elements that can be used in a future mixed-mode signal chain tutorial.
 
 You may recognize some of the material; this tutorial builds upon two previous ones:
 
@@ -27,13 +31,11 @@ where we connected an AD5592r to a Raspberry Pi and built a transistor curve tra
 `Tools for Precision Wideband Mixed Signal System Design <../tools_for_prec_wb/index.html>`_
 
 where we used an ADALM2000 as part of a colorimeter proof of concept, then demonstrated how easy it was to replace the ADALM2000 with an AD4630-24 ADC.
-This tutorial also serves as a testing ground for elements that can be used in a future mixed-mode signal chain tutorial.
 
 Slide Deck and Video
 ~~~~~~~~~~~~~~~~~~~~
 
-Since this tutorial is also designed to be presented as a live, hands-on
-workshop, a slide deck is provided here:
+This tutorial is also designed to be presented as a live, hands-on workshop; a slide deck is provided here:
 
 .. ADMONITION:: Download
 
@@ -41,19 +43,26 @@ workshop, a slide deck is provided here:
 
 A complete video run-through will also be provided, either as a companion to following the tutorial yourself, or to practice before presenting as a hands-on workshop. This video is a placeholder for the time being, but many of the concepts apply directly to this workshop:
 
-.. video:: https://www.youtube.com/watch?v=UHX1njMQ7V0
+.. ADMONITION:: ToDo
+
+   To Do: Re-shoot video after experiment-specific module released.
+
+   .. video:: https://www.youtube.com/watch?v=UHX1njMQ7V0
 
 Materials
 ---------
 
 - Raspberry Pi 400 (or 4)
 - 32 GB or larger, Class 10 or greater SD card
-- EVAL-AD4080-ARDZ eval board
+- EVAL-AD4080-ARDZ eval board (Not on Analog.com yet, see disty links below.)
+    - `EVAL-AD4080-ARDZ at DigiKey <https://www.digikey.com/en/products/detail/analog-devices-inc/EVAL-AD4052-ARDZ/24854310>`_
+    - `EVAL-AD4080-ARDZ at Mouser <https://www.mouser.com/ProductDetail/Analog-Devices/EVAL-AD4052-ARDZ?qs=wT7LY0lnAe1804F8ddHaXQ%3D%3D>`_
 - Tensility 16-00078 / DigiKey 839-1671-ND 12 V adapter
 - ST Nucleo-H563ZI
 - ADALM2000 Multi-function USB instrument
    - ADALM2000 will be referred to as "m2k"
 - Either 1k series resistors, or 2k/3k attenuators between the M2k and AD4080
+    - `Design files for a minimal attenuator / filter board used in initial worshop <https://github.com/trupples/ftc2024-ad4080-addon/tree/main/minimal>`_
 
 Hardware setup
 ~~~~~~~~~~~~~~
@@ -104,6 +113,7 @@ For reference, the connector pinouts are shown in :numref:`fig-m2k_ad4080_pinout
 - 1- to P2, pin 7
 - 1-, 2- to m2k GND pins
 
+Connect the ADALM2000 to one of the Raspberry Pi's USB port, and the Nucleo-H563ZI to another. Power the EVAL-AD4080-ARDZ with the 12 V adapter, and power up the Raspberry Pi
 
 Software Setup
 ~~~~~~~~~~~~~~
@@ -117,14 +127,20 @@ Write the ADI Kuiper Linux image onto the SD card. Directions and the image down
 
 In theory the latest Kuiper Linux release should always work, but this tutorial is tested with the 2023_r2 release. All previous releases are archived and available.
 
-Boot up the Raspberry Pi and connect to the internet. Clone or download the ftc24-ws repository from:
+Boot up the Raspberry Pi and connect to the internet. Code and setup scripts for this workshop are available at:
 
 `ftc24-ws Workshop Files <https://github.com/cristina-suteu/ftc24-ws/>`_
 
-Open a termial and ``cd ftc24-ws``. Run the following command:
+.. todo::
+
+   Re-host code and setup scripts, perhaps in the analogdevicesinc/education_tools repo.
+
+Open a termial and run the following commands:
 
 ::
 
+   git clone https://github.com/cristina-suteu/ftc24-ws.git
+   cd ftc24-ws 
    sudo ./workshopsetup.sh
    
 This will download and install all of the prerequisite software needed for the rest of the exercise.
@@ -140,8 +156,14 @@ from the task bar:
 
 IIO Info
 --------
+Communication with the various data converter sources and sinks is done through the Industrial I/O (IIO) framework. This framework is used for communicating with devices that are in some sense an ADC or DAC, and is the backbone of many of the tools we will use in this workshop. An important concept in IIO is the "Context". An IIO context usually refers to a computing device or a device driver that is capable of interfacing with IIO devices. The context is the starting point for all IIO operations, and is used to manage devices, channels, and buffers. The context can be local (on the same device), or remote (on a different device). The IIO context is created by the IIO backend, which is responsible for interfacing with the hardware.
 
-Use the ``iio_info`` utility to display information about...
+There are three IIO contexts in our setup:
+- The Raspberry Pi itself, whose backend is local. It has two IIO devices: an internal temperature sensor and a supply voltage monitor
+- The ST Nucleo-H563ZI,whose backend is serial. It has one IIO device: the AD4080
+- The ADALM2000, whose backend is either USB or netowrk. It has several IIO devices: the XADC housekeeping ADCs on the FPGA, the AD9963 ADC/DAC, and custom peripherals (triggering, waveform generation, DMAs) in the FPGA.
+
+Let's use the ``iio_info`` utility to display information about...
 
 ...the ``local:`` context (raspberry pi cpu_thermal):
 
@@ -176,7 +198,7 @@ Use the ``iio_info`` utility to display information about...
                                         attr  0: lcrit_alarm value: 0
                         No trigger on this device
 
-...the ``usb:`` context (ADALM2000):
+...Next, the ``usb:`` context (ADALM2000):
 
     ::
         
@@ -211,10 +233,11 @@ Use the ``iio_info`` utility to display information about...
         
         iio_info -u serial:/dev/ttyACM0,230400,8n1
 
-
+The iio_info utility is handy for debugging setups, making sure contexts are available, and checking that devices are recognized. There are other command line utilities for reading and writing individual attributtes, reading and writing data to DMA buffers, but they're not very convenient for interactive use.
 
 Exercise 2: Scopy (2.0!)
 ~~~~~~~~~~~~~~~~~~~~~~~~
+Scopy is a GUI application that provides the test instrument interfaces to the ADALM2000, as well as custom instruments for other hardware, such as the `AD-SWIOT1L-SL <https://www.analog.com/AD-SWIOT1L-SL>`__ Software-configurable Analog and Digital I/O with 10BASE-T1L. When  no board-specific control panel is available, a debug interface provides access to all IIO attributes for a given context, generic time and frequency domain plots, and DAC data managers. We will use Scopy to control and capture data from the AD4080 board.
 
 Click the Scopy shortcut on the desktop as shown in :numref:`fig-open_scopy` (Note #1) and then choose “Execute” when prompted (#2). Once opened, it should detect the attached M2k. Click “Connect”
 (#3).
@@ -235,12 +258,53 @@ A Scopy profile is available to set up the initial configuration. Load the **m2k
 
 .. _fig-load_ini:
 .. figure:: m2k_load_ini.png
-   :width: 30 em
+   :width: 40 em
    :align: center
 
    Loading Scopy Profile
 
-Connect to the AD4080.
+Connect to the AD4080 as shown in :numref:`fig-connect_ad4080`.
+
+.. _fig-connect_ad4080:
+.. figure:: ad4080_connect.png
+   :width: 50 em
+   :align: center
+
+   Connecting to the AD4080
+
+Open the AD4080 debug panel as shown in :numref:`fig-open_debug`.
+
+.. _fig-open_debug:
+.. figure:: ad4080_debug_panel.png
+   :width: 50 em
+   :align: center
+
+   Opening the AD4080 Debug Panel
+
+
+Explore the context’s hierarchy, attributes, and channels. Take a peek at filter_sel, sinc_dec_rate, etc.
+
+Next, open the Signal Generator instrument and click run. Open the AD4080 data panel as shown in :numref:`fig-open_data`.
+
+.. _fig-open_data:
+.. figure:: ad4080_data_panel.png
+   :width: 50 em
+   :align: center
+
+   Opening the AD4080 Data Panel
+
+Click the “Start” button to begin capturing data.
+
+**Extra Credit:**
+
+Observe the SINC5+Comp filter's step response. Set the FILTER_SEL attribute to **sinc5_plus_compensation**. The step response should look like :numref:`fig-sinc5_step`.
+
+.. _fig-sinc5_step:
+.. figure:: ad4080_sinc5_comp_step_resp.png
+   :width: 50 em
+   :align: center
+
+   SINC5+Comp Step Response
 
 Exercise 3: Python and the Thonny IDE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -255,7 +319,7 @@ Simple sine wave from the M2K to the AD4080
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Start generating a sine wave using Scopy. In Thonny, load
-`Desktop/ftc24-ws/hello_hw/hello_ad4080.py <https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_hw/hello_ad4080.py>`_
+**Desktop/ftc24-ws/hello_hw/hello_ad4080.py**
 and click Run:
 
 .. image:: hello_ad4080.png
@@ -265,7 +329,7 @@ Performance metrics with Genalyzer
 
 Stop the M2k waveform generator and close Scopy, because this demo will generate
 a signal programaticaly. In Thonny, load
-`Desktop/ftc24-ws/hello_genalyzer/m2k_source_ad4080_sink.py <https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_genalyzer/m2k_source_ad4080_sink.py>`_
+**Desktop/ftc24-ws/hello_genalyzer/m2k_source_ad4080_sink.py**
 and Run:
 
 .. image:: m2k_source_ad4080_sink.png
@@ -274,7 +338,7 @@ Sinc1 frequency response
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 In Thonny, load and run
-`Desktop/ftc24-ws/hello_genalyzer/sinc_folding_interactive.py <https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_genalyzer/sinc_folding_interactive.py>`_.
+**Desktop/ftc24-ws/hello_genalyzer/sinc_folding_interactive.py**.
 Drag the slider controlling the frequency of the transmitted noise and interpret the resulting FFT for different frequencies:
 
 .. image:: sinc_folding_interactive.png
@@ -282,18 +346,23 @@ Drag the slider controlling the frequency of the transmitted noise and interpret
 ObsPy
 ~~~~~
 
-In Thonny, load and run `Desktop/ftc24-ws/hello_seismograph/seismograph.py <https://github.com/cristina-suteu/ftc24-ws/blob/main/hello_seismograph/seismograph.py>`_:
+In Thonny, load and run **Desktop/ftc24-ws/hello_seismograph/seismograph.py**:
 
 .. image:: seismograph.png
 
-Using libiio in C
-~~~~~~~~~~~~~~~~~
+Exercise 4: Using libiio in C
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The libiio has language bindings for C, C#, Python, and MATLAB. This exercise will show how to use libiio in C.
 
-In a terminal, navigate to `Desktop/ftc24-ws/hello_iio <https://github.com/cristina-suteu/ftc24-ws/tree/main/hello_iio>`_: ::
+In a terminal, navigate to **Desktop/ftc24-ws/hello_iio**
+
+::
     
     cd ~/Desktop/ftc24-ws/hello_iio
 
-Run ``ls -la`` to check the contents of this directory. Expected output: ::
+Run ``ls -la`` to check the contents of this directory. Expected output:
+
+::
 
     total 24
     drwxr-xr-x 2 analog analog 4096 Oct 29 15:51 .
@@ -307,21 +376,18 @@ Take a look at the source code using the command ``geany hello_iio.c``. Check
 the ``how_2_build_cmake.txt`` and ``how_2_build_cmdline.txt`` files for build
 instructions.
 
-Copy the command from ``how_2_build_cmdline.txt`` into the command line
-(Ctrl-Shift-C, Ctrl-Shift-V) and run it (there should be no console output): ::
+Copy the command from ``how_2_build_cmdline.txt`` into the command line (Ctrl-Shift-C, Ctrl-Shift-V) and run it (there should be no console output): ::
 
     gcc hello_iio.c -o hello_iio -liio
 
-Alternatively, you can use the CMake build system. For this project, run the
-following commands (also in ``how_2_build_cmake.txt``):
+Alternatively, you can use the CMake build system. For this project, run the following commands (also in ``how_2_build_cmake.txt``):
 
     mkdir build
     cd build
     cmake ..
     make
 
-Both will have compiled an executable called hello_iio, which can be run in the
-command line: ::
+Both will have compiled an executable called hello_iio, which can be run in the command line: ::
 
     ./hello_iio
 
@@ -330,31 +396,18 @@ Expected output: ::
     102.979400 Fahrenheit Degrees
     39.433000 Celsius Degrees
 
-IIOD and context forwarding
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Appendix A: IIOD and context forwarding
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-IIOD (IIO Daemon) is a program that creates libiio network contexts (``ip:...``)
-that are bound to any kind of context (could be ``local:``, ``usb:``,
-``serial:``, etc.), acting like a middleman between the two, forwarding commands
-and data both ways. It is a great tool in managing connectivity in projects with
-multiple iio devices, which may potentially be connected to multiple hosts,
-allowing seamless communication between all of them. Some **example use cases**:
+IIOD (IIO Daemon) is a program that creates libiio network contexts (``ip:...``) that are bound to any kind of context (could be ``local:``, ``usb:``, ``serial:``, etc.), acting like a middleman between the two, forwarding commands and data both ways. It is a great tool in managing connectivity in projects with multiple iio devices, which may potentially be connected to multiple hosts, allowing seamless communication between all of them.
 
-- Exposing an iio context only visible to a Raspberry Pi's (such as the AD4080
-  serial context) to other computers on the network
-- Connecting to multiple iio contexts through a single internet connection,
-  using different ports for each device (four Phasers example in the slide deck)
-- Backend compatibility: some libiio builds (such as the one bundled in MATLAB
-  Toolboxes) don't support the serial backend. IIOD can forward the serial
-  context to a port on the local (or loopback) network, allowing the MATLAB
-  Toolbox to connect to that and access the device
+Some **example use cases**:
 
-IIOD runs on the computer that has access to the context you want to forward. In
-the case of this workshop, that is the Raspberry Pi to which the M2K and AD4080
-are connected.
+- Exposing an iio context only visible to a Raspberry Pi's (such as the AD4080 serial context) to other computers on the network
+- Connecting to multiple iio contexts through a single internet connection, using different ports for each device (four Phasers example in the slide deck)
+- Backend compatibility: some libiio builds (such as the one bundled in MATLAB Toolboxes) don't support the serial backend. IIOD can forward the serial context to a port on the local (or loopback) network, allowing the MATLAB Toolbox to connect to that and access the device
 
-To check which backends your build of libiio (which IIOD is part of) supports,
-run ``iio_info -V``: ::
+IIOD runs on the computer that has access to the context you want to forward. In the case of this workshop, that is the Raspberry Pi to which the M2K and AD4080 are connected. To check which backends your build of libiio (which IIOD is part of) supports, run ``iio_info -V``: ::
 
     iio_info version: 0.26 (git tag:a0eca0d)
     Libiio version: 0.26 (git tag: a0eca0d) backends: local xml ip usb serial
@@ -362,12 +415,9 @@ run ``iio_info -V``: ::
 To forward a context, first identify its URI:
 
 - For the M2K, use ``usb:`` or ``ip:192.168.2.1``
-- For the AD4080, use ``serial:/dev/ttyACM0,230400,8n1`` (or ACM1, depending on
-  the order in which the Pi assigns serial device numbers)
+- For the AD4080, use ``serial:/dev/ttyACM0,230400,8n1`` (or ACM1, depending on the order in which the Pi assigns serial device numbers)
 
-Then choose a port on which iiod will listen. Kuiper linux already has an
-instance of iiod running on the default port (30431) forwarding the ``local:``
-context. 
+Then choose a port on which iiod will listen. Kuiper linux already has an instance of iiod running on the default port (30431) forwarding the ``local:`` context. 
 
 Examples:
 
@@ -385,12 +435,9 @@ To forward the AD4080 connection to port 50907, run: ::
 You can now use the context from any libiio application (e.g. the workshop
 scripts, Scopy, iio-oscilloscope, iio_info, etc.).
 
-For example, ``iio_info`` can now display the AD4080 context by connecting to
-the IIOD port (even from another computer on the network), instead of directly
-to the board: ::
+For example, ``iio_info`` can now display the AD4080 context by connecting to the IIOD port (even from another computer on the network), instead of directly to the board: ::
     
-    iio_info -u ip:12.34.56.78:50907
+    iio_info -u ip:analog.local:50907
 
 .. note::
-    In the above command, you must replace 12.34.56.78 with the address of the
-    Raspberry Pi. Find it by running ``hostname -I`` on the Pi.
+    In the above command, analog.local is the default hostname of a Kuiper Linux system. This can be replaced with another hostname or IP address as appropriate, if it was changed.
