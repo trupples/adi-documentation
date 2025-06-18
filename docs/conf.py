@@ -13,6 +13,7 @@ author = 'Analog Devices, Inc.'
 
 extensions = [
     "sphinx.ext.todo",
+    "sphinx_tabs.tabs",
     "adi_doctools"
 ]
 
