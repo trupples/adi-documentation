@@ -8,7 +8,9 @@
     <title>AD-AMR-DRV-SL (partno TBD) &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=c218d0f6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
     <script defer="" src="../../../_static/app.umd.js?v=057c4fc5"></script>
+    <script src="../../../_static/tabs.js?v=3030b3cb"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -90,7 +92,7 @@
 <li><a class="reference internal" href="#specifications">Specifications</a></li>
 <li><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
 <li><a class="reference internal" href="#system-setup">System Setup</a><ul>
-<li><a class="reference internal" href="#firmware-flashing">Firmware flashing</a></li>
+<li><a class="reference internal" href="#firmware-updates">Firmware updates</a></li>
 <li><a class="reference internal" href="#motor-tuning-procedure">Motor Tuning Procedure</a></li>
 </ul>
 </li>
@@ -414,32 +416,133 @@ Content on this topic
 <h2>Open Mobile Robot Motor Control module with CANopen CiA 402<a class="headerlink" href="#open-mobile-robot-motor-control-module-with-canopen-cia-402" title="Link to this heading"></a></h2>
 <section id="introduction">
 <h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h3>
-<p>TODO</p>
+<p>The AD???? is a versatile FOC motor driver based on the TMC9660, capable of
+driving Stepper, BLDC, and brushed DC motors with optional quadrature (ABN)
+and/or Hall encoders. It communicates via CANopen CiA 402 over 500 kbaud CAN.
+For development, the TMC9660 may also be accessed directly via UART and thus
+controlled / configured via TMCL-IDE.</p>
 </section>
 <section id="specifications">
 <h3>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h3>
-<p>TODO</p>
+<ul class="simple">
+<li><p>9 - 70 V DC supply</p></li>
+<li><p>10 A phase output</p></li>
+<li><p>Isolated CAN bus communication, CANopen CiA 402</p></li>
+<li><p>TMC9660 motor driver IC</p></li>
+<li><p>MAX32662 microcontroller</p></li>
+<li><p>Supported motor types: 3-phase BLDC/PMSM, 2-phase bipolar stepper, brushed DC</p></li>
+<li><p>Supported encoder types: ABN (= ABZ, ABI, quadrature), Digital Hall</p></li>
+<li><p>Optional solderable brake chopper resistor</p></li>
+<li><p>Optional electromechanical brake in BLDC configuration</p></li>
+</ul>
+<p>Connections:</p>
+<ul class="simple">
+<li><p>Power input: screw terminal</p></li>
+<li><p>Motor connection: screw terminal</p></li>
+<li><p>Debug ports (x2): SWD header</p></li>
+<li><p>Encoder interface, isolated: Custom header (8 pin)</p></li>
+<li><p>CAN, isolated: 2x Custom header (4 pin)</p></li>
+</ul>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Diagrams</p>
+</div>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Custom connector docs</p>
+</div>
 </section>
 <section id="required-hardware">
 <h3>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>AD-AMR-DRV-SL</p></li>
-<li><p>motor (stepper / BLDC / DC)</p></li>
+<li><p>Stepper / BLDC / DC motor. Documented output represents the <a class="reference external" href="https://www.analog.com/qsh5718">QSH5718-51-28-101-10k</a> Stepper and <cite>TODO</cite> BLDC, respectively.</p></li>
 <li><p>power supply (9 .. 70 VDC)</p></li>
 <li><p>CAN cable</p></li>
-<li><p>Optional: MAXPICO (or compatible) debug probe</p></li>
+<li><p><a class="reference external" href="https://www.analog.com/max32625pico">MAX32625PICO</a> (or compatible) debug probe</p></li>
 </ul>
 </section>
 <section id="system-setup">
 <h3>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h3>
 <p>TODO</p>
-<section id="firmware-flashing">
-<h4>Firmware flashing<a class="headerlink" href="#firmware-flashing" title="Link to this heading"></a></h4>
-<p>TODO</p>
+<section id="firmware-updates">
+<h4>Firmware updates<a class="headerlink" href="#firmware-updates" title="Link to this heading"></a></h4>
+<p>The BOARDNAME firmware is based on Zephyr. The source code for the latest version may be found at <a class="reference external" href="https://github.com/analogdevicesinc/thisreponame">https://github.com/analogdevicesinc/thisreponame</a> .</p>
+<p>To build and flash firmware, you will need a Zephyr setup and MSDK for target-specific flashing support.</p>
+<p>Install MSDK following the <a class="reference external" href="https://analogdevicesinc.github.io/msdk/USERGUIDE/#download">MSDK User Guide</a>. On WSL, we
+recommend installing it as root in <code class="docutils literal notranslate"><span class="pre">/MaximSDK</span></code>, instead of the default
+user home install path.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Create new west workspace</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Use existing west workspace</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>If you do not have Zephyr SDK already set up, start by creating a Zephyr
+workspace, following the <a class="reference external" href="https://docs.zephyrproject.org/latest/develop/getting_started/index.html">Zephyr Getting Started</a>
+tutorial. In short, the following commands should suffice:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up virtualenv</span>
+mkdir<span class="w"> </span>zephyrproject
+<span class="nb">cd</span><span class="w"> </span>zephyrproject
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+
+<span class="c1"># Set up west, firmware repo, Zephyr SDK</span>
+pip<span class="w"> </span>install<span class="w"> </span>west
+west<span class="w"> </span>init<span class="w"> </span>-m<span class="w"> </span>https://github.com/analogdevicesinc/thisreponame<span class="w"> </span>.<span class="w"> </span><span class="c1"># This might take a while - big download</span>
+west<span class="w"> </span>update<span class="w"> </span><span class="c1"># This might take a while - big download</span>
+west<span class="w"> </span>zephyr-export
+west<span class="w"> </span>packages<span class="w"> </span>pip<span class="w"> </span>--install
+<span class="nb">cd</span><span class="w"> </span>zephyr
+west<span class="w"> </span>sdk<span class="w"> </span>install
+<span class="nb">cd</span><span class="w"> </span>..
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>You may reuse a pre-existing West workspace. This is especially convenient if working on other boards in the ADRD family.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>west<span class="w"> </span>workspace&gt;
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<span class="nb">cd</span><span class="w"> </span>thisreponame
+
+west<span class="w"> </span>config<span class="w"> </span>manifest.path<span class="w"> </span>thisreponame
+west<span class="w"> </span>update
+</pre></div>
+</div>
+</div></div>
+<p>To build the firmware, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>west<span class="w"> </span>workspace&gt;
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<span class="nb">cd</span><span class="w"> </span>thisreponame
+
+west<span class="w"> </span>build<span class="w"> </span>-p<span class="w"> </span>auto<span class="w"> </span>app
+</pre></div>
+</div>
+<p>To flash the firmware (will build, if necessary), run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>west<span class="w"> </span>workspace&gt;
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<span class="nb">cd</span><span class="w"> </span>thisreponame
+
+<span class="c1"># Replace /MaximSDK/ with the path to MSDK</span>
+west<span class="w"> </span>flash<span class="w"> </span>--openocd-search<span class="w"> </span>/MaximSDK/Tools/OpenOCD/scripts/<span class="w"> </span>--openocd<span class="w"> </span>/MaximSDK/Tools/OpenOCD/openocd
+</pre></div>
+</div>
 </section>
 <section id="motor-tuning-procedure">
 <h4>Motor Tuning Procedure<a class="headerlink" href="#motor-tuning-procedure" title="Link to this heading"></a></h4>
-<p>TODO</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The current motor tuning procedure is rather crude, unwieldy, and will be
+streamlined in the near future.</p>
+</div>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>Add diagrams / photos / screenshots for each step</p>
+</div>
+<ol class="arabic simple">
+<li><p>Connect a UART probe to header P7</p></li>
+<li><p>Open TMCL-IDE and connect to the corresponding serial port</p></li>
+<li><p>Use the TMC9660 tuning wizard until the drive parameters are satisfactory</p></li>
+<li><p>Disconnect in TMCL-IDE, and move the debug probe over to header P6</p></li>
+<li><p>Open a serial terminal</p></li>
+<li><p>Press Ctrl-U to erase junk that might have accumulated on UART</p></li>
+<li><p>Type and run the <code class="docutils literal notranslate"><span class="pre">tmc_params</span> <span class="pre">save</span></code> command</p></li>
+</ol>
+<p>All parameters configured by TMCL-IDE will be saved to the drive board’s flash
+and be loaded at each following boot.</p>
 </section>
 </section>
 <section id="user-guides">
