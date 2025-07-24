@@ -20,7 +20,7 @@ Features
 
 	High Output Power Capability:
 
-		- Delivers up to 480W (40A) of output power from the battery, suitable for driving motors, actuators 
+		- Delivers up to 240W (20A) continuous output power from the battery, suitable for driving motors, actuators 
 		and embedded control systems in robotics and industrial tools.
 		
 	USB Type-C Battery Pack CC/CV Charger - MAX77958EWV+ and MAX77961BEFV06+:
@@ -32,11 +32,11 @@ Features
 
 	Display and User Interface:
 
-		- Equipped with an LCD featuring a GUI and buttons for status display and battery pack charging settings.
+		- Equipped with display featuring a GUI and buttons for battery status and battery pack charging settings.
 
 	Battery Compatibility:
 
-		- Supports 3S Li-ion batteries.
+		- Supports 3S Li-ion batteries default and 3S Li-polymer batteries.
 
 	Fuel Gauge and Battery Pack Protector - MAX17320G20+:
 
@@ -50,7 +50,7 @@ Features
 			- Charging Prescriptions (JEITA)
 			- Prequal Charge Control with CHG FET.
 		- ModelGauge m5 EZ Algorithm (Percent, Capacity, Time-to-Empty/Full, Age, Cycle+™ Age Forecast).
-		- Cell Balancing with Internal FETs
+		- Cell Balancing with Internal FETs.
 
 	Output Powerpath Selector - LTC4421:
 
@@ -64,7 +64,7 @@ Features
 	External communication:
 
 		- Isolated CAN Transceiver - ADM3053
-		- QWIIC connector with I2C isolator - ADUM1252.
+		- I2C isolator - ADUM1252.
 
 	Additional screw terminal connector for adding external thermistors.
 
@@ -85,10 +85,20 @@ User Guides
 
 Additional Information and Useful Links
 ----------------
+- :adi:`MAX77958 Product Page <MAX77958>`
+- :adi:`MAX17320 Product Page <MAX17320>`
+- :adi:`MAX77961B Product Page <MAX77961B>`
+- :adi:`LTC4421 Product Page <LTC4421>`
+- :adi:`MAX32662 Product Page <MAX32662>`
+- :adi:`ADP5589 Product Page <ADP5589>`
+- :adi:`ADM3053 Product Page <ADM3053>`
+- :adi:`MAX31827 Product Page <MAX31827>`
+- :adi:`MAX25231 Product Page <MAX25231>`
+- :adi:`MAX4701 Product Page <MAX4701>`
+- :adi:`ADUM1252 Product Page <ADUM1252>`
 
-TODO: add adi parts with hyperlink
 
 Help and Support
 ----------------
 
-TODO
+For questions and more information, please visit :ez:`/`.
