@@ -4,7 +4,7 @@ Hardware Configuration
 Block Diagram
 -----------------
 
-.. figure:: hw_block_diagram.JPG
+.. figure:: hw_block_diagram.png
    :width: 900 px
 
    Schematic Block Diagram
@@ -16,21 +16,38 @@ Connectors
 
 TODO: add picture with board + description of connectors
 
-Battery Pack and Charge/Discharge Configuration
+Recommended Battery Pack
 -----------------
 
-TODO: add info about battery pack used for testing + info about what needs to be changed for another battery pack.
-Battery pack needs to have a minimum capacity for the default current limit and short circuit protection of powerpath controller.
+- Any Li-ion or Li-polymer battery pack with 3 series cells (any number of cells in parallel). When using different battery packs, adjust the charging and discharging parameters described in the battery cell datasheet.
+- Recommended battery cells: Panasonic NCR18650GA (Li-ion); The default software configuration after boot is for 3 series, 2 parallel Panasonic NCR18650GA Li-ion batteries
 
 Output Power
 -----------------
 
-TODO: add info about max output power (specify it depends about pattery pack specs)
+Maximum Output Current when USB-C adapter is not plugged in:
+	
+	- Maximum Continuous Discharge Current is 20A and Surge Discharge Current is 50A (for ~200us)
+	- The Maximum Output Current is also limited by the battery pack used.
+		
+Maximum Output Current when USB-C is Plugged in:
+	
+	- 1.7A if USB-C AC/DC Adapter supports 20V/3A PDO and Charging Constant Current is se to 3A
+	- 4.9A if USB-C AC/DC Adapter supports 20V/5A PDO and Charging Constant Current is set to 3A.
+		
+Maximum Output Voltage:
+		
+	- By default, the LTC4421 power path controller prioritizes the output from the USB-C AC/DC adapter. This configuration ensures that the system draws power from the adapter rather than from the battery during charging. Conseqeuently, the maximumoutput voltage corresponds to the adapter's output, typically up to 20V.
+		
+	- To limit the maximumoutput voltage to the voltage of the battery, the USB-C adapter power path can be disabled via software control.
+
 
 USB-C Adapter
 -----------------
 
-TODO: add info about recommended USB-C adapter
+	- Recommended AC/DC USB-C adapter: multicomp MP009261 (supports 20V/3A).
+	
+	- For increasd output current when the battery is charging, use an AC/DC USB-C adapter that supports 20V/5A PDO. For a 20V/5A PDO make sure that the cable used from the AC/DC adapter to the board is specified for 5A current. 
 
 Led Indicators
 -----------------
