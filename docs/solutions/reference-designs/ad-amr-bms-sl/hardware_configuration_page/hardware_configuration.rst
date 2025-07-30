@@ -37,15 +37,16 @@ Maximum Output Current when USB-C is Plugged in:
 		
 Maximum Output Voltage:
 		
-	- By default, the LTC4421 power path controller prioritizes the output from the USB-C AC/DC adapter. This configuration ensures that the system draws power from the adapter rather than from the battery during charging. Conseqeuently, the maximumoutput voltage corresponds to the adapter's output, typically up to 20V.
+	- By default, the LTC4421 power path controller prioritizes the output from the USB-C AC/DC adapter. This configuration ensures that the system draws power from the adapter rather than from the battery during charging. Conseqeuently, the maximum output voltage corresponds to the adapter's output, typically up to 20V.
 		
-	- To limit the maximumoutput voltage to the voltage of the battery, the USB-C adapter power path can be disabled via software control.
+	- USB-C VBUS output power path can be disabled via software control.
 
 
 USB-C Adapter
 -----------------
+	- MAX77958 software and hardware configuration negotiates on VBUS only 20V if the USB-C AC/DC adapter can provide at least 3A minimum at 20V. To modify the configuration to negotiate other PDOs, refer to `EVAL-CN0581-EBZ User Guide <https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0581>`__.
 
-	- Recommended AC/DC USB-C adapter: multicomp MP009261 (supports 20V/3A).
+	- Recommended AC/DC USB-C adapter: multicomp MP009261 (supports 20V/3A). 
 	
 	- For increasd output current when the battery is charging, use an AC/DC USB-C adapter that supports 20V/5A PDO. For a 20V/5A PDO make sure that the cable used from the AC/DC adapter to the board is specified for 5A current. 
 
