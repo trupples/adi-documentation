@@ -10,7 +10,7 @@ Overview
 	This board is a complete battery managment, charging and power delivery solution compatible with 3S Li-Ion battery packs, design for robotics, power tools and
 	industrial equipment. It features and intuitive GUI for fast setup and monitoring, enabling out of the box operation with minimal configuration. The MAX17320 Fuel
 	Gauge provides accurate state of charge and battery health data, while MAX77958 and MAX77961 enable customizable USB-C Charging up to 3A constant current. LTC4421
-	Power Path controller prioritizes USB-C source over battery output and adds protection features. The system can deliver up to 480W (40A) output from battery and 
+	Power Path controller prioritizes USB-C source over battery output and adds protection features. The system can deliver up to 240W (20A) output from battery and 
 	integrates easily into larger systems via isolated CAN and isolated I2C. 
 
 TODO: add high level info about software, add photo with the actual board
@@ -20,8 +20,7 @@ Features
 
 	High Output Power Capability:
 
-		- Delivers up to 240W (20A) continuous output power from the battery, suitable for driving motors, actuators 
-		and embedded control systems in robotics and industrial tools.
+		- Delivers up to 240W (20A) continuous output power from the battery, suitable for driving motors, actuators and embedded control systems in robotics and industrial tools.
 		
 	USB Type-C Battery Pack CC/CV Charger - MAX77958EWV+ and MAX77961BEFV06+:
 	
