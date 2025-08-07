@@ -1,8 +1,8 @@
-EVAL-AD-AMR
-===========
+AD-R1M
+======
 
-Open Mobile Robot Platform
-""""""""""""""""""""""""""
+Open Mobile Robot Platform Reference Mobile Robot
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
 Introduction
 ------------
@@ -30,7 +30,8 @@ User Guides
 .. toctree::
     :maxdepth: 1
 
-    diy-setup
+    production-guide
+    user-guide
     ros2-architecture
     ros2-examples
 

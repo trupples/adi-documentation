@@ -1,16 +1,16 @@
-AD-AMR-DRV-SL (partno TBD)
-==========================
+ADRD3161
+========
 
-Open Mobile Robot Motor Control module with CANopen CiA 402
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Motor Control module with CANopen CiA 402
+"""""""""""""""""""""""""""""""""""""""""
 
 Introduction
 ------------
 
-The AD-AMR-DRV-SL is an FOC motor driver board based on the TMC9660, capable of
+The :adi:`ADRD3161` is an FOC motor driver board based on the :adi:`TMC9660`, capable of
 driving Stepper, BLDC, and brushed DC motors with optional quadrature (ABN)
 and/or Hall encoders. It communicates via CANopen CiA 402 over 500 kbaud CAN.
-For development, the TMC9660 may also be accessed directly via UART and thus
+For development, the :adi:`TMC9660` may also be accessed directly via UART and thus
 controlled / configured via TMCL-IDE.
 
 Specifications
@@ -38,19 +38,12 @@ Connections:
 * Encoder interface, isolated: Custom header (8 pin)
 * CAN, isolated: 2x Custom header (4 pin)
 
-.. todo::
-   Diagrams
-
-.. todo::
-   Custom connector docs 
-
 Required Hardware
 -----------------
 
-* AD-AMR-DRV-SL
+* ADRD3161
 * Stepper / BLDC / DC motor. Documented output represents the `QSH5718-51-28-101-10k <https://www.analog.com/qsh5718>`_ Stepper and `TODO` BLDC, respectively.
-* power supply (9 .. 70 VDC)
-* CAN cable
+* DC power supply (9 .. 70 VDC)
 * `MAX32625PICO <https://www.analog.com/max32625pico>`_ (or compatible) debug probe
 
 User Guides

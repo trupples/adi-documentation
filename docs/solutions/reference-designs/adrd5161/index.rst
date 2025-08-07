@@ -1,8 +1,8 @@
-AD-AMR-BMS-SL (partno TBD)
-==========================
+ADRD5161
+========
 
-Open Mobile Robot BMS module with CANopen CiA 419
-"""""""""""""""""""""""""""""""""""""""""""""""""
+BMS module with CANopen CiA 419
+"""""""""""""""""""""""""""""""
 
 Introduction
 ------------
@@ -17,10 +17,9 @@ TODO
 Required Hardware
 -----------------
 
-- AD-AMR-BMS-SL
+- ADRD5161
 - 3S LiPo battery pack with an XT60 connector 
 - USB PD charger, capable of 20V 3A
-- CAN cable
 - Optional: MAXPICO (or compatible) debug probe
 
 System Setup
