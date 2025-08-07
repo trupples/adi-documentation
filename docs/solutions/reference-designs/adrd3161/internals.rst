@@ -1,5 +1,5 @@
-AD-AMR-DRV-SL Internals
-=======================
+ADRD3161 Internals
+==================
 
 Troubleshoot board power supply issues
 --------------------------------------

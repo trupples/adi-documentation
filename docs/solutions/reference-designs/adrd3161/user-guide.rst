@@ -1,25 +1,74 @@
-AD-AMR-DRV-SL User Guide
-========================
+ADRD3161 User Guide
+===================
 
-Connect and configure a motor
------------------------------
+Connect a motor
+---------------
 
 .. note::
-	The current tuning procedure is admittedly crude. It will be simplified in the future.
+	Wire colors are not standard and vary between motors.
+	These tables reflect the wiring of Trinamic motors.
+	Check your motor's datasheet!
+
+.. tab:: Stepper
+
+        =========== ========== ========
+        Motor phase Wire color Terminal
+        =========== ========== ========
+        A+          Black      UX1
+        A-          Green      VX2
+        B+          Red        WY1
+        B-          Blue       Y2
+        =========== ========== ========
+
+.. tab:: Brushless DC
+
+        =========== ========== ========
+        Motor phase Wire color Terminal
+        =========== ========== ========
+        U           Yellow     UX1
+        V           Red        VX2
+        W           Black      WY1
+        =========== ========== ========
+
+.. tab:: Brushed DC
+
+        =========== ========== ========
+        Motor phase Wire color Terminal
+        =========== ========== ========
+        M+          Red        UX1
+        M-          Black      VX2
+        =========== ========== ========
+
+Connect using TMCL-IDE
+----------------------
 
 Prerequisites:
 
-* Install the latest version of TMCL-IDE
-* Obtain a suitable UART probe (TODO *list of compatible probes*, custom *pinout*)
+* Install the latest version of `TMCL-IDE <https://www.analog.com/en/resources/evaluation-hardware-and-software/motor-motion-control-software/tmcl-ide.html>`_
+* Obtain a suitable UART probe (TODO *list of compatible probes*, TODO *pinout*)
+
+Steps:
+
+#. Connect a UART probe to header P7
+#. Open TMCL-IDE and connect to the corresponding serial port (115200 baud):
+   
+   .. image:: tmcl-ide-serial-dialog.png
+
+Once connected, the list on the left should expand, revealing a useful set of TMCL-IDE features.
+
+.. image:: tmcl-ide-tmc9660-menus.png
+
+Motor configuration and tuning
+''''''''''''''''''''''''''''''
+
+Enter the TMC9660 tuning wizard. Carefully go through each step, up to and including encoder configuration.
+Exit the tuning wizard after reaching the closed loop tuning steps.
 
 .. todo::
-	* Stepper, BLDC, DC connection diagrams (tabs)
 	* Encoder connector diagrams
 	* TMCL-IDE tuning steps explained
 	* Elaborate all points
 
-1. Connect a UART probe to header P7
-2. Open TMCL-IDE and connect to the corresponding serial port
 3. Use the TMC9660 tuning wizard until the drive parameters are satisfactory
 4. Disconnect in TMCL-IDE, and move the debug probe over to header P6
 5. Open a serial terminal
@@ -31,7 +80,7 @@ and be loaded at each following boot.
 
 
 Control through TMCL-IDE
-------------------------
+''''''''''''''''''''''''
 
 `TMCL-IDE
 <https://www.analog.com/en/resources/evaluation-hardware-and-software/motor-motion-control-software/tmcl-ide.html>`_
@@ -43,14 +92,13 @@ is the main software package for Trinamic parts. The TMC9660 may be directly int
 	* 115200 baud
 	* search IDs from 1 to 1
 
-Once connected, the list on the left should expand, revealing a useful set of TMCL-IDE features.
 
 TODO: how to reconcile the "control" and "tuning" via TMCL-IDE parts, given they start out the same, have the same prerequisites, but are two separate user stories / use cases?
 
 Connect via CAN bus
 -------------------
 
-The AD-AMR-DRV-SL implements CANopen, with the CiA 402 profile for motor drives. The device is interoperable with other CANopen devices, but has limited applicability on a CAN bus that is not CANopen, unless carefully configured.
+The ADRD3161 implements CANopen, with the CiA 402 profile for motor drives. The device is interoperable with other CANopen devices, but has limited applicability on a CAN bus that is not CANopen, unless carefully configured.
 
 The boards' CANopen node IDs can be configured using the DIP switches *S2* (TODO: diagram). The node ID is ``0x10`` + the binary value of the DIP switches. Assigning node IDs via CANopen LSS is planned as a future feature. Most CAN messages sent and received by a specific device will have the lower 7 bits set to the node ID, allowing for easy identification when monitoring the bus.
 
@@ -109,13 +157,11 @@ On the software side, CAN communication depends on the OS and used hardware inte
 
 Install / load the appropriate kernel modules for your CAN adapter:
 
-.. tabs::
+.. tab:: gs_can
 
-	.. tab:: gs_can
+        Many off-the-shelf adapters (TODO: list a handful) need the ``gs_can`` driver which is widely available, in many cases even already installed or built into the kernel.
 
-		Many off-the-shelf adapters (TODO: list a handful) need the ``gs_can`` driver which is widely available, in many cases even already installed or built into the kernel.
-
-		.. todo:: Elaborate instructions for gs_can
+        .. todo:: Elaborate instructions for gs_can
 
 Configure and bring up the CAN interface (replace can0 with the name of the interface, if different)::
 
@@ -125,7 +171,7 @@ Configure and bring up the CAN interface (replace can0 with the name of the inte
 
 Additionally, the ``can-utils`` package has a useful set of tools which aid in bus monitoring and troubleshooting.
 
-If connected to an AD-AMR-DRV-SL board, you should see regular heartbeat messages using `candump`::
+If connected to an ADRD3161 board, you should see regular heartbeat messages using `candump`::
 
 	$ candump can0
 	can0  716   [1]  05

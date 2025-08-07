@@ -1,8 +1,9 @@
-AD-AMR-DRV-SL Production Guide
-==============================
+ADRD3161 Production Guide
+=========================
 
 .. note::
-	These steps are intended for when bringing up your own boards from scratch. These procedures are already done in the factory for boards sold by ADI.
+   
+   Don't follow these steps if you bought an ADRD3161. These are intended for bringing up your own board from scratch.
 
 Bootstrapping the TMC9660
 -------------------------
@@ -27,20 +28,27 @@ Steps:
 
 #. Connect the UART probe to header P7 (*diagram*)
 #. Take note of which serial interface the probe took. In the following commands, replace ``COM123`` with the actual serial port name.
-#. Verify the TMC9660 is in bootstrap mode::
+#. Verify the TMC9660 communicates and is in bootstrap mode:
 
-	> ublcli.exe --port COM123 inspect chip
-	TODO: output
+   .. code-block:: console
 
-#. Upload the configuration and burn::
+      $ ublcli.exe --port COM123 inspect chip
+      Chip:                 TMC9660
+      Bootloader Version:   v1.0
 
-	> ublcli.exe --port COM123 write config --burn .\ad-amr-drv-bootstrap.toml
-	TODO: output
+#. Upload the configuration and burn:
+
+   .. code-block:: console
+
+      $ ublcli.exe --port COM123 write config --burn ad-amr-drv-bootstrap.toml
+      Writing config values to TM01
+      Configuration write and boot completed
+      TODO: this is the --boot output, not --burn, change
 
 Flashing the MAX32662
 ---------------------
 
-The AD-AMR-DRV-SL firmware is based on Zephyr. The source code for the latest version may be found at https://github.com/analogdevicesinc/todoreponame .
+The ADRD3161 firmware is based on Zephyr. The source code for the latest version may be found at https://github.com/analogdevicesinc/adrd3161-fw .
 
 Prerequisites:
 
@@ -52,66 +60,67 @@ Install MSDK following the `MSDK User Guide
 recommend installing it as root in ``/MaximSDK``, instead of the default
 user home install path.
 
-.. tabs::
-
-   .. tab:: Create new west workspace
+.. tab:: Create new west workspace
 
       If you do not have Zephyr SDK already set up, start by creating a Zephyr
       workspace, following the `Zephyr Getting Started
       <https://docs.zephyrproject.org/latest/develop/getting_started/index.html>`_
       tutorial. In short, the following commands should suffice:
 
-      .. code-block:: bash
+      Set up virtualenv:
 
-         # Set up virtualenv
-         mkdir zephyrproject
-         cd zephyrproject
-         python3 -m venv .venv
-         source .venv/bin/activate
+      .. code-block:: console
 
-         # Set up west, firmware repo, Zephyr SDK
-         pip install west
-         west init -m https://github.com/analogdevicesinc/todoreponame . # This might take a while - big download
-         west update # This might take a while - big download
-         west zephyr-export
-         west packages pip --install
-         cd zephyr
-         west sdk install
-         cd ..
+         $ mkdir zephyrproject
+         $ cd zephyrproject
+         $ python3 -m venv .venv
+         $ source .venv/bin/activate
 
-   .. tab:: Use existing west workspace
+      Set up west workspace:
+
+      .. code-block:: console
+
+         $ pip install west
+         $ west init -m https://github.com/analogdevicesinc/adrd3161-fw . # This might take a while - big download
+         $ west update # This might take a while - big download
+         $ west zephyr-export
+         $ west packages pip --install
+         $ cd zephyr
+         $ west sdk install
+         $ cd ..
+
+.. tab:: Use existing west workspace
 
       You may reuse a pre-existing West workspace. This is especially convenient if working on other boards in the ADRD family.
 
-      .. code-block:: bash
+      .. code-block:: console
 
-         cd <path to west workspace>
-         source .venv/bin/activate
-         cd todoreponame
-
-         west config manifest.path todoreponame
-         west update
+         $ cd <path to west workspace>
+         $ source .venv/bin/activate
+         $ git clone https://github.com/analogdevicesinc/adrd3161-fw
+         $ west config manifest.path adrd3161-fw
+         $ west update
 
 Enter the workspace and load the python virtual environment:
 
-.. code-block:: bash
+.. code-block:: console
 
-   cd <path to west workspace>
-   source .venv/bin/activate
-   cd todoreponame
+   $ cd <path to west workspace>
+   $ source .venv/bin/activate
+   $ cd adrd3161-fw
 
 Build the firmware:
 
-.. code-block:: bash
+.. code-block:: console
 
-   west build -p auto app
+   $ west build -p auto app
 
 Flash the firmware (will build if necessary):
 
-.. code-block:: bash
+.. code-block:: console
 
    # Replace /MaximSDK/ with the path to MSDK
-   west flash --openocd-search /MaximSDK/Tools/OpenOCD/scripts/ --openocd /MaximSDK/Tools/OpenOCD/openocd
+   $ west flash --openocd-search /MaximSDK/Tools/OpenOCD/scripts/ --openocd /MaximSDK/Tools/OpenOCD/openocd
 
 If your debug probe supports this, you may also flash the firmware by dragging and dropping the ``build/zephyr/zephyr.hex`` file onto the debug probe filesystem (?word?): (TODO example screenshots/gif)
 
