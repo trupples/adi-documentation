@@ -13,10 +13,11 @@ author = 'Analog Devices, Inc.'
 
 extensions = [
     "sphinx.ext.todo",
-    "sphinx_tabs.tabs",
+    "sphinx_inline_tabs",
     "adi_doctools",
     "myst_parser",
     "sphinxcontrib.mermaid"
+    "sphinx.ext.graphviz",
 ]
 
 needs_extensions = {
@@ -52,3 +53,4 @@ numfig_format = {'figure': 'Figure %s',
 # -- Show TODOs ---------------------------------------------------------------
 
 todo_include_todos = True
+

@@ -30,7 +30,8 @@ User Guides
 .. toctree::
     :maxdepth: 1
 
-    diy-setup
+    production-guide
+    user-guide
     ros2-architecture
     ros2-examples
 
@@ -39,3 +40,4 @@ Help and Support
 ----------------
 
 TODO
+

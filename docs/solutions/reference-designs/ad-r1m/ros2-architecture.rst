@@ -765,3 +765,4 @@ The commander node provides a demo script for robot navigation and lift control 
 
 See the next ROS2 Examples section for more details on how to interact with the system, refer to the `ROS2 Examples <ros2-examples.html>`__ documentation, which provides examples of how to interact with the robot using the available commander nodes and other ROS2 features.
 For more information on the AD-R1M ROS2 architecture, refer to the `AD-R1M ROS2 GitHub repository <https://github.com/adi-innersource/adrd_demo_ros2>`__.
+
