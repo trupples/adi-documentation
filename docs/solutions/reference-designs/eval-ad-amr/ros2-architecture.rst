@@ -611,12 +611,6 @@ The navigation launch provides:
 
 - **Purpose**: Creates smooth acceleration/deceleration profiles
 
-**Key Design Decisions**
-
-- **Conservative Safety Settings**: Small inflation radius (1cm) for tight spaces, low obstacle penalty for close-proximity maneuvering
-- **Performance Optimizations**: 20×20 trajectory samples, balanced update frequencies (5Hz local, 1Hz global)
-- **Sensor Integration**: LaserScan range 0.3-3.0m, 2m maximum obstacle height
-
 Nav2 subscribes to `/odom`, `/cam1/scan`, and `/tf` topics, and publishes commands to `/cmd_vel_nav` (smoothed to `/cmd_vel`).
 
 .. raw:: html
@@ -632,37 +626,142 @@ The full documentation for the Navigation2 stack can be found in the `Navigation
 
 High-Level Control (Commander Nodes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Nodes for demo, waypoint following, and elevator integration
-- Integrate with Nav2's BasicNavigator
-- Launch: ``scripts/commander/``
+
+.. code-block:: bash
+
+    # Run a commander node
+    ros2 run adrd_demo_ros2 <node_name>.py
+
+Available commander nodes:
+
+- **demo.py**: Basic navigation demo with elevator integration
+- **waypoint_follower.py**: Follows predefined waypoint sequences  
+- **elevator_server.py**: Simulates elevator control responses
+
+Commander nodes provide:
+
+- Integration with Nav2's ``BasicNavigator``
+- Waypoint definition and sequencing
+- Robot pose management
+- Task coordination
+- Elevator integration
+
+More details on the commander nodes and examples on how to interact with the ROS2 system can be found in the `ROS2 Examples <ros2-examples.html>`__ documentation.
 
 Visualization and Manual Control
 --------------------------------
 
 RViz Visualization
 ~~~~~~~~~~~~~~~~~~
-- Launch RViz: ``ros2 run rviz2 rviz -d src/adrd_demo_ros2/rviz/main.rviz``
-- Fixed frame selection: `/base_link`, `/odom`, `/map`
-- TF tree: ``map → odom → base_link → [camera_link, wheel_*_link, imu_link]``
+Launch RViz with the preconfigured layout:
+
+.. code-block:: bash
+
+    ros2 run rviz2 rviz2 -d src/adrd_demo_ros2/rviz/main.rviz
+
+.. admonition:: Note
+    :class: smaller
+
+    Fixed frame selection impacts data visibility:
+    
+    - ``/base_link``: Only robot-relative data
+    - ``/odom``: Robot and odometry data  
+    - ``/map``: All data when mapping/localization active
+
+**TF Tree Structure:**
+
+.. code-block:: text
+
+    map
+    └── odom
+        └── base_link
+            ├── base_footprint
+            ├── camera_link
+            ├── wheel_*_link
+            └── imu_link
+
+Select the appropriate frame based on active components to avoid transform errors.
 
 Manual Control
 ~~~~~~~~~~~~~~
-- Keyboard teleop: ``ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/diff_drive_controller/cmd_vel_unstamped``
+For manual keyboard control, you can use the teleop launch file:
+
+.. code-block:: bash
+
+    ros2 launch adrd_demo_ros2 teleop_launch.py
+
+This launch file provides:
+
+**Teleop Keyboard Node**
+ - Enables keyboard control of the robot
+ - Publishes velocity commands to `/cmd_vel_keyboard`
+ - Runs in a separate terminal window (xterm)
+
+**Killswitch Keyboard Node**
+ - Provides emergency stop functionality via keyboard
+ - Runs in a separate terminal window
+ - Safety control independent of joystick
+
+Alternatively, you can run keyboard teleop directly:
+
+.. code-block:: bash
+
+    ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/cmd_vel_keyboard
+
+.. admonition:: Important
+   :class: note
+
+   Make sure you launched the motor system first before using keyboard teleop.
 
 Quick Start
 -----------
 
+To quickly get the robot running, you can create a bash script to start all nodes sequentially. Here's the recommended startup sequence:
+
 .. code-block:: bash
 
-   #!/bin/bash
-   ros2 launch adrd_demo_ros2 just_motors.launch.py can_iface:=can0 &
-   sleep 20
-   ros2 launch adrd_demo_ros2 just_crsf.launch.py &
-   sleep 10
-   ros2 launch adrd_demo_ros2 just_imu.launch.py &
-   sleep 10
-   ros2 launch adrd_demo_ros2 just_tof.launch.py &
-   sleep 10
-   ros2 launch adrd_demo_ros2 localization_launch.py &
+    #!/bin/bash
+    # Start motor control system
+    ros2 launch adrd_demo_ros2 just_motors.launch.py can_iface:=can0 &
+    sleep 20
+    
+    # Start telemetry and remote control
+    ros2 launch adrd_demo_ros2 just_crsf.launch.py &
+    sleep 10
+    
+    # Start sensor nodes
+    ros2 launch adrd_demo_ros2 just_imu.launch.py &
+    sleep 10
+    ros2 launch adrd_demo_ros2 just_tof.launch.py &
+    sleep 10
+    
+    # Start localization
+    ros2 launch adrd_demo_ros2 localization_launch.py &
 
-See the main README and component documentation for further details.
+At this point, you can move the robot around using the remote control and observe how it localizes in RViz. The robot will track its position using AMCL particle filter localization.
+
+To enable autonomous navigation, start the navigation stack:
+
+.. code-block:: bash
+
+    # Start autonomous navigation
+    ros2 launch adrd_demo_ros2 navigation_launch.py &
+
+Once navigation is running, you can publish goal poses from RViz using the "2D Goal Pose" tool. The robot will compute an optimal path and autonomously navigate to the target location.
+
+For high-level autonomous behavior, start a commander node:
+
+.. code-block:: bash
+
+    # Start autonomous mission commander
+    ros2 run adrd_demo_ros2 demo_run.py
+
+The commander node provides a demo script for robot navigation and lift control with the following features:
+
+- **LiftClientAsync**: Asynchronous ROS2 service client for controlling a lift via GPIO
+- **Waypoint**: Helper class for storing navigation waypoints with orientation and lift actions  
+- **PoseTracker**: Node that tracks robot pose, navigates through waypoints, and coordinates lift actions
+- **Navigation Integration**: Publishes navigation goals, sends velocity commands, and interacts with the lift service
+
+See the next ROS2 Examples section for more details on how to interact with the system, refer to the `ROS2 Examples <ros2-examples.html>`__ documentation, which provides examples of how to interact with the robot using the available commander nodes and other ROS2 features.
+For more information on the EVAL-AD-AMR ROS2 architecture, refer to the `EVAL-AD-AMR ROS2 GitHub repository <https://github.com/adi-innersource/adrd_demo_ros2>`__.
