@@ -1,5 +1,5 @@
-EVAL-AD-AMR ROS2 examples
-=========================
+AD-R1M ROS2 examples
+====================
 
 Nav2 SLAM
 ---------
