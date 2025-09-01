@@ -1,5 +1,5 @@
-EVAL-AD-AMR ROS2 Architecture
-=============================
+AD-R1M ROS2 Architecture
+========================
 
 .. contents:: Table of Contents
    :depth: 2
@@ -7,7 +7,7 @@ EVAL-AD-AMR ROS2 Architecture
 
 Overview
 --------
-The EVAL-AD-AMR ROS2 architecture is an autonomous robot system based on the Arduino AGV platform, integrating CANOpen motor control, ADI Time-of-Flight (ToF) camera, IMU, and the ROS2 Navigation2 stack for 2D localization and navigation.
+The AD-R1M ROS2 architecture is an autonomous robot system based on the Arduino AGV platform, integrating CANOpen motor control, ADI Time-of-Flight (ToF) camera, IMU, and the ROS2 Navigation2 stack for 2D localization and navigation.
 
 System Architecture
 -------------------
@@ -764,4 +764,4 @@ The commander node provides a demo script for robot navigation and lift control 
 - **Navigation Integration**: Publishes navigation goals, sends velocity commands, and interacts with the lift service
 
 See the next ROS2 Examples section for more details on how to interact with the system, refer to the `ROS2 Examples <ros2-examples.html>`__ documentation, which provides examples of how to interact with the robot using the available commander nodes and other ROS2 features.
-For more information on the EVAL-AD-AMR ROS2 architecture, refer to the `EVAL-AD-AMR ROS2 GitHub repository <https://github.com/adi-innersource/adrd_demo_ros2>`__.
+For more information on the AD-R1M ROS2 architecture, refer to the `AD-R1M ROS2 GitHub repository <https://github.com/adi-innersource/adrd_demo_ros2>`__.

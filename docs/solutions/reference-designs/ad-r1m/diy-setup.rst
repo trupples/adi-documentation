@@ -1,5 +1,5 @@
-EVAL-AD-AMR Hardware Guide
-==========================
+AD-R1M Hardware Guide
+=====================
 
 Parts sourcing
 --------------
@@ -31,3 +31,4 @@ Variant: Nvidia AGX Orin
 TODO: mechanical, electrical assembly
 
 TODO: flashing & software setup
+

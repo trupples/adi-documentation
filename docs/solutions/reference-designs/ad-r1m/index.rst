@@ -1,8 +1,8 @@
-EVAL-AD-AMR
-===========
+AD-R1M
+======
 
-Open Mobile Robot Platform
-""""""""""""""""""""""""""
+Open Mobile Robot Platform Reference Design
+"""""""""""""""""""""""""""""""""""""""""""
 
 Introduction
 ------------
