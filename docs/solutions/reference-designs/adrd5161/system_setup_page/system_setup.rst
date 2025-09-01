@@ -1,17 +1,17 @@
 System Setup
-=======================================
+============
 
 Required Hardware
 -----------------
 
-	- AD-AMR-BMS-SL
+	- ADRD5161
 	- 3S LiPo battery pack with an XT60 connector 
 	- USB PD charger, capable of 15V/20V, 3A (min)
 	- CAN cable
 	- Optional: MAXPICO (or compatible) debug probe
 	
 Getting Started
------------------
+---------------
 
 Battery Pack Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
