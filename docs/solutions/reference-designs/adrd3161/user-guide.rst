@@ -51,12 +51,14 @@ Steps:
 
 #. Connect a UART probe to header P7
 #. Open TMCL-IDE and connect to the corresponding serial port (115200 baud):
-   
+
+..
    .. image:: tmcl-ide-serial-dialog.png
 
 Once connected, the list on the left should expand, revealing a useful set of TMCL-IDE features.
 
-.. image:: tmcl-ide-tmc9660-menus.png
+..
+   .. image:: tmcl-ide-tmc9660-menus.png
 
 Motor configuration and tuning
 ''''''''''''''''''''''''''''''
