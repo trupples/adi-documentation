@@ -18,6 +18,11 @@ jobs:
       with:
         lfs: 'true'
 
+    - name: Install apt packages
+      run: |
+        sudo apt update
+        sudo apt install -y graphviz
+
     - name: Install pip packages
       working-directory: docs
       run: |
