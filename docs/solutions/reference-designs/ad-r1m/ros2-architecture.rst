@@ -411,7 +411,8 @@ The CRSF Node is a ROS 2 node designed to interface with an CRSF transceiver, en
 - **Switch SA**: Killswitch
 - **Switch SB**: Lifter control
 
-.. figure:: figures/fig_joystick_mapping.png
+..
+    .. figure:: figures/fig_joystick_mapping.png
     :alt: Joystick setup and mapping used for controlling the robot.
     :align: center
     :width: 400px

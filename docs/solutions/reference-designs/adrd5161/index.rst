@@ -43,7 +43,9 @@ User Guides
 -----------
 
 .. toctree::
-    od
+    hardware_configuration_page/hardware_configuration.rst
+    software_configuration_page/software_configuration.rst
+    system_setup_page/system_setup.rst
 
 Help and Support
 ----------------
