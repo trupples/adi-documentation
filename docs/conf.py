@@ -16,7 +16,7 @@ extensions = [
     "sphinx_inline_tabs",
     "adi_doctools",
     "myst_parser",
-    "sphinxcontrib.mermaid"
+    "sphinxcontrib.mermaid",
     "sphinx.ext.graphviz",
 ]
 
