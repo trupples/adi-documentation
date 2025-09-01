@@ -1,11 +1,11 @@
-AD-AMR-BMS-SL (partno TBD)
-==========================
+ADRD5161
+========
 
 Open Mobile Robot BMS module with CANopen CiA 419
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 Overview
-------------
+--------
 
 	This board is a complete battery managment, charging and power delivery solution compatible with 3S Li-Ion battery packs, design for robotics, power tools and
 	industrial equipment. It features and intuitive GUI for fast setup and monitoring, enabling out of the box operation with minimal configuration. The MAX17320 Fuel
@@ -16,7 +16,7 @@ Overview
 TODO: add high level info about software, add photo with the actual board
 
 Features
---------------
+--------
 
 	High Output Power Capability:
 
@@ -76,14 +76,13 @@ User Guides
    :titlesonly:
    :maxdepth: 1
 
-   */index
    hardware_configuration_page/hardware_configuration
    software_configuration_page/software_configuration
    system_setup_page/system_setup
-   */
 
 Additional Information and Useful Links
-----------------
+---------------------------------------
+
 - :adi:`MAX77958 Product Page <MAX77958>`
 - :adi:`MAX17320 Product Page <MAX17320>`
 - :adi:`MAX77961B Product Page <MAX77961B>`
@@ -101,3 +100,4 @@ Help and Support
 ----------------
 
 For questions and more information, please visit :ez:`/`.
+
