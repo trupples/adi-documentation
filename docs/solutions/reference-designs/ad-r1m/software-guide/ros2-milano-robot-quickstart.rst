@@ -166,7 +166,7 @@ To localize the robot on a previously saved map, run the localization script (ma
    # In the VNC session on Raspberry Pi
    ~/locate.sh
 
-This starts the AMCL (Adaptive Monte Carlo Localization) node to localize the robot on the saved map (`~/ros_data/maps/office-map.yaml`).
+This starts the AMCL (Adaptive Monte Carlo Localization) node to localize the robot on the saved map (``~/ros_data/maps/office-map.yaml``).
 
 .. note::
    After running the localization script, press the ``2D Pose Estimate`` button in RViz and click on the map to set the initial pose of the robot for better localization, as shown in the video below.
@@ -212,6 +212,7 @@ You will see a blue arrow indicating the goal and the robot will start moving to
    :width: 1000px
    
    Robot navigation demonstration using RViz
+   
 The video shows the robot navigating to the set goal using the navigation stack.
 
 Portenta Runtime
