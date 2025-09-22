@@ -1,5 +1,11 @@
-System Setup
-============
+ADRD5161 Quick Start Guide
+==========================
+
+.. todo:: 
+
+    * Connecting a 3S Li-Ion battery pack
+    * One-time configuration: estimated battery capacity, charge/discharge current limits, undervoltage cutoff, charging timeout
+    * What's on the screen
 
 Required Hardware
 -----------------
@@ -22,4 +28,5 @@ The first step required when plugging in a new battery pack is configuring the B
 
 Firmware flashing
 ~~~~~~~~~~~~~~~~~
+
 

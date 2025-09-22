@@ -1,10 +1,13 @@
-Hardware Configuration
-======================
+ADRD5161 Hardware Guide
+=======================
+
+.. todo:: Board image with annotations
+
 
 Block Diagram
 -------------
 
-.. figure:: hw_block_diagram.png
+.. figure:: res/hw_block_diagram.png
    :width: 900 px
 
    Schematic Block Diagram
@@ -15,6 +18,13 @@ Connectors
 ----------
 
 TODO: add picture with board + description of connectors
+
+CAN cable
+~~~~~~~~~
+
+The ADRDx161 board family communicates via CAN bus. The two headers P8, P9 allow for daisy-chaining CAN devices.
+
+.. graphviz:: res/cable-can.gv
 
 Recommended Battery Pack
 ------------------------
@@ -59,4 +69,3 @@ Design and Integration Files
 ----------------------------
 
 TODO: add schematics, PCB Layout, Bill of Materials, Allegro Project
-

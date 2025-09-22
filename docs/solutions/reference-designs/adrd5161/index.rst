@@ -17,10 +17,10 @@ TODO
 Required Hardware
 -----------------
 
-- ADRD5161
-- 3S LiPo battery pack with an XT60 connector 
-- USB PD charger, capable of 20V 3A
-- Optional: MAXPICO (or compatible) debug probe
+* ADRD5161
+* 3S LiPo battery pack with an XT60 connector 
+* USB PD charger, capable of 20V 3A
+* Optional: MAXPICO (or compatible) debug probe
 
 System Setup
 ------------
@@ -43,11 +43,13 @@ User Guides
 -----------
 
 .. toctree::
-    hardware_configuration_page/hardware_configuration.rst
-    software_configuration_page/software_configuration.rst
-    system_setup_page/system_setup.rst
+   
+   quick-start-guide
+   hardware-guide
+   software-guide
+   canopen
 
 Help and Support
 ----------------
 
-TODO
+.. todo:: Support channel
