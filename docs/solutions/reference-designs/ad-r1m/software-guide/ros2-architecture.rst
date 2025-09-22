@@ -260,7 +260,7 @@ The IMU is mounted to the robot using a fixed joint as defined in the URDF:
 
 This means the IMU is positioned 0.133 m forward, -0.01 m to the left, and at the height of the wheel radius from the *base_link* (robot center at ground-level), with a rotation of (0, π, -π/2) radians.
 
-.. figure:: figures/imu_link.png
+.. figure:: ../figures/imu_link.png
     :alt: IMU coordinate frame visualization
     :align: center
     :width: 400px
@@ -338,7 +338,7 @@ Current parameters used ``depthimage_to_laserscan/cfg/param.yaml``:
 
 The camera's position relative to the robot base is defined in ``urdf/camera.xacro``. Ensure the transform between ``cam1_adtf31xx`` and ``base_link`` frames is correctly specified for accurate sensor fusion and navigation.
 
-.. figure:: figures/fig_tof_tf.png
+.. figure:: ../figures/fig_tof_tf.png
     :alt: ToF Camera coordinate frame visualization
     :align: center
     :width: 400px
@@ -412,7 +412,7 @@ The CRSF Node is a ROS 2 node designed to interface with an CRSF transceiver, en
 - **Switch SB**: Lifter control
 
 ..
-    .. figure:: figures/fig_joystick_mapping.png
+    .. figure:: ../figures/fig_joystick_mapping.png
     :alt: Joystick setup and mapping used for controlling the robot.
     :align: center
     :width: 400px
@@ -464,7 +464,7 @@ More details on SLAM Toolbox implementation and configuration can be found in th
 
     <div style="text-align: center;">
         <video width="400" controls style="display: block; margin: 0 auto;">
-             <source src="figures/fig_amcl.mp4" type="video/mp4">
+             <source src="../figures/fig_amcl.mp4" type="video/mp4">
         </video>
         <p style="text-align: center; font-style: italic; margin-top: 10px;">Live AMCL localization process visualization.</p>
     </div>
@@ -618,7 +618,7 @@ Nav2 subscribes to `/odom`, `/cam1/scan`, and `/tf` topics, and publishes comman
 
     <div style="text-align: center;">
         <video width="400" controls style="display: block; margin: 0 auto;">
-             <source src="figures/fig_amcl.mp4" type="video/mp4">
+             <source src="../figures/fig_amcl.mp4" type="video/mp4">
         </video>
         <p style="text-align: center; font-style: italic; margin-top: 10px;">Live Navigation visualization.</p>
     </div>
