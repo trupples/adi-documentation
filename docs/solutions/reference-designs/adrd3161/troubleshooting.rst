@@ -1,5 +1,5 @@
-ADRD3161 Internals
-==================
+ADRD3161 Troubleshooting
+========================
 
 Troubleshoot board power supply issues
 --------------------------------------

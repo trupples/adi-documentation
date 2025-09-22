@@ -1,5 +1,5 @@
-ADRD3161 User Guide
-===================
+ADRD3161 Quick Start Guide
+==========================
 
 Connect a motor
 ---------------
@@ -39,7 +39,7 @@ Connect a motor
         M-          Black      VX2
         =========== ========== ========
 
-Connect using TMCL-IDE
+Control using TMCL-IDE
 ----------------------
 
 Prerequisites:
@@ -80,9 +80,8 @@ Exit the tuning wizard after reaching the closed loop tuning steps.
 All parameters configured by TMCL-IDE will be saved to the drive board's flash
 and be loaded at each following boot.
 
-
-Control through TMCL-IDE
-''''''''''''''''''''''''
+Motor control
+'''''''''''''
 
 `TMCL-IDE
 <https://www.analog.com/en/resources/evaluation-hardware-and-software/motor-motion-control-software/tmcl-ide.html>`_
@@ -97,7 +96,7 @@ is the main software package for Trinamic parts. The TMC9660 may be directly int
 
 TODO: how to reconcile the "control" and "tuning" via TMCL-IDE parts, given they start out the same, have the same prerequisites, but are two separate user stories / use cases?
 
-Connect via CAN bus
+Control via CAN bus
 -------------------
 
 The ADRD3161 implements CANopen, with the CiA 402 profile for motor drives. The device is interoperable with other CANopen devices, but has limited applicability on a CAN bus that is not CANopen, unless carefully configured.
@@ -152,7 +151,6 @@ Check that the board has started up correctly:
 
 ---
 
-
 On the software side, CAN communication depends on the OS and used hardware interface. The following guide assumes a **Linux** machine. On Windows, this setup can be achieved in WSL with USB forwarding of CAN adapters.
 
 .. todo:: Write or link to a WSL CAN setup guide
@@ -164,6 +162,10 @@ Install / load the appropriate kernel modules for your CAN adapter:
         Many off-the-shelf adapters (TODO: list a handful) need the ``gs_can`` driver which is widely available, in many cases even already installed or built into the kernel.
 
         .. todo:: Elaborate instructions for gs_can
+
+.. tab:: slcan
+
+        .. todo:: ADRD4161 instructions
 
 Configure and bring up the CAN interface (replace can0 with the name of the interface, if different)::
 
@@ -191,14 +193,6 @@ To remotely reset a specific node, with ID xx, run (after replacing xx with the 
 
 	$ cansend can0 000#xx81
 
-The CiA 402 profile prescribes a standard set of CANopen objects and their function for motor drives. While hand-crafting compatible CAN messages is possible, it is recommended to use an implementation of the CANopen and CiA 402 stack that exposes a simpler API, such as the Python `canopen` package or the ROS2 `ros2_canopen` package, exemplified in the following sections.
+---
 
-Control through Python ``canopen``
-----------------------------------
-
-TODO
-
-Control through ROS2 ``ros2_canopen``
--------------------------------------
-
-TODO
+.. todo:: Link to software guide for programatic control, or merge these two documents?
