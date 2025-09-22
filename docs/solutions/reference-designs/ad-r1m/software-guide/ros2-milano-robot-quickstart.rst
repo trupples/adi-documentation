@@ -7,7 +7,7 @@ Power Up
 --------
 Use the side-panel buttons to power and initialize the robot electronics.
 
-.. figure:: figures/robot-buttons.png
+.. figure:: ../figures/robot-buttons.png
    :alt: Robot side buttons: 1 (silver, power), 2 (red, joystick receiver reset), 3 (green, not used)
    :align: center
    :width: 500px
@@ -21,7 +21,7 @@ After power‑up, an onboard bring‑up script runs on the Portenta microcontrol
 Remote Control
 --------------
 
-.. figure:: figures/remote-control.png
+.. figure:: ../figures/remote-control.png
    :alt: Remote control layout with KILLSWITCH (SB), lift (SC), power, and TELE buttons
    :align: center
    :width: 500px
@@ -42,7 +42,7 @@ Network Setup
 -------------
 Connect your workstation to the robot’s Wi‑Fi network before starting.
 
-.. figure:: figures/wifi.png
+.. figure:: ../figures/wifi.png
    :alt: Connect to ADIADV_LIFT Wi‑Fi network
    :align: center
    :width: 400px
@@ -64,7 +64,7 @@ Portenta (MCU controller)
 
 - Credentials: user ``analog`` / password ``analog``
 
-.. figure:: figures/ssh.png
+.. figure:: ../figures/ssh.png
    :alt: SSH to Portenta board
    :align: center
    :width: 400px
@@ -79,7 +79,7 @@ Raspberry Pi (edge computer)
 
 - Credentials: user ``analog`` / password ``analog``
 
-.. figure:: figures/ssh_rpi.png
+.. figure:: ../figures/ssh_rpi.png
    :alt: SSH to Raspberry Pi
    :align: center
    :width: 400px
@@ -90,7 +90,7 @@ Raspberry Pi (edge computer)
    - VNC Server: ``ad-r1m-pi-milano.local``
    - Credentials: user ``analog`` / password ``analog``
 
-.. figure:: figures/vnc_connect.png
+.. figure:: ../figures/vnc_connect.png
    :alt: VNC connection to Raspberry Pi
    :align: center
    :width: 400px
@@ -109,7 +109,7 @@ After connecting via VNC, run the start_rviz script to start the ROS 2 Docker co
 
 This launches RViz with the robot model, odometry, and camera laser scan visualization.
 
-.. figure:: figures/start_rviz.png
+.. figure:: ../figures/start_rviz.png
    :alt: RViz startup showing robot model and laser scan with odom fixed frame
    :align: center
    :width: 900px
@@ -127,7 +127,7 @@ To map the environment, run the mapping script and change the fixed frame to vis
 
 Change the fixed frame from ``odom`` to ``map`` in RViz to visualize the mapping process as shown in the figure.
 
-.. figure:: figures/do_mapping.png
+.. figure:: ../figures/do_mapping.png
    :alt: RViz mapping view showing how to change fixed frame to map and mapping process
    :align: center
    :width: 900px
@@ -136,7 +136,7 @@ The figure shows how to change the fixed frame in RViz and observe the real-time
 
 Move the robot around the environment using the remote control to build the map, as shown in the animated demonstration below.
 
-.. figure:: figures/do_mapping.gif
+.. figure:: ../figures/do_mapping.gif
    :align: center
    :width: 1000px
    
@@ -171,7 +171,7 @@ This starts the AMCL (Adaptive Monte Carlo Localization) node to localize the ro
 .. note::
    After running the localization script, press the ``2D Pose Estimate`` button in RViz and click on the map to set the initial pose of the robot for better localization, as shown in the video below.
 
-.. figure:: figures/locate.gif
+.. figure:: ../figures/locate.gif
    :align: center
    :width: 1000px
    
@@ -189,14 +189,14 @@ Keep the localization script running and open a new terminal to start the naviga
 
 After running the navigation script, you will see the navigation nodes starting in the terminal, as shown in the figure below.
 
-.. figure:: figures/navigate-sh.png
+.. figure:: ../figures/navigate-sh.png
    :alt: Navigation terminal showing nodes starting
    :align: center
    :width: 600px
 
 In RViz, you will see the global and local costmaps in light blue and purple.
 
-.. figure:: figures/nav_view.png
+.. figure:: ../figures/nav_view.png
    :alt: RViz navigation view showing global and local costmaps
    :align: center
    :width: 900px
@@ -207,7 +207,7 @@ In RViz, you will see the global and local costmaps in light blue and purple.
 To send a navigation goal, press the ``2D Nav Goal`` button in RViz and click on the map to set the desired destination for the robot, as shown in the video below.
 You will see a blue arrow indicating the goal and the robot will start moving towards it.
 
-.. figure:: figures/navigate.gif
+.. figure:: ../figures/navigate.gif
    :align: center
    :width: 1000px
    
@@ -241,7 +241,7 @@ To re-run the container and nodes manually:
 
 You will see the ROS 2 nodes starting in the terminal, as shown in the figure below.
 
-.. figure:: figures/portenta_bringup.png
+.. figure:: ../figures/portenta_bringup.png
    :align: center
    :width: 600px
 
