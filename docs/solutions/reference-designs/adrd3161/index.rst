@@ -57,6 +57,7 @@ User Guides
    software-guide
    troubleshooting
    canopen
+   production-guide
 
 Help and Support
 ----------------
