@@ -8,15 +8,15 @@
 
     <title>ADRD3161 &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=37266688" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=8d0b0339" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
     <script src="../../../_static/tabs.js?v=3ee01567"></script>
-    <script async="async" src="../../../_static/app.umd.js?v=8f62bab2"></script>
+    <script async="async" src="../../../_static/app.umd.js?v=2f9373fc"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="ADRD3161 Production Guide" href="production-guide.html" />
+    <link rel="next" title="ADRD3161 Quick Start Guide" href="quick-start-guide.html" />
     <link rel="prev" title="Software User Guide" href="../admv96s-wgbe-ek1/software-guide/index.html" />
    
   
@@ -25,6 +25,7 @@
   <meta name="version" content="">
   
     <meta name="page_source_suffix" content=".rst">
+  
   
   
 
@@ -96,11 +97,7 @@
 <li><a class="reference internal" href="#">ADRD3161</a><ul>
 <li><a class="reference internal" href="#motor-control-module-with-canopen-cia-402">Motor Control module with CANopen CiA 402</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#specifications">Specifications</a><ul>
-<li><a class="reference internal" href="#encoder-cable">Encoder cable</a></li>
-<li><a class="reference internal" href="#can-cable">CAN cable</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#specifications">Specifications</a></li>
 <li><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
 <li><a class="reference internal" href="#user-guides">User Guides</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
@@ -316,6 +313,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
@@ -323,47 +321,73 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../ad-r1m/index.html">AD-R1M</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="../ad-r1m/production-guide.html">AD-R1M Production Guide</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-r1m/user-guide.html">AD-R1M User Guide</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-r1m/ros2-architecture.html">AD-R1M ROS2 Architecture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-r1m/ros2-examples.html">AD-R1M ROS2 examples</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../ad-r1m/index.html">AD-R1M</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-r1m/quick-start-guide.html">AD-R1M Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-r1m/use-cases.html">AD-R1M Use Case Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-r1m/hardware-guide.html">AD-R1M Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-r1m/system-setup.html">AD-R1M System Setup</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9-1" id="toctree-collapse-13-9-1"/><div class="collapse"><a class="reference internal" href="../ad-r1m/software-guide.html">AD-R1M Software Guide</a><label for="toctree-collapse-13-9-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../ad-r1m/software-guide/ros2-getting-started.html">AD-R1M ROS 2 Getting Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ad-r1m/software-guide/ros2-examples.html">AD-R1M ROS2 examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ad-r1m/software-guide/ros2-architecture.html">AD-R1M ROS2 Architecture</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9-2" id="toctree-collapse-13-9-2"/><div class="collapse"><a class="reference internal" href="../ad-r1m/advanced-usage.html">AD-R1M Advanced Usage</a><label for="toctree-collapse-13-9-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../ad-r1m/advanced-usage/linux-system.html">AD-R1M Linux, systemd, docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ad-r1m/advanced-usage/ros2-writing-your-own-nodes.html">Writing your own ROS 2 nodes for AD-R1M</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-r1m/troubleshooting.html">AD-R1M Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11" checked=""/><div class="collapse"><a class="current reference internal" href="#">ADRD3161</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="production-guide.html">ADRD3161 Production Guide</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user-guide.html">ADRD3161 User Guide</a></li>
-<li class="toctree-l3"><a class="reference internal" href="internals.html">ADRD3161 Internals</a></li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12" checked=""/><div class="collapse"><a class="current reference internal" href="#">ADRD3161</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="quick-start-guide.html">ADRD3161 Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware-guide.html">ADRD3161 Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-guide.html">ADRD3161 Software Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html">ADRD3161 Troubleshooting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="canopen.html">ADRD3161 CANopen reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="production-guide.html">ADRD3161 Production Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../adrd5161/index.html">ADRD5161</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="../adrd5161/hardware_configuration_page/hardware_configuration.html">Hardware Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../adrd5161/software_configuration_page/software_configuration.html">Software Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../adrd5161/system_setup_page/system_setup.html">System Setup</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../adrd4161/index.html">ADRD4161</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../adrd4161/quick-start-guide.html">ADRD4161 Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrd4161/hardware-guide.html">ADRD4161 Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrd4161/software-guide.html">ADRD4161 Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../adrd5161/index.html">ADRD5161</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../adrd5161/quick-start-guide.html">ADRD5161 Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrd5161/hardware-guide.html">ADRD5161 Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrd5161/software-guide.html">ADRD5161 Software Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrd5161/canopen.html">ADRD5161 CANopen reference</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
@@ -374,19 +398,20 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-isomax/software_guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
 </ul>
@@ -481,1729 +506,9 @@ controlled / configured via TMCL-IDE.</p>
 <li><p>Power input: screw terminal</p></li>
 <li><p>Motor connection: screw terminal</p></li>
 <li><p>Debug ports (x2): SWD header</p></li>
-<li><p>Encoder interface, isolated: Custom header described below (8 pin)</p></li>
-<li><p>CAN, isolated: 2x Custom header described below (4 pin)</p></li>
+<li><p>Encoder interface, isolated: Custom header (8 pin). Described in <a class="reference internal" href="hardware-guide.html#adrd3161-cable-encoder"><span class="std std-ref">Encoder cable</span></a>.</p></li>
+<li><p>CAN, isolated: 2x Custom header described below (4 pin). Described in <a class="reference internal" href="hardware-guide.html#adrd3161-cable-can"><span class="std std-ref">CAN cable</span></a>.</p></li>
 </ul>
-<section id="encoder-cable">
-<h4>Encoder cable<a class="headerlink" href="#encoder-cable" title="Link to this heading"></a></h4>
-<p>Header P16 provides 5V power to encoders and has isolated inputs corresponding to ABN and Digital Hall encoders.</p>
-<p>Depending on the used motor and its wiring, you may need to customize the encoder cable. Some examples:</p>
-<div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">ADI Trinamic ABN (Default)</label><div class="tab-content docutils">
-<p>Encoder cable for ADI Trinamic ABN encoders, such as the
-<a class="icon link reference external" href="https://www.analog.com/en/product-category/motor-encoders.html" target="_blank">ADI Trinamic TMCS</a> series, and the builtin encoders on
-<a class="icon link reference external" href="https://www.analog.com/en/product-category/stepper-motors.html" target="_blank">ADI Trinamic QSH</a> series stepper motors.</p>
-<div class="graphviz"><img src="../../../_images/graphviz-abf62a4b95af044d01173455ca843d8d8f0fbfb7.png" alt="graph {
-// Graph generated by WireViz 0.4.1
-// https://github.com/wireviz/WireViz
-	graph [bgcolor=&quot;#FFFFFF&quot; fontname=arial nodesep=0.33 rankdir=LR ranksep=2]
-	node [fillcolor=&quot;#FFFFFF&quot; fontname=arial height=0 margin=0 shape=none style=filled width=0]
-	edge [fontname=arial style=bold]
-	X1 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;X1&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Molex: 430250800&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Micro-Fit 3.0&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;Receptacle&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;8-pin&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;
-   &lt;tr&gt;
-    &lt;td&gt;VCC&lt;/td&gt;
-    &lt;td port=&quot;p1r&quot;&gt;1&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;GND&lt;/td&gt;
-    &lt;td port=&quot;p2r&quot;&gt;2&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Encoder A&lt;/td&gt;
-    &lt;td port=&quot;p3r&quot;&gt;3&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Encoder B&lt;/td&gt;
-    &lt;td port=&quot;p4r&quot;&gt;4&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Encoder N&lt;/td&gt;
-    &lt;td port=&quot;p5r&quot;&gt;5&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Hall U&lt;/td&gt;
-    &lt;td port=&quot;p6r&quot;&gt;6&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Hall V&lt;/td&gt;
-    &lt;td port=&quot;p7r&quot;&gt;7&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Hall W&lt;/td&gt;
-    &lt;td port=&quot;p8r&quot;&gt;8&lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;
-    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;&lt;tr&gt;
-     &lt;td width=&quot;200&quot; height=&quot;200.0&quot; fixedsize=&quot;true&quot;&gt;&lt;img scale=&quot;true&quot; src=&quot;connector-microfit.jpg&quot;/&gt;&lt;/td&gt;
-    &lt;/tr&gt;&lt;/table&gt;
-   &lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;to ADRD3161&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	X2 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;X2&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Molex: 5023800900&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;CLIK-Mate&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;Plug&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;9-pin&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p1l&quot;&gt;1&lt;/td&gt;
-    &lt;td&gt;VCC&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p2l&quot;&gt;2&lt;/td&gt;
-    &lt;td&gt;GND&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p3l&quot;&gt;3&lt;/td&gt;
-    &lt;td&gt;A+&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p4l&quot;&gt;4&lt;/td&gt;
-    &lt;td&gt;A-&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p5l&quot;&gt;5&lt;/td&gt;
-    &lt;td&gt;B+&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p6l&quot;&gt;6&lt;/td&gt;
-    &lt;td&gt;B-&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p7l&quot;&gt;7&lt;/td&gt;
-    &lt;td&gt;Z+&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p8l&quot;&gt;8&lt;/td&gt;
-    &lt;td&gt;Z-&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p9l&quot;&gt;9&lt;/td&gt;
-    &lt;td&gt;Shield&lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;
-    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;&lt;tr&gt;
-     &lt;td width=&quot;200&quot; height=&quot;200.0&quot; fixedsize=&quot;true&quot;&gt;&lt;img scale=&quot;true&quot; src=&quot;connector-clikmate.jpg&quot;/&gt;&lt;/td&gt;
-    &lt;/tr&gt;&lt;/table&gt;
-   &lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;to Trinamic ABN encoder&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	edge [color=&quot;#000000:#ff0000:#ff0000:#ff0000:#000000&quot;]
-	X1:p1r:e -- W1:w1:w
-	W1:w1:e -- X2:p1l:w
-	edge [color=&quot;#000000:#000000:#000000:#000000:#000000&quot;]
-	X1:p2r:e -- W1:w2:w
-	W1:w2:e -- X2:p2l:w
-	edge [color=&quot;#000000:#ffffff:#ffffff:#ffffff:#000000&quot;]
-	X1:p3r:e -- W1:w3:w
-	W1:w3:e -- X2:p3l:w
-	edge [color=&quot;#000000:#00ff00:#00ff00:#00ff00:#000000&quot;]
-	X1:p4r:e -- W1:w5:w
-	W1:w5:e -- X2:p5l:w
-	edge [color=&quot;#000000:#ffff00:#ffff00:#ffff00:#000000&quot;]
-	X1:p5r:e -- W1:w7:w
-	W1:w7:e -- X2:p7l:w
-	edge [color=&quot;#000000:#ffffff:#000000:#ffffff:#000000&quot;]
-	W1:w4:e -- X2:p4l:w
-	edge [color=&quot;#000000:#00ff00:#000000:#00ff00:#000000&quot;]
-	W1:w6:e -- X2:p6l:w
-	edge [color=&quot;#000000:#ffff00:#000000:#ffff00:#000000&quot;]
-	W1:w8:e -- X2:p8l:w
-	edge [color=&quot;#000000:#0066ff:#0066ff:#0066ff:#000000&quot;]
-	W1:w9:e -- X2:p9l:w
-	W1 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;W1&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;9x&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;28 AWG&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;
-   &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:1:VCC&lt;/td&gt;
-    &lt;td&gt;
-     1:RD
-    &lt;/td&gt;
-    &lt;td&gt;X2:1:VCC&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w1&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ff0000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ff0000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ff0000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:2:GND&lt;/td&gt;
-    &lt;td&gt;
-     2:BK
-    &lt;/td&gt;
-    &lt;td&gt;X2:2:GND&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w2&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:3:Encoder A&lt;/td&gt;
-    &lt;td&gt;
-     3:WH
-    &lt;/td&gt;
-    &lt;td&gt;X2:3:A+&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w3&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;&lt;!-- 4_in --&gt;&lt;/td&gt;
-    &lt;td&gt;
-     4:WHBK
-    &lt;/td&gt;
-    &lt;td&gt;X2:4:A-&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w4&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:4:Encoder B&lt;/td&gt;
-    &lt;td&gt;
-     5:GN
-    &lt;/td&gt;
-    &lt;td&gt;X2:5:B+&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w5&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;&lt;!-- 6_in --&gt;&lt;/td&gt;
-    &lt;td&gt;
-     6:GNBK
-    &lt;/td&gt;
-    &lt;td&gt;X2:6:B-&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w6&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:5:Encoder N&lt;/td&gt;
-    &lt;td&gt;
-     7:YE
-    &lt;/td&gt;
-    &lt;td&gt;X2:7:Z+&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w7&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;&lt;!-- 8_in --&gt;&lt;/td&gt;
-    &lt;td&gt;
-     8:YEBK
-    &lt;/td&gt;
-    &lt;td&gt;X2:8:Z-&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w8&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;&lt;!-- 9_in --&gt;&lt;/td&gt;
-    &lt;td&gt;
-     9:BU
-    &lt;/td&gt;
-    &lt;td&gt;X2:9:Shield&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w9&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#0066ff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#0066ff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#0066ff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-}" class="graphviz" /></div>
-</div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">BLDC with Hall</label><div class="tab-content docutils">
-<p>Encoder cable for a generic BLDC with Digital Hall sensor configuration, with no special encoder connector, such as the
-<a class="icon link reference external" href="https://www.analog.com/en/product-category/bldc-brushless-dc-motors.html" target="_blank">ADI Trinamic QBL</a> series.</p>
-<div class="graphviz"><img src="../../../_images/graphviz-77af1a9f05366b6f21697599ecd736f228540eb3.png" alt="graph {
-// Graph generated by WireViz 0.4.1
-// https://github.com/wireviz/WireViz
-	graph [bgcolor=&quot;#FFFFFF&quot; fontname=arial nodesep=0.33 rankdir=LR ranksep=2]
-	node [fillcolor=&quot;#FFFFFF&quot; fontname=arial height=0 margin=0 shape=none style=filled width=0]
-	edge [fontname=arial style=bold]
-	X1 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;X1&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Molex: 430250800&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Micro-Fit 3.0&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;Receptacle&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;8-pin&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;
-   &lt;tr&gt;
-    &lt;td&gt;VCC&lt;/td&gt;
-    &lt;td port=&quot;p1r&quot;&gt;1&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;GND&lt;/td&gt;
-    &lt;td port=&quot;p2r&quot;&gt;2&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Encoder A&lt;/td&gt;
-    &lt;td port=&quot;p3r&quot;&gt;3&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Encoder B&lt;/td&gt;
-    &lt;td port=&quot;p4r&quot;&gt;4&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Encoder N&lt;/td&gt;
-    &lt;td port=&quot;p5r&quot;&gt;5&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Hall U&lt;/td&gt;
-    &lt;td port=&quot;p6r&quot;&gt;6&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Hall V&lt;/td&gt;
-    &lt;td port=&quot;p7r&quot;&gt;7&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Hall W&lt;/td&gt;
-    &lt;td port=&quot;p8r&quot;&gt;8&lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;
-    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;&lt;tr&gt;
-     &lt;td width=&quot;200&quot; height=&quot;200.0&quot; fixedsize=&quot;true&quot;&gt;&lt;img scale=&quot;true&quot; src=&quot;connector-microfit.jpg&quot;/&gt;&lt;/td&gt;
-    &lt;/tr&gt;&lt;/table&gt;
-   &lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;to ADRD3161&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	X2 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;X2&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;5-pin&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p1l&quot;&gt;1&lt;/td&gt;
-    &lt;td&gt;VCC&lt;/td&gt;
-    &lt;td sides=&quot;tbl&quot;&gt;RD&lt;/td&gt;
-    &lt;td sides=&quot;tbr&quot;&gt;
-     &lt;table border=&quot;0&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-      &lt;td bgcolor=&quot;#FF0000&quot; width=&quot;8&quot; height=&quot;8&quot; fixedsize=&quot;true&quot;&gt;&lt;/td&gt;
-     &lt;/tr&gt;&lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p2l&quot;&gt;2&lt;/td&gt;
-    &lt;td&gt;A&lt;/td&gt;
-    &lt;td sides=&quot;tbl&quot;&gt;BU&lt;/td&gt;
-    &lt;td sides=&quot;tbr&quot;&gt;
-     &lt;table border=&quot;0&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-      &lt;td bgcolor=&quot;#0066FF&quot; width=&quot;8&quot; height=&quot;8&quot; fixedsize=&quot;true&quot;&gt;&lt;/td&gt;
-     &lt;/tr&gt;&lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p3l&quot;&gt;3&lt;/td&gt;
-    &lt;td&gt;B&lt;/td&gt;
-    &lt;td sides=&quot;tbl&quot;&gt;GN&lt;/td&gt;
-    &lt;td sides=&quot;tbr&quot;&gt;
-     &lt;table border=&quot;0&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-      &lt;td bgcolor=&quot;#00FF00&quot; width=&quot;8&quot; height=&quot;8&quot; fixedsize=&quot;true&quot;&gt;&lt;/td&gt;
-     &lt;/tr&gt;&lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p4l&quot;&gt;4&lt;/td&gt;
-    &lt;td&gt;C&lt;/td&gt;
-    &lt;td sides=&quot;tbl&quot;&gt;WH&lt;/td&gt;
-    &lt;td sides=&quot;tbr&quot;&gt;
-     &lt;table border=&quot;0&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-      &lt;td bgcolor=&quot;#FFFFFF&quot; width=&quot;8&quot; height=&quot;8&quot; fixedsize=&quot;true&quot;&gt;&lt;/td&gt;
-     &lt;/tr&gt;&lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p5l&quot;&gt;5&lt;/td&gt;
-    &lt;td&gt;GND&lt;/td&gt;
-    &lt;td sides=&quot;tbl&quot;&gt;BK&lt;/td&gt;
-    &lt;td sides=&quot;tbr&quot;&gt;
-     &lt;table border=&quot;0&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-      &lt;td bgcolor=&quot;#000000&quot; width=&quot;8&quot; height=&quot;8&quot; fixedsize=&quot;true&quot;&gt;&lt;/td&gt;
-     &lt;/tr&gt;&lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;to Hall effect encoder&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	edge [color=&quot;#000000:#ff0000:#000000&quot;]
-	X1:p1r:e -- W1:w1:w
-	W1:w1:e -- X2:p1l:w
-	edge [color=&quot;#000000:#000000:#000000&quot;]
-	X1:p2r:e -- W1:w5:w
-	W1:w5:e -- X2:p5l:w
-	edge [color=&quot;#000000:#0066ff:#000000&quot;]
-	X1:p6r:e -- W1:w2:w
-	W1:w2:e -- X2:p2l:w
-	edge [color=&quot;#000000:#00ff00:#000000&quot;]
-	X1:p7r:e -- W1:w3:w
-	W1:w3:e -- X2:p3l:w
-	edge [color=&quot;#000000:#ffffff:#000000&quot;]
-	X1:p8r:e -- W1:w4:w
-	W1:w4:e -- X2:p4l:w
-	W1 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;W1&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;5x&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;26 AWG&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;
-   &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:1:VCC&lt;/td&gt;
-    &lt;td&gt;
-     1:RD
-    &lt;/td&gt;
-    &lt;td&gt;X2:1:VCC&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w1&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ff0000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:6:Hall U&lt;/td&gt;
-    &lt;td&gt;
-     2:BU
-    &lt;/td&gt;
-    &lt;td&gt;X2:2:A&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w2&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#0066ff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:7:Hall V&lt;/td&gt;
-    &lt;td&gt;
-     3:GN
-    &lt;/td&gt;
-    &lt;td&gt;X2:3:B&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w3&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:8:Hall W&lt;/td&gt;
-    &lt;td&gt;
-     4:WH
-    &lt;/td&gt;
-    &lt;td&gt;X2:4:C&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w4&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:2:GND&lt;/td&gt;
-    &lt;td&gt;
-     5:BK
-    &lt;/td&gt;
-    &lt;td&gt;X2:5:GND&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w5&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-}" class="graphviz" /></div>
-</div>
-<input class="tab-input" id="tab-set--0-input--3" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--3">BLDC with Hall, VESC-like connector</label><div class="tab-content docutils">
-<p>Encoder cable for using a Digital Hall sensor with a VESC-like encoder connector (6-pin JST PH), such as the
-<a class="icon link reference external" href="https://revrobotics.eu/rev-21-1650/" target="_blank">REV-21-1650</a>.</p>
-<div class="graphviz"><img src="../../../_images/graphviz-5b4008a0a2ebe2d6d19be216593b0d98983602c8.png" alt="graph {
-// Graph generated by WireViz 0.4.1
-// https://github.com/wireviz/WireViz
-	graph [bgcolor=&quot;#FFFFFF&quot; fontname=arial nodesep=0.33 rankdir=LR ranksep=2]
-	node [fillcolor=&quot;#FFFFFF&quot; fontname=arial height=0 margin=0 shape=none style=filled width=0]
-	edge [fontname=arial style=bold]
-	X1 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;X1&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Molex: 430250800&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Micro-Fit 3.0&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;Receptacle&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;8-pin&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;
-   &lt;tr&gt;
-    &lt;td&gt;VCC&lt;/td&gt;
-    &lt;td port=&quot;p1r&quot;&gt;1&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;GND&lt;/td&gt;
-    &lt;td port=&quot;p2r&quot;&gt;2&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Encoder A&lt;/td&gt;
-    &lt;td port=&quot;p3r&quot;&gt;3&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Encoder B&lt;/td&gt;
-    &lt;td port=&quot;p4r&quot;&gt;4&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Encoder N&lt;/td&gt;
-    &lt;td port=&quot;p5r&quot;&gt;5&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Hall U&lt;/td&gt;
-    &lt;td port=&quot;p6r&quot;&gt;6&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Hall V&lt;/td&gt;
-    &lt;td port=&quot;p7r&quot;&gt;7&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Hall W&lt;/td&gt;
-    &lt;td port=&quot;p8r&quot;&gt;8&lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;
-    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;&lt;tr&gt;
-     &lt;td width=&quot;200&quot; height=&quot;200.0&quot; fixedsize=&quot;true&quot;&gt;&lt;img scale=&quot;true&quot; src=&quot;connector-microfit.jpg&quot;/&gt;&lt;/td&gt;
-    &lt;/tr&gt;&lt;/table&gt;
-   &lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;to ADRD3161&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	X2 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;X2&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;JST: B6B-PH-K-S&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;JST PH&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;Header&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;6-pin&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p1l&quot;&gt;1&lt;/td&gt;
-    &lt;td&gt;VCC&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p2l&quot;&gt;2&lt;/td&gt;
-    &lt;td&gt;Temperature&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p3l&quot;&gt;3&lt;/td&gt;
-    &lt;td&gt;Encoder A&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p4l&quot;&gt;4&lt;/td&gt;
-    &lt;td&gt;Encoder B&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p5l&quot;&gt;5&lt;/td&gt;
-    &lt;td&gt;Encoder C&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p6l&quot;&gt;6&lt;/td&gt;
-    &lt;td&gt;GND&lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;part of adapter cable&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	X3 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;X3&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;JST: PHR-6&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;JST PH&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;receptacle&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;6-pin&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p1l&quot;&gt;1&lt;/td&gt;
-    &lt;td&gt;VCC&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p2l&quot;&gt;2&lt;/td&gt;
-    &lt;td&gt;Temperature&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p3l&quot;&gt;3&lt;/td&gt;
-    &lt;td&gt;Encoder A&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p4l&quot;&gt;4&lt;/td&gt;
-    &lt;td&gt;Encoder B&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p5l&quot;&gt;5&lt;/td&gt;
-    &lt;td&gt;Encoder C&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p6l&quot;&gt;6&lt;/td&gt;
-    &lt;td&gt;GND&lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;
-    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;&lt;tr&gt;
-     &lt;td width=&quot;200&quot; height=&quot;200.0&quot; fixedsize=&quot;true&quot;&gt;&lt;img scale=&quot;true&quot; src=&quot;connector-vesc.jpg&quot;/&gt;&lt;/td&gt;
-    &lt;/tr&gt;&lt;/table&gt;
-   &lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;part of motor encoder cable&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	edge [color=&quot;#000000:#ff0000:#000000&quot;]
-	X1:p1r:e -- W1:w1:w
-	W1:w1:e -- X2:p1l:w
-	edge [color=&quot;#000000:#000000:#000000&quot;]
-	X1:p2r:e -- W1:w5:w
-	W1:w5:e -- X2:p6l:w
-	edge [color=&quot;#000000:#0066ff:#000000&quot;]
-	X1:p6r:e -- W1:w2:w
-	W1:w2:e -- X2:p3l:w
-	edge [color=&quot;#000000:#00ff00:#000000&quot;]
-	X1:p7r:e -- W1:w3:w
-	W1:w3:e -- X2:p4l:w
-	edge [color=&quot;#000000:#ffffff:#000000&quot;]
-	X1:p8r:e -- W1:w4:w
-	W1:w4:e -- X2:p5l:w
-	W1 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;W1&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;5x&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;26 AWG&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;
-   &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:1:VCC&lt;/td&gt;
-    &lt;td&gt;
-     1:RD
-    &lt;/td&gt;
-    &lt;td&gt;X2:1:VCC&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w1&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ff0000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:6:Hall U&lt;/td&gt;
-    &lt;td&gt;
-     2:BU
-    &lt;/td&gt;
-    &lt;td&gt;X2:3:Encoder A&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w2&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#0066ff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:7:Hall V&lt;/td&gt;
-    &lt;td&gt;
-     3:GN
-    &lt;/td&gt;
-    &lt;td&gt;X2:4:Encoder B&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w3&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:8:Hall W&lt;/td&gt;
-    &lt;td&gt;
-     4:WH
-    &lt;/td&gt;
-    &lt;td&gt;X2:5:Encoder C&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w4&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:2:GND&lt;/td&gt;
-    &lt;td&gt;
-     5:BK
-    &lt;/td&gt;
-    &lt;td&gt;X2:6:GND&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w5&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	edge [color=&quot;#000000:#000000&quot; dir=back style=dashed]
-	X2:e -- X3:w
-}" class="graphviz" /></div>
-</div>
-<input class="tab-input" id="tab-set--0-input--4" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--4">BLDC with Hall &amp; ADI Trinamic ABN</label><div class="tab-content docutils">
-<p>Encoder cable for using both an ADI Trinamic ABN encoder and a Digital Hall sensor.</p>
-<div class="graphviz"><img src="../../../_images/graphviz-dac3ae5087278c5e8c1429eb81a485fce9aa6680.png" alt="graph {
-// Graph generated by WireViz 0.4.1
-// https://github.com/wireviz/WireViz
-	graph [bgcolor=&quot;#FFFFFF&quot; fontname=arial nodesep=0.33 rankdir=LR ranksep=2]
-	node [fillcolor=&quot;#FFFFFF&quot; fontname=arial height=0 margin=0 shape=none style=filled width=0]
-	edge [fontname=arial style=bold]
-	X1 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;X1&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Molex: 430250800&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Micro-Fit 3.0&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;Receptacle&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;8-pin&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;
-   &lt;tr&gt;
-    &lt;td&gt;VCC&lt;/td&gt;
-    &lt;td port=&quot;p1r&quot;&gt;1&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;GND&lt;/td&gt;
-    &lt;td port=&quot;p2r&quot;&gt;2&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Encoder A&lt;/td&gt;
-    &lt;td port=&quot;p3r&quot;&gt;3&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Encoder B&lt;/td&gt;
-    &lt;td port=&quot;p4r&quot;&gt;4&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Encoder N&lt;/td&gt;
-    &lt;td port=&quot;p5r&quot;&gt;5&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Hall U&lt;/td&gt;
-    &lt;td port=&quot;p6r&quot;&gt;6&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Hall V&lt;/td&gt;
-    &lt;td port=&quot;p7r&quot;&gt;7&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;Hall W&lt;/td&gt;
-    &lt;td port=&quot;p8r&quot;&gt;8&lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;
-    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;&lt;tr&gt;
-     &lt;td width=&quot;200&quot; height=&quot;200.0&quot; fixedsize=&quot;true&quot;&gt;&lt;img scale=&quot;true&quot; src=&quot;connector-microfit.jpg&quot;/&gt;&lt;/td&gt;
-    &lt;/tr&gt;&lt;/table&gt;
-   &lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;to ADRD3161&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	X2 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;X2&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;5-pin&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p1l&quot;&gt;1&lt;/td&gt;
-    &lt;td&gt;VCC&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p2l&quot;&gt;2&lt;/td&gt;
-    &lt;td&gt;A&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p3l&quot;&gt;3&lt;/td&gt;
-    &lt;td&gt;B&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p4l&quot;&gt;4&lt;/td&gt;
-    &lt;td&gt;C&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p5l&quot;&gt;5&lt;/td&gt;
-    &lt;td&gt;GND&lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;to Hall effect encoder&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	X3 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;X3&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Molex: 5023800900&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;CLIK-Mate&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;Plug&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;9-pin&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p1l&quot;&gt;1&lt;/td&gt;
-    &lt;td&gt;VCC&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p2l&quot;&gt;2&lt;/td&gt;
-    &lt;td&gt;GND&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p3l&quot;&gt;3&lt;/td&gt;
-    &lt;td&gt;A+&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p4l&quot;&gt;4&lt;/td&gt;
-    &lt;td&gt;A-&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p5l&quot;&gt;5&lt;/td&gt;
-    &lt;td&gt;B+&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p6l&quot;&gt;6&lt;/td&gt;
-    &lt;td&gt;B-&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p7l&quot;&gt;7&lt;/td&gt;
-    &lt;td&gt;Z+&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p8l&quot;&gt;8&lt;/td&gt;
-    &lt;td&gt;Z-&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p9l&quot;&gt;9&lt;/td&gt;
-    &lt;td&gt;Shield&lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;
-    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;&lt;tr&gt;
-     &lt;td width=&quot;200&quot; height=&quot;200.0&quot; fixedsize=&quot;true&quot;&gt;&lt;img scale=&quot;true&quot; src=&quot;connector-clikmate.jpg&quot;/&gt;&lt;/td&gt;
-    &lt;/tr&gt;&lt;/table&gt;
-   &lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;to Trinamic ABN encoder&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	edge [color=&quot;#000000:#ff0000:#ff0000:#ff0000:#000000&quot;]
-	X1:p1r:e -- W1:w1:w
-	W1:w1:e -- X2:p1l:w
-	edge [color=&quot;#000000:#000000:#000000:#000000:#000000&quot;]
-	X1:p2r:e -- W1:w5:w
-	W1:w5:e -- X2:p5l:w
-	edge [color=&quot;#000000:#0066ff:#0066ff:#0066ff:#000000&quot;]
-	X1:p6r:e -- W1:w2:w
-	W1:w2:e -- X2:p2l:w
-	edge [color=&quot;#000000:#00ff00:#00ff00:#00ff00:#000000&quot;]
-	X1:p7r:e -- W1:w3:w
-	W1:w3:e -- X2:p3l:w
-	edge [color=&quot;#000000:#ffffff:#ffffff:#ffffff:#000000&quot;]
-	X1:p8r:e -- W1:w4:w
-	W1:w4:e -- X2:p4l:w
-	W1 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;W1&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;5x&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;26 AWG&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;
-   &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:1:VCC&lt;/td&gt;
-    &lt;td&gt;
-     1:RD
-    &lt;/td&gt;
-    &lt;td&gt;X2:1:VCC&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w1&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ff0000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ff0000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ff0000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:6:Hall U&lt;/td&gt;
-    &lt;td&gt;
-     2:BU
-    &lt;/td&gt;
-    &lt;td&gt;X2:2:A&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w2&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#0066ff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#0066ff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#0066ff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:7:Hall V&lt;/td&gt;
-    &lt;td&gt;
-     3:GN
-    &lt;/td&gt;
-    &lt;td&gt;X2:3:B&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w3&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:8:Hall W&lt;/td&gt;
-    &lt;td&gt;
-     4:WH
-    &lt;/td&gt;
-    &lt;td&gt;X2:4:C&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w4&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:2:GND&lt;/td&gt;
-    &lt;td&gt;
-     5:BK
-    &lt;/td&gt;
-    &lt;td&gt;X2:5:GND&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w5&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	edge [color=&quot;#000000:#ff0000:#ff0000:#ff0000:#000000&quot;]
-	X1:p1r:e -- W2:w1:w
-	W2:w1:e -- X3:p1l:w
-	edge [color=&quot;#000000:#000000:#000000:#000000:#000000&quot;]
-	X1:p2r:e -- W2:w2:w
-	W2:w2:e -- X3:p2l:w
-	edge [color=&quot;#000000:#ffffff:#ffffff:#ffffff:#000000&quot;]
-	X1:p3r:e -- W2:w3:w
-	W2:w3:e -- X3:p3l:w
-	edge [color=&quot;#000000:#00ff00:#00ff00:#00ff00:#000000&quot;]
-	X1:p4r:e -- W2:w5:w
-	W2:w5:e -- X3:p5l:w
-	edge [color=&quot;#000000:#ffff00:#ffff00:#ffff00:#000000&quot;]
-	X1:p5r:e -- W2:w7:w
-	W2:w7:e -- X3:p7l:w
-	edge [color=&quot;#000000:#ffffff:#000000:#ffffff:#000000&quot;]
-	W2:w4:e -- X3:p4l:w
-	edge [color=&quot;#000000:#00ff00:#000000:#00ff00:#000000&quot;]
-	W2:w6:e -- X3:p6l:w
-	edge [color=&quot;#000000:#ffff00:#000000:#ffff00:#000000&quot;]
-	W2:w8:e -- X3:p8l:w
-	edge [color=&quot;#000000:#0066ff:#0066ff:#0066ff:#000000&quot;]
-	W2:w9:e -- X3:p9l:w
-	W2 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;W2&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;9x&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;28 AWG&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;
-   &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:1:VCC&lt;/td&gt;
-    &lt;td&gt;
-     1:RD
-    &lt;/td&gt;
-    &lt;td&gt;X3:1:VCC&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w1&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ff0000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ff0000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ff0000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:2:GND&lt;/td&gt;
-    &lt;td&gt;
-     2:BK
-    &lt;/td&gt;
-    &lt;td&gt;X3:2:GND&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w2&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:3:Encoder A&lt;/td&gt;
-    &lt;td&gt;
-     3:WH
-    &lt;/td&gt;
-    &lt;td&gt;X3:3:A+&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w3&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;&lt;!-- 4_in --&gt;&lt;/td&gt;
-    &lt;td&gt;
-     4:WHBK
-    &lt;/td&gt;
-    &lt;td&gt;X3:4:A-&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w4&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffffff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:4:Encoder B&lt;/td&gt;
-    &lt;td&gt;
-     5:GN
-    &lt;/td&gt;
-    &lt;td&gt;X3:5:B+&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w5&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;&lt;!-- 6_in --&gt;&lt;/td&gt;
-    &lt;td&gt;
-     6:GNBK
-    &lt;/td&gt;
-    &lt;td&gt;X3:6:B-&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w6&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#00ff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:5:Encoder N&lt;/td&gt;
-    &lt;td&gt;
-     7:YE
-    &lt;/td&gt;
-    &lt;td&gt;X3:7:Z+&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w7&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;&lt;!-- 8_in --&gt;&lt;/td&gt;
-    &lt;td&gt;
-     8:YEBK
-    &lt;/td&gt;
-    &lt;td&gt;X3:8:Z-&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w8&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;&lt;!-- 9_in --&gt;&lt;/td&gt;
-    &lt;td&gt;
-     9:BU
-    &lt;/td&gt;
-    &lt;td&gt;X3:9:Shield&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w9&quot; height=&quot;10&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#0066ff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#0066ff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#0066ff&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-}" class="graphviz" /></div>
-</div>
-</div>
-</section>
-<section id="can-cable">
-<h4>CAN cable<a class="headerlink" href="#can-cable" title="Link to this heading"></a></h4>
-<p>The ADRDx161 board family communicates via CAN bus. The two headers P8, P9 allow for daisy-chaining CAN devices.</p>
-<div class="graphviz"><img src="../../../_images/graphviz-07886ab1c4daf1d448f6b3f14ff2253314ba6b03.png" alt="graph {
-// Graph generated by WireViz 0.4.1
-// https://github.com/wireviz/WireViz
-	graph [bgcolor=&quot;#FFFFFF&quot; fontname=arial nodesep=0.33 rankdir=LR ranksep=2]
-	node [fillcolor=&quot;#FFFFFF&quot; fontname=arial height=0 margin=0 shape=none style=filled width=0]
-	edge [fontname=arial style=bold]
-	X1 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;X1&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Molex: 430250400&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Micro-Fit 3.0&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;Receptacle&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;4-pin&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;
-   &lt;tr&gt;
-    &lt;td&gt;CANH&lt;/td&gt;
-    &lt;td sides=&quot;tbl&quot;&gt;YE&lt;/td&gt;
-    &lt;td sides=&quot;tbr&quot;&gt;
-     &lt;table border=&quot;0&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-      &lt;td bgcolor=&quot;#FFFF00&quot; width=&quot;8&quot; height=&quot;8&quot; fixedsize=&quot;true&quot;&gt;&lt;/td&gt;
-     &lt;/tr&gt;&lt;/table&gt;
-    &lt;/td&gt;
-    &lt;td port=&quot;p1r&quot;&gt;1&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;CANL&lt;/td&gt;
-    &lt;td sides=&quot;tbl&quot;&gt;OG&lt;/td&gt;
-    &lt;td sides=&quot;tbr&quot;&gt;
-     &lt;table border=&quot;0&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-      &lt;td bgcolor=&quot;#FF8000&quot; width=&quot;8&quot; height=&quot;8&quot; fixedsize=&quot;true&quot;&gt;&lt;/td&gt;
-     &lt;/tr&gt;&lt;/table&gt;
-    &lt;/td&gt;
-    &lt;td port=&quot;p2r&quot;&gt;2&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;GND&lt;/td&gt;
-    &lt;td sides=&quot;tbl&quot;&gt;BK&lt;/td&gt;
-    &lt;td sides=&quot;tbr&quot;&gt;
-     &lt;table border=&quot;0&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-      &lt;td bgcolor=&quot;#000000&quot; width=&quot;8&quot; height=&quot;8&quot; fixedsize=&quot;true&quot;&gt;&lt;/td&gt;
-     &lt;/tr&gt;&lt;/table&gt;
-    &lt;/td&gt;
-    &lt;td port=&quot;p3r&quot;&gt;3&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;2&quot;&gt;&lt;/td&gt;
-    &lt;td port=&quot;p4r&quot;&gt;4&lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;
-    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;&lt;tr&gt;
-     &lt;td width=&quot;150&quot; height=&quot;150.0&quot; fixedsize=&quot;true&quot;&gt;&lt;img scale=&quot;true&quot; src=&quot;connector-microfit-can.jpg&quot;/&gt;&lt;/td&gt;
-    &lt;/tr&gt;&lt;/table&gt;
-   &lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	X2 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;X2&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Molex: 430250400&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Micro-Fit 3.0&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;Receptacle&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;4-pin&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p1l&quot;&gt;1&lt;/td&gt;
-    &lt;td&gt;CANH&lt;/td&gt;
-    &lt;td sides=&quot;tbl&quot;&gt;YE&lt;/td&gt;
-    &lt;td sides=&quot;tbr&quot;&gt;
-     &lt;table border=&quot;0&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-      &lt;td bgcolor=&quot;#FFFF00&quot; width=&quot;8&quot; height=&quot;8&quot; fixedsize=&quot;true&quot;&gt;&lt;/td&gt;
-     &lt;/tr&gt;&lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p2l&quot;&gt;2&lt;/td&gt;
-    &lt;td&gt;CANL&lt;/td&gt;
-    &lt;td sides=&quot;tbl&quot;&gt;OG&lt;/td&gt;
-    &lt;td sides=&quot;tbr&quot;&gt;
-     &lt;table border=&quot;0&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-      &lt;td bgcolor=&quot;#FF8000&quot; width=&quot;8&quot; height=&quot;8&quot; fixedsize=&quot;true&quot;&gt;&lt;/td&gt;
-     &lt;/tr&gt;&lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p3l&quot;&gt;3&lt;/td&gt;
-    &lt;td&gt;GND&lt;/td&gt;
-    &lt;td sides=&quot;tbl&quot;&gt;BK&lt;/td&gt;
-    &lt;td sides=&quot;tbr&quot;&gt;
-     &lt;table border=&quot;0&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-      &lt;td bgcolor=&quot;#000000&quot; width=&quot;8&quot; height=&quot;8&quot; fixedsize=&quot;true&quot;&gt;&lt;/td&gt;
-     &lt;/tr&gt;&lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td port=&quot;p4l&quot;&gt;4&lt;/td&gt;
-    &lt;td colspan=&quot;2&quot;&gt;&lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;
-    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;&lt;tr&gt;
-     &lt;td width=&quot;150&quot; height=&quot;150.0&quot; fixedsize=&quot;true&quot;&gt;&lt;img scale=&quot;true&quot; src=&quot;connector-microfit-can.jpg&quot;/&gt;&lt;/td&gt;
-    &lt;/tr&gt;&lt;/table&gt;
-   &lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-	edge [color=&quot;#000000:#ffff00:#000000&quot;]
-	X1:p1r:e -- W1:w1:w
-	W1:w1:e -- X2:p1l:w
-	edge [color=&quot;#000000:#ff8000:#000000&quot;]
-	X1:p2r:e -- W1:w2:w
-	W1:w2:e -- X2:p2l:w
-	edge [color=&quot;#000000:#000000:#000000&quot;]
-	X1:p3r:e -- W1:w3:w
-	W1:w3:e -- X2:p3l:w
-	W1 [label=&lt;
-&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;W1&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;3x&lt;/td&gt;
-   &lt;td balign=&quot;left&quot;&gt;24 AWG&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellborder=&quot;0&quot;&gt;
-   &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:1:CANH&lt;/td&gt;
-    &lt;td&gt;
-     1:YE
-    &lt;/td&gt;
-    &lt;td&gt;X2:1:CANH&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w1&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ffff00&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:2:CANL&lt;/td&gt;
-    &lt;td&gt;
-     2:OG
-    &lt;/td&gt;
-    &lt;td&gt;X2:2:CANL&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w2&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#ff8000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td&gt;X1:3:GND&lt;/td&gt;
-    &lt;td&gt;
-     3:BK
-    &lt;/td&gt;
-    &lt;td&gt;X2:3:GND&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td colspan=&quot;3&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; port=&quot;w3&quot; height=&quot;6&quot;&gt;
-     &lt;table cellspacing=&quot;0&quot; cellborder=&quot;0&quot; border=&quot;0&quot;&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td colspan=&quot;3&quot; cellpadding=&quot;0&quot; height=&quot;2&quot; bgcolor=&quot;#000000&quot; border=&quot;0&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-     &lt;/table&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-  &lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;
-  &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; cellborder=&quot;1&quot;&gt;&lt;tr&gt;
-   &lt;td balign=&quot;left&quot;&gt;Twisted&lt;/td&gt;
-  &lt;/tr&gt;&lt;/table&gt;
- &lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&gt; fillcolor=&quot;#FFFFFF&quot; shape=box style=filled]
-}" class="graphviz" /></div>
-</section>
 </section>
 <section id="required-hardware">
 <h3>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
@@ -2219,6 +524,33 @@ controlled / configured via TMCL-IDE.</p>
 <h3>User Guides<a class="headerlink" href="#user-guides" title="Link to this heading"></a></h3>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="quick-start-guide.html">ADRD3161 Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick-start-guide.html#connect-a-motor">Connect a motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start-guide.html#control-using-tmcl-ide">Control using TMCL-IDE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quick-start-guide.html#motor-configuration-and-tuning">Motor configuration and tuning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quick-start-guide.html#motor-control">Motor control</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start-guide.html#control-via-can-bus">Control via CAN bus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-guide.html">ADRD3161 Hardware Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware-guide.html#switches">Switches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware-guide.html#encoder-cable">Encoder cable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware-guide.html#can-cable">CAN cable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software-guide.html">ADRD3161 Software Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software-guide.html#control-through-python-canopen">Control through Python <code class="docutils literal notranslate"><span class="pre">canopen</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="software-guide.html#control-through-ros2-ros2-canopen">Control through ROS2 <code class="docutils literal notranslate"><span class="pre">ros2_canopen</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">ADRD3161 Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#troubleshoot-board-power-supply-issues">Troubleshoot board power supply issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#troubleshoot-tmc9660-bootstrapping">Troubleshoot TMC9660 bootstrapping</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="canopen.html">ADRD3161 CANopen reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="production-guide.html">ADRD3161 Production Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="production-guide.html#bootstrapping-the-tmc9660">Bootstrapping the TMC9660</a></li>
 <li class="toctree-l2"><a class="reference internal" href="production-guide.html#flashing-the-max32662">Flashing the MAX32662</a></li>
@@ -2226,30 +558,15 @@ controlled / configured via TMCL-IDE.</p>
 <li class="toctree-l2"><a class="reference internal" href="production-guide.html#test-bench-setup">Test bench setup</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="user-guide.html">ADRD3161 User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="user-guide.html#connect-a-motor">Connect a motor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user-guide.html#connect-using-tmcl-ide">Connect using TMCL-IDE</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user-guide.html#motor-configuration-and-tuning">Motor configuration and tuning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user-guide.html#control-through-tmcl-ide">Control through TMCL-IDE</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="user-guide.html#connect-via-can-bus">Connect via CAN bus</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user-guide.html#control-through-python-canopen">Control through Python <code class="docutils literal notranslate"><span class="pre">canopen</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="user-guide.html#control-through-ros2-ros2-canopen">Control through ROS2 <code class="docutils literal notranslate"><span class="pre">ros2_canopen</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="internals.html">ADRD3161 Internals</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="internals.html#troubleshoot-board-power-supply-issues">Troubleshoot board power supply issues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="internals.html#troubleshoot-tmc9660-bootstrapping">Troubleshoot TMC9660 bootstrapping</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="canopen.html">ADRD3161 CANopen reference</a></li>
 </ul>
 </div>
 </section>
 <section id="help-and-support">
 <h3>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h3>
-<p>TODO</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Support channel</p>
+</div>
 </section>
 </section>
 </section>
@@ -2259,7 +576,7 @@ controlled / configured via TMCL-IDE.</p>
               <div class="related">
                 &nbsp;
     <a href="../admv96s-wgbe-ek1/software-guide/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Software User Guide</a>
-    <a href="production-guide.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADRD3161 Production Guide</a>
+    <a href="quick-start-guide.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADRD3161 Quick Start Guide</a>
               </div>
           
         </div>
