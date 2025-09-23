@@ -488,6 +488,11 @@ Content on this topic
 <p>This guide helps you bring up the AD-R1M robot quickly using VNC and SSH to access the onboard computers.</p>
 <section id="power-up">
 <h2>Power Up<a class="headerlink" href="#power-up" title="Link to this heading"></a></h2>
+<p>Connect the charged battery pack to the robot via the <strong>XT60 connector</strong> on the back of the robot, see the figure below for the general hardware architecture and connections.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/robot-hardware.png"><img alt="AD-R1M Milano robot hardware architecture and connections" src="../../../../_images/robot-hardware.png" style="width: 1000px;" />
+</a>
+</figure>
 <p>Use the side-panel buttons to power and initialize the robot electronics.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../../../_images/robot-buttons.png"><img alt="Robot side buttons: 1 (silver, power), 2 (red, joystick receiver reset), 3 (green, not used)" src="../../../../_images/robot-buttons.png" style="width: 500px;" />
@@ -498,26 +503,26 @@ Content on this topic
 <li><p><strong>Button 2 (red)</strong>: Press to reset the RC transceiver. You should hear an audio output indicating the tele‑joystick connected to the robot.</p></li>
 <li><p>Button 3 (green): Not used in this configuration.</p></li>
 </ul>
-<p>After power‑up, an onboard bring‑up script runs on the Portenta microcontroller so you can control the platform.</p>
+<p>After power‑up, an onboard <strong>bring‑up script</strong> runs on the <strong>Portenta</strong> microcontroller so you can control the platform, see the <a class="reference internal" href="#portenta-runtime">Portenta Runtime</a> section below for details.</p>
 </section>
 <section id="remote-control">
 <h2>Remote Control<a class="headerlink" href="#remote-control" title="Link to this heading"></a></h2>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/remote-control.png"><img alt="Remote control layout with KILLSWITCH (SB), lift (SC), power, and TELE buttons" src="../../../../_images/remote-control.png" style="width: 500px;" />
+<a class="reference internal image-reference" href="../../../../_images/remote-control.png"><img alt="Remote control layout with KILLSWITCH (SB), lift (SC), power, and TELE buttons" src="../../../../_images/remote-control.png" style="width: 800px;" />
 </a>
 </figure>
 <ul class="simple">
 <li><p><strong>Power on the RC</strong>: press the On/Off button. The screen will show the model configuration and the RC battery state.</p></li>
-<li><p><strong>View robot battery</strong>: press the <code class="docutils literal notranslate"><span class="pre">TELE</span></code> button (bottom-left). The display shows <code class="docutils literal notranslate"><span class="pre">RxBt</span></code> indicating the robot battery level.</p></li>
+<li><p><strong>View robot battery</strong>: press the <code class="docutils literal notranslate"><span class="pre">TELE</span></code> button (bottom-left). The display shows <code class="docutils literal notranslate"><span class="pre">RxBt</span></code> indicating the <strong>robot battery level</strong>.</p></li>
 </ul>
-<div class="note admonition">
-<p class="admonition-title">Important</p>
-<p>Ensure the robot battery (<code class="docutils literal notranslate"><span class="pre">RxBt</span></code>) does not drop below <strong>9 V</strong>.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Ensure the robot battery does not drop below <strong>9 V</strong> during operation.</p>
 </div>
 <ul class="simple">
-<li><p><strong>Enable motion</strong>: move the KILLSWITCH (<code class="docutils literal notranslate"><span class="pre">SB</span></code>) to the OFF position (as shown in the figure). The robot will slightly shake to indicate it is enabled.</p></li>
-<li><p><strong>Drive</strong>: use the indicated CONTROL GIMBAL to command the robot (forward/back/turn ~ up/down/left-right).</p></li>
-<li><p><strong>Lift</strong>: use switch <code class="docutils literal notranslate"><span class="pre">SC</span></code> to raise/hold/lower the lift as labeled in the figure.</p></li>
+<li><p><strong>Enable motion</strong>: move the <strong>KILLSWITCH (SB)</strong> to the <strong>OFF</strong> position (as shown in the figure). The robot will slightly shake to indicate it is enabled.</p></li>
+<li><p><strong>Drive</strong>: use the indicated <strong>CONTROL GIMBAL</strong> to command the robot (forward/back/turn ~ up/down/left-right).</p></li>
+<li><p><strong>Lift</strong>: use switch <strong>SC</strong> to raise/hold/lower the lift as labeled in the figure.</p></li>
 </ul>
 </section>
 <section id="network-setup">
@@ -528,8 +533,8 @@ Content on this topic
 </a>
 </figure>
 <ul class="simple">
-<li><p>SSID: <code class="docutils literal notranslate"><span class="pre">ADIADV_LIFT</span></code></p></li>
-<li><p>Password: <code class="docutils literal notranslate"><span class="pre">Sq7e4T9W</span></code></p></li>
+<li><p><strong>SSID</strong>: <code class="docutils literal notranslate"><span class="pre">ADIADV_LIFT</span></code></p></li>
+<li><p><strong>Password</strong>: <code class="docutils literal notranslate"><span class="pre">Sq7e4T9W</span></code></p></li>
 </ul>
 </section>
 <section id="device-access">
@@ -543,7 +548,7 @@ Content on this topic
 </pre></div>
 </div>
 </li>
-<li><p>Credentials: user <code class="docutils literal notranslate"><span class="pre">analog</span></code> / password <code class="docutils literal notranslate"><span class="pre">analog</span></code></p></li>
+<li><p><strong>Credentials</strong>: user <code class="docutils literal notranslate"><span class="pre">analog</span></code> / password <code class="docutils literal notranslate"><span class="pre">analog</span></code></p></li>
 </ul>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../../../_images/ssh.png"><img alt="SSH to Portenta board" src="../../../../_images/ssh.png" style="width: 400px;" />
@@ -558,7 +563,7 @@ Content on this topic
 </pre></div>
 </div>
 </li>
-<li><p>Credentials: user <code class="docutils literal notranslate"><span class="pre">analog</span></code> / password <code class="docutils literal notranslate"><span class="pre">analog</span></code></p></li>
+<li><p><strong>Credentials</strong>: user <code class="docutils literal notranslate"><span class="pre">analog</span></code> / password <code class="docutils literal notranslate"><span class="pre">analog</span></code></p></li>
 </ul>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../../../_images/ssh_rpi.png"><img alt="SSH to Raspberry Pi" src="../../../../_images/ssh_rpi.png" style="width: 400px;" />
@@ -569,8 +574,8 @@ Content on this topic
 <dt>VNC:</dt><dd><ul>
 <li><p>Install <a class="icon link reference external" href="https://www.realvnc.com/en/connect/download/viewer/" target="_blank">VNC Viewer</a></p></li>
 <li><p>Open Viewer → File → New Connection</p></li>
-<li><p>VNC Server: <code class="docutils literal notranslate"><span class="pre">ad-r1m-pi-milano.local</span></code></p></li>
-<li><p>Credentials: user <code class="docutils literal notranslate"><span class="pre">analog</span></code> / password <code class="docutils literal notranslate"><span class="pre">analog</span></code></p></li>
+<li><p><strong>VNC Server</strong>: <code class="docutils literal notranslate"><span class="pre">ad-r1m-pi-milano.local</span></code></p></li>
+<li><p><strong>Credentials</strong>: user <code class="docutils literal notranslate"><span class="pre">analog</span></code> / password <code class="docutils literal notranslate"><span class="pre">analog</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -580,6 +585,10 @@ Content on this topic
 <a class="reference internal image-reference" href="../../../../_images/vnc_connect.png"><img alt="VNC connection to Raspberry Pi" src="../../../../_images/vnc_connect.png" style="width: 400px;" />
 </a>
 </figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use VNC for GUI tasks like RViz, especially on the Raspberry Pi, SSH is sufficient for Portenta access and navigating the OS.</p>
+</div>
 </section>
 </section>
 <section id="raspberry-pi-runtime">
@@ -596,7 +605,7 @@ Content on this topic
 <a class="reference internal image-reference" href="../../../../_images/start_rviz.png"><img alt="RViz startup showing robot model and laser scan with odom fixed frame" src="../../../../_images/start_rviz.png" style="width: 900px;" />
 </a>
 </figure>
-<p>The RViz window starts with <code class="docutils literal notranslate"><span class="pre">odom</span></code> as the fixed frame, displaying the robot model and sensor data.</p>
+<p>The RViz window starts with <code class="docutils literal notranslate"><span class="pre">odom</span></code> as the <strong>Fixed Frame</strong>, displaying the robot model and sensor data.</p>
 </section>
 <section id="mapping">
 <h3>Mapping<a class="headerlink" href="#mapping" title="Link to this heading"></a></h3>
@@ -605,7 +614,10 @@ Content on this topic
 ~/do_mapping.sh
 </pre></div>
 </div>
-<p>Change the fixed frame from <code class="docutils literal notranslate"><span class="pre">odom</span></code> to <code class="docutils literal notranslate"><span class="pre">map</span></code> in RViz to visualize the mapping process as shown in the figure.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In RViz, change the <strong>Fixed Frame</strong> from <code class="docutils literal notranslate"><span class="pre">odom</span></code> to <code class="docutils literal notranslate"><span class="pre">map</span></code> to visualize the mapping process.</p>
+</div>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../../../_images/do_mapping.png"><img alt="RViz mapping view showing how to change fixed frame to map and mapping process" src="../../../../_images/do_mapping.png" style="width: 900px;" />
 </a>
@@ -629,6 +641,10 @@ Content on this topic
 </pre></div>
 </div>
 <p>This saves the map as <code class="docutils literal notranslate"><span class="pre">office-map.pgm</span></code> and <code class="docutils literal notranslate"><span class="pre">office-map.yaml</span></code> files in the <code class="docutils literal notranslate"><span class="pre">~/ros_data/maps</span></code> directory on the Raspberry Pi.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Save the map while the mapping node is still running and the map is being published. You can stop the mapping script after saving the map.</p>
+</div>
 </section>
 <section id="localization">
 <h3>Localization<a class="headerlink" href="#localization" title="Link to this heading"></a></h3>
@@ -637,10 +653,11 @@ Content on this topic
 ~/locate.sh
 </pre></div>
 </div>
-<p>This starts the AMCL (Adaptive Monte Carlo Localization) node to localize the robot on the saved map (<code class="docutils literal notranslate"><span class="pre">~/ros_data/maps/office-map.yaml</span></code>).</p>
+<p>This starts the <strong>AMCL</strong> (Adaptive Monte Carlo Localization) node to localize the robot on the saved map (<code class="docutils literal notranslate"><span class="pre">~/ros_data/maps/office-map.yaml</span></code>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>After running the localization script, press the <code class="docutils literal notranslate"><span class="pre">2D</span> <span class="pre">Pose</span> <span class="pre">Estimate</span></code> button in RViz and click on the map to set the initial pose of the robot for better localization, as shown in the video below.</p>
+<p>After starting localization, press <strong>2D Pose Estimate</strong> in RViz and click on the map to set an approximate <strong>initial pose</strong> for the robot, this helps AMCL converge faster.
+You will see the robot’s estimated position and orientation as a red arrow, and the covariance as a purple ellipse around it, see the localization demo.</p>
 </div>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../../../../_images/locate.gif"><img alt="../../../../_images/locate.gif" src="../../../../_images/locate.gif" style="width: 1000px;" />
@@ -649,6 +666,10 @@ Content on this topic
 <p><span class="caption-number">Figure 2 </span><span class="caption-text">Robot localization demonstration</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Stop <code class="docutils literal notranslate"><span class="pre">do_mapping.sh</span></code> before starting <code class="docutils literal notranslate"><span class="pre">locate.sh</span></code>.</p>
+</div>
 </section>
 <section id="navigation">
 <h3>Navigation<a class="headerlink" href="#navigation" title="Link to this heading"></a></h3>
@@ -662,13 +683,13 @@ Content on this topic
 <a class="reference internal image-reference" href="../../../../_images/navigate-sh.png"><img alt="Navigation terminal showing nodes starting" src="../../../../_images/navigate-sh.png" style="width: 600px;" />
 </a>
 </figure>
-<p>In RViz, you will see the global and local costmaps in light blue and purple.</p>
+<p>In RViz, you will see the <strong>global costmap</strong> and <strong>local costmap</strong> in light blue and purple.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../../../_images/nav_view.png"><img alt="RViz navigation view showing global and local costmaps" src="../../../../_images/nav_view.png" style="width: 900px;" />
 </a>
 </figure>
 <p><strong>Sending a Navigation Goal</strong></p>
-<p>To send a navigation goal, press the <code class="docutils literal notranslate"><span class="pre">2D</span> <span class="pre">Nav</span> <span class="pre">Goal</span></code> button in RViz and click on the map to set the desired destination for the robot, as shown in the video below.
+<p>To send a navigation goal, press <strong>2D Nav Goal</strong> in RViz and click on the map to set the desired destination for the robot, as shown in the video below.
 You will see a blue arrow indicating the goal and the robot will start moving towards it.</p>
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../../../../_images/navigate.gif"><img alt="../../../../_images/navigate.gif" src="../../../../_images/navigate.gif" style="width: 1000px;" />
@@ -684,19 +705,16 @@ You will see a blue arrow indicating the goal and the robot will start moving to
 <h2>Portenta Runtime<a class="headerlink" href="#portenta-runtime" title="Link to this heading"></a></h2>
 <p>On the Portenta board, a Docker container runs the core ROS 2 nodes:</p>
 <ul class="simple">
-<li><p><cite>diff_drive_controller</cite> (ros2_control)</p></li>
-<li><p>Remote Control (CRSF) node</p></li>
-<li><p>ADI ToF camera node</p></li>
-<li><p>ADI IMU node</p></li>
-<li><p>Lift controller node</p></li>
+<li><p><strong>diff_drive_controller</strong> (ros2_control)</p></li>
+<li><p><strong>Remote Control (CRSF)</strong> node</p></li>
+<li><p><strong>ADI ToF camera</strong> node</p></li>
+<li><p><strong>ADI IMU</strong> node</p></li>
+<li><p><strong>Lift controller</strong> node</p></li>
 </ul>
 <p>These are started by the bring-up script at <code class="docutils literal notranslate"><span class="pre">~/bringup.sh</span></code> on the Portenta after power-up.</p>
 <p>To re-run the container and nodes manually:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># SSH into Portenta first (user: analog / password: analog)</span>
 ssh<span class="w"> </span>analog@ad-r1m-portenta-milano.local
-
-<span class="c1"># Make sure the script is executable</span>
-chmod<span class="w"> </span>+x<span class="w"> </span>~/bringup.sh
 
 <span class="c1"># Launch the full stack inside Docker</span>
 ~/bringup.sh
@@ -732,6 +750,10 @@ docker<span class="w"> </span>cp<span class="w"> </span>ros_app:/ros2_ws/src/adr
 <p><strong>Copy mapper parameters:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>cp<span class="w"> </span>ros_app:/ros2_ws/src/adrd_demo_ros2/config/mapper_params_online_async.yaml<span class="w"> </span>~/ros_data/
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Files copied to <code class="docutils literal notranslate"><span class="pre">~/ros_data</span></code> persist on the Raspberry Pi host between container runs.</p>
 </div>
 </section>
 </section>
