@@ -7,4 +7,3 @@ AD-R1M Software Guide
     software-guide/ros2-getting-started
     software-guide/ros2-examples
     software-guide/ros2-architecture
-    software-guide/ros2-milano-robot-quickstart

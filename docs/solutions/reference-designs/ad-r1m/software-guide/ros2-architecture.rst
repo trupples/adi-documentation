@@ -7,7 +7,7 @@ AD-R1M ROS2 Architecture
 
 Overview
 --------
-The AD-R1M ROS2 architecture is an autonomous robot system based on the Arduino AGV platform, integrating CANOpen motor control, ADI Time-of-Flight (ToF) camera, IMU, and the ROS2 Navigation2 stack for 2D localization and navigation.
+The AD-R1M ROS2 architecture enables the autonomous robot system, integrating CANOpen motor control, ADI Time-of-Flight (ToF) camera, IMU, and the ROS2 Navigation2 stack for 2D localization and navigation.
 
 System Architecture
 -------------------
