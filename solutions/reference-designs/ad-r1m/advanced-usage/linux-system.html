@@ -4,15 +4,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Overview of how we use docker, docker compose, systemd services." name="description" />
+<meta content="The AD-R1M Raspberry Pi runs a custom linux image based on Kuiper 2, with a custom Kernel, a handful of system configuration files, systemd services." name="description" />
 
-    <title>AD-R1M Linux, systemd, docker &#8212; System Level Documentation  documentation</title>
+    <title>AD-R1M Linux system structure (kernel, configs, services, docker) &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=8d0b0339" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=4ae1632d" />
     <script src="../../../../_static/tabs.js?v=3ee01567"></script>
     <script async="async" src="../../../../_static/app.umd.js?v=2f9373fc"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -94,7 +102,23 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">AD-R1M Linux, systemd, docker</a></li>
+<li><a class="reference internal" href="#">AD-R1M Linux system structure (kernel, configs, services, docker)</a><ul>
+<li><a class="reference internal" href="#custom-kernel">Custom kernel</a><ul>
+<li><a class="reference internal" href="#adding-the-kernel-to-an-already-working-linux-system">Adding the kernel to an already working linux system</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#custom-sd-card-image">Custom SD card image</a></li>
+<li><a class="reference internal" href="#bootup-process-and-service-management">Bootup process and service management</a><ul>
+<li><a class="reference internal" href="#example-commands">Example commands</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#docker-runtime">Docker runtime</a><ul>
+<li><a class="reference internal" href="#id1">Example commands</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adding-new-functionalities">Adding new functionalities</a></li>
+</ul>
+</li>
 </ul>
 
         </nav>
@@ -333,7 +357,7 @@ Content on this topic
 </ul>
 </li>
 <li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9-2" id="toctree-collapse-13-9-2" checked=""/><div class="collapse"><a class="reference internal" href="../advanced-usage.html">AD-R1M Advanced Usage</a><label for="toctree-collapse-13-9-2"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">AD-R1M Linux, systemd, docker</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">AD-R1M Linux system structure (kernel, configs, services, docker)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ros2-writing-your-own-nodes.html">Writing your own ROS 2 nodes for AD-R1M</a></li>
 </ul>
 </li>
@@ -462,15 +486,178 @@ Content on this topic
 </div>
           <div class="body" role="main">
             
-  <section id="ad-r1m-linux-systemd-docker">
-<h1>AD-R1M Linux, systemd, docker<a class="headerlink" href="#ad-r1m-linux-systemd-docker" title="Link to this heading"></a></h1>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
+  <section id="ad-r1m-linux-system-structure-kernel-configs-services-docker">
+<h1>AD-R1M Linux system structure (kernel, configs, services, docker)<a class="headerlink" href="#ad-r1m-linux-system-structure-kernel-configs-services-docker" title="Link to this heading"></a></h1>
+<p>The AD-R1M Raspberry Pi runs a custom linux image based on Kuiper 2, with a custom Kernel, a handful
+of system configuration files, systemd services.</p>
+<section id="custom-kernel">
+<h2>Custom kernel<a class="headerlink" href="#custom-kernel" title="Link to this heading"></a></h2>
+<p>To enable all supported hardware configurations and software functionalities, the AD-R1M runs a
+kernel with a handful of extra modules enabled, among which:</p>
 <ul class="simple">
-<li><p>Overview of how we use docker, docker compose, systemd services.</p></li>
-<li><p>How to build your own SD card image (WIP adi-kuiper-gen branch)</p></li>
+<li><p>ADIS16xxx IMU drivers (default ADIS16475)</p></li>
+<li><p>SLCAN support</p></li>
+<li><p>Proper options for running Docker containers</p></li>
 </ul>
+<p>You can download a <a class="icon link reference external" href="https://github.com/analogdevicesinc/linux/releases/DOESNTEXISTYET" target="_blank">pre-built kernel tarball</a> or build it yourself. For the latter, start by
+cloning the linux branch with AD-R1M defconfigs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">analogdevicesinc</span><span class="o">/</span><span class="n">linux</span><span class="o">.</span><span class="n">git</span> <span class="o">--</span><span class="n">branch</span> <span class="n">ad</span><span class="o">-</span><span class="n">r1m</span><span class="o">/</span><span class="n">rpi</span><span class="o">-</span><span class="mf">6.13</span><span class="o">.</span><span class="n">y</span> <span class="o">--</span><span class="n">depth</span> <span class="mi">1</span>
+</pre></div>
 </div>
+<p>Build kernel, modules, dtbs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Skip these two if running this build on an arm64 machine:</span>
+<span class="n">export</span> <span class="n">ARCH</span><span class="o">=</span><span class="n">arm64</span>
+<span class="n">export</span> <span class="n">CROSS_COMPILE</span><span class="o">=</span><span class="n">aarch64</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span>
+
+<span class="n">export</span> <span class="n">KERNEL</span><span class="o">=</span><span class="n">kernel_2712</span>
+<span class="n">make</span> <span class="o">-</span><span class="n">j12</span> <span class="n">bcm2712_ad_r1m_defconfig</span> <span class="n">Image</span><span class="o">.</span><span class="n">gz</span> <span class="n">modules</span> <span class="n">dtbs</span>
+</pre></div>
+</div>
+<p>Export modules and boot files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo mkdir -p rootfs/boot/firmware/overlays
+sudo env PATH=&quot;$PATH&quot; make INSTALL_MOD_PATH=$PWD/rootfs modules_install
+sudo cp arch/arm64/boot/Image.gz rootfs/boot/$KERNEL.img
+sudo cp arch/arm64/boot/dts/broadcom/*.dtb rootfs/boot/firmware/
+sudo cp arch/arm64/boot/dts/overlays/*.dtb* rootfs/boot/firmware/overlays/
+sudo cp arch/arm64/boot/dts/overlays/README rootfs/boot/firmware/overlays/
+</pre></div>
+</div>
+<p>Create an archive for easy copying to the target image:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">rootfs</span>
+<span class="n">sudo</span> <span class="n">tar</span> <span class="o">-</span><span class="n">cpf</span> <span class="o">../</span><span class="n">ad</span><span class="o">-</span><span class="n">r1m</span><span class="o">-</span><span class="n">kernel</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="n">boot</span> <span class="n">lib</span>
+</pre></div>
+</div>
+<p>The created <code class="docutils literal notranslate"><span class="pre">ad-r1m-kernel.tar.gz</span></code> archive can be used in the next steps.</p>
+<section id="adding-the-kernel-to-an-already-working-linux-system">
+<h3>Adding the kernel to an already working linux system<a class="headerlink" href="#adding-the-kernel-to-an-already-working-linux-system" title="Link to this heading"></a></h3>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This step may break your setup if you use a bad kernel build. If you feel unsure, it’s never a
+bad idea to back up your current <code class="docutils literal notranslate"><span class="pre">/boot/kernel_2712.img</span></code> and <code class="docutils literal notranslate"><span class="pre">/lib/modules/...</span></code> to be able
+to bring them back in case of a failed update.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Only extract tarballs you trust! The following command will overwrite system files.</p>
+</div>
+<p>If you have an already working system, adding the newly built kernel is as simple as copying the
+tar archive and extracting it in the filesystem root (make sure <code class="docutils literal notranslate"><span class="pre">/boot/firmware</span></code> is mounted):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">tar</span> <span class="o">-</span><span class="n">xpf</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">ad</span><span class="o">-</span><span class="n">r1m</span><span class="o">-</span><span class="n">kernel</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="o">-</span><span class="n">C</span> <span class="o">/</span> <span class="o">--</span><span class="n">keep</span><span class="o">-</span><span class="n">directory</span><span class="o">-</span><span class="n">symlink</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="custom-sd-card-image">
+<h2>Custom SD card image<a class="headerlink" href="#custom-sd-card-image" title="Link to this heading"></a></h2>
+<p>The SD card image is built as a variant of ADI Kuiper linux. You may download a
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/adi-kuiper-gen/releases/DOESNTEXISTYET" target="_blank">pre-built SD card image</a> or build one yourself.</p>
+<p>Prerequisites for building your own image:</p>
+<ul class="simple">
+<li><p>A working <a class="icon link reference external" href="https://docs.docker.com/engine/install/" target="_blank">Docker install</a></p></li>
+<li><p>~10GB of storage (the faster, the better: write speed will be the main bottleneck)</p></li>
+</ul>
+<p>Start by cloning <a class="icon link reference external" href="https://github.com/analogdevicesinc/adi-kuiper-gen" target="_blank">adi-kuiper-gen</a>, branch <code class="docutils literal notranslate"><span class="pre">ad-r1m</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">analogdevicesinc</span><span class="o">/</span><span class="n">adi</span><span class="o">-</span><span class="n">kuiper</span><span class="o">-</span><span class="n">gen</span> <span class="o">--</span><span class="n">branch</span> <span class="n">ad</span><span class="o">-</span><span class="n">r1m</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">stages/07.extra-tweaks/10.ad-r1m</span></code> folder contains most relevant configs. You may swap
+out the kernel by changing <code class="docutils literal notranslate"><span class="pre">.../files/ad-r1m-kernel.tar.gz</span></code> with the one you prepared. To run the
+build:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">./</span><span class="n">build_docker</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>… and wait. The final SD card image will be stored in <code class="docutils literal notranslate"><span class="pre">kuiper-volume/</span></code>.</p>
+</section>
+<section id="bootup-process-and-service-management">
+<h2>Bootup process and service management<a class="headerlink" href="#bootup-process-and-service-management" title="Link to this heading"></a></h2>
+<p>The robot software starts up automatically through the <code class="docutils literal notranslate"><span class="pre">ros_app.service</span></code>, which runs
+<code class="docutils literal notranslate"><span class="pre">/home/analog/bringup.sh</span></code>, which does device initialization and then launches docker containers
+for the various ROS 2 nodes using Docker Compose.</p>
+<pre  class="mermaid">
+        flowchart LR
+    def(Default systemd target) --&gt; multi_user.target -- Wants --&gt; ros_app.service -- ExecStart--&gt; br[~/bringup.sh]
+    def --&gt; graphical.target --&gt; multi_user.target
+    br --&gt; c1(Configure SLCAN)
+    br --&gt; c2(Configure IMU)
+    br --&gt; c3(Enable RC receiver)
+    br --&gt; c4(Start Docker containers)
+    </pre><section id="example-commands">
+<h3>Example commands<a class="headerlink" href="#example-commands" title="Link to this heading"></a></h3>
+<p>Show app status and latest logs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">status</span> <span class="n">ros_app</span>
+</pre></div>
+</div>
+<p>Show current run’s logs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span><span class="n">u</span> <span class="n">ros_app</span>
+</pre></div>
+</div>
+<p>Show live logs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">journalctl</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">u</span> <span class="n">ros_app</span>
+</pre></div>
+</div>
+<p>Stop/start/restart ROS 2 stack:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">stop</span> <span class="n">ros_app</span>
+<span class="n">systemctl</span> <span class="n">start</span> <span class="n">ros_app</span>
+<span class="n">systemctl</span> <span class="n">restart</span> <span class="n">ros_app</span>
+</pre></div>
+</div>
+<p>You may also run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">~/bringup.sh</span></code> directly, but make sure the service isn’t already running,
+or else you might trigger odd behaviour.</p>
+<p>Disable/enable auto startup after boot:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">disable</span> <span class="n">ros_app</span>
+<span class="n">systemctl</span> <span class="n">enable</span> <span class="n">ros_app</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="docker-runtime">
+<h2>Docker runtime<a class="headerlink" href="#docker-runtime" title="Link to this heading"></a></h2>
+<p>ROS 2 nodes are run inside Docker containers brought up using a Docker Compose file. This allows
+for easier lifecycle management, as well as reconfiguring and adding new nodes without needing to
+rebuild or modify the docker container (though that’s absolutely possible).</p>
+<p>All persisted data should be stored in <code class="docutils literal notranslate"><span class="pre">/home/analog/ros_data</span></code>, which is bound to <code class="docutils literal notranslate"><span class="pre">/ros_data</span></code>
+inside each container. Use this for: launch configurations you want to tweak, storing maps, etc.</p>
+<p>The base system consists of the following containers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">canopen</span></code> - CANopen communication with motor drives and BMS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">imu</span></code> - Data acquisition from IMU</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tof</span></code> - Data acquisition from ToF camera, processing into 1D LaserScan</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ekf</span></code> - Sensor fusion (EKF between IMU and wheel encoder data)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">teleop</span></code> - CRSF remote control, telemetry, and killswitch</p></li>
+</ul>
+<p>Additionally, the following profiles can be used to start optional nodes depending on the current
+operation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mapping</span></code> profile - Create a map of the environment: starts slam_toolbox in online mapping mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">navigation</span></code> profile - Navigate around the environment: starts AMCL localization and nav2 stack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rviz</span></code> profile - Start rviz GUI</p></li>
+</ul>
+<section id="id1">
+<h3>Example commands<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Launch the entire base system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">up</span>
+</pre></div>
+</div>
+<p>Restart a specific container (e.g. <code class="docutils literal notranslate"><span class="pre">imu</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">up</span> <span class="n">imu</span>
+</pre></div>
+</div>
+<p>Launch / stop a specific profile (e.g. <code class="docutils literal notranslate"><span class="pre">mapping</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">up</span> <span class="o">--</span><span class="n">profile</span> <span class="n">mapping</span>
+<span class="n">docker</span> <span class="n">compose</span> <span class="n">down</span> <span class="o">--</span><span class="n">profile</span> <span class="n">mapping</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="adding-new-functionalities">
+<h2>Adding new functionalities<a class="headerlink" href="#adding-new-functionalities" title="Link to this heading"></a></h2>
+<p>You may edit the compose file and/or the bringup script to add your own containers and
+functionalities.</p>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Lifter node example</p>
+</div>
+</section>
 </section>
 
 
