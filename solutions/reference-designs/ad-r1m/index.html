@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="TODO" name="description" />
+<meta content="The Open Mobile Robot Platform Reference Design is a modular, extensible, and fully open-source framework developed to accelerate the design, prototyping, and deployment of autonomous mobile robots." name="description" />
 
     <title>AD-R1M &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -97,7 +97,18 @@
 <li><a class="reference internal" href="#">AD-R1M</a><ul>
 <li><a class="reference internal" href="#open-mobile-robot-platform-reference-design">Open Mobile Robot Platform Reference Design</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#specifications">Specifications</a></li>
+<li><a class="reference internal" href="#specifications">Specifications</a><ul>
+<li><a class="reference internal" href="#software-middleware">Software &amp; Middleware</a></li>
+<li><a class="reference internal" href="#hardware-components">Hardware Components</a><ul>
+<li><a class="reference internal" href="#processing-units">Processing Units</a></li>
+<li><a class="reference internal" href="#motor-motion-control">Motor &amp; Motion Control</a></li>
+<li><a class="reference internal" href="#power-management">Power Management</a></li>
+<li><a class="reference internal" href="#sensor-suite">Sensor Suite</a></li>
+<li><a class="reference internal" href="#connectivity">Connectivity</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#user-guides">User Guides</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
 </ul>
@@ -339,7 +350,6 @@ Content on this topic
 <li class="toctree-l4"><a class="reference internal" href="software-guide/ros2-getting-started.html">AD-R1M ROS 2 Getting Started</a></li>
 <li class="toctree-l4"><a class="reference internal" href="software-guide/ros2-examples.html">AD-R1M ROS2 examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="software-guide/ros2-architecture.html">AD-R1M ROS2 Architecture</a></li>
-<li class="toctree-l4"><a class="reference internal" href="software-guide/ros2-milano-robot-quickstart.html">AD-R1M Milano Robot Quickstart</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9-2" id="toctree-collapse-13-9-2"/><div class="collapse"><a class="reference internal" href="advanced-usage.html">AD-R1M Advanced Usage</a><label for="toctree-collapse-13-9-2"><div class="icon"></div></label></div><ul>
@@ -478,11 +488,82 @@ Content on this topic
 <h2>Open Mobile Robot Platform Reference Design<a class="headerlink" href="#open-mobile-robot-platform-reference-design" title="Link to this heading"></a></h2>
 <section id="introduction">
 <h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h3>
-<p>TODO</p>
+<p>The Open Mobile Robot Platform Reference Design is a modular, extensible, and fully open-source framework developed to accelerate the design, prototyping, and deployment of autonomous mobile robots.</p>
+<p>This reference design integrates key hardware and software components—including motor control, sensor fusion, localization, navigation, and communication—into a cohesive platform that supports rapid development and experimentation.</p>
+<p>Whether you’re building a research prototype, an educational robot, or a commercial-grade autonomous system, this platform provides the flexibility and scalability needed to meet diverse application requirements.</p>
+<p>It is designed to be compatible with popular development tools, middleware (such as ROS2), and embedded systems, making it ideal for both academic and industrial use.</p>
 </section>
 <section id="specifications">
 <h3>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h3>
-<p>TODO</p>
+<p>The scope of the project is to create a mobile robotic platform which should be used as a robotic platform for internal ADI development/advancement on mobile robotic infrastructure and broad market product. It will contains to following:</p>
+<section id="software-middleware">
+<h4>Software &amp; Middleware<a class="headerlink" href="#software-middleware" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>ROS 2 Enabled</strong> for:</p>
+<ul>
+<li><p>Navigation</p></li>
+<li><p>Motion Control</p></li>
+<li><p>Sensor Integration</p></li>
+<li><p>Battery management</p></li>
+</ul>
+</li>
+<li><p><strong>Modular ROS 2 Nodes</strong> for:</p>
+<ul>
+<li><p>Localization</p></li>
+<li><p>Navigation</p></li>
+<li><p>Motion</p></li>
+<li><p>BMS</p></li>
+</ul>
+</li>
+<li><p><strong>Compatible with ROS 2 Humble Distribution</strong></p></li>
+<li><p><strong>Zephyr Support</strong> for embedded firmware on motor, navigation and BMS boards</p></li>
+<li><p><strong>CAN</strong> communication between platforms</p></li>
+</ul>
+</section>
+<section id="hardware-components">
+<h4>Hardware Components<a class="headerlink" href="#hardware-components" title="Link to this heading"></a></h4>
+<section id="processing-units">
+<h5>Processing Units<a class="headerlink" href="#processing-units" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p>Raspberry Pi 5 (with ADI Kuiper2)</p></li>
+<li><p>NVIDIA Jetson AGX Orin</p></li>
+</ul>
+</section>
+<section id="motor-motion-control">
+<h5>Motor &amp; Motion Control<a class="headerlink" href="#motor-motion-control" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p>Motor Drivers with Encoder Feedback</p></li>
+<li><p>Motor Control Board with Zephyr Firmware</p></li>
+</ul>
+</section>
+<section id="power-management">
+<h5>Power Management<a class="headerlink" href="#power-management" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p>Battery Management System board variants (BMS):</p>
+<ul>
+<li><p><strong>3S BMS</strong> with Zephyr Firmware or</p></li>
+<li><p><strong>12S BMS</strong> with Zephyr Firmware</p></li>
+</ul>
+</li>
+<li><p>Power Management for Mobile Operation</p></li>
+</ul>
+</section>
+<section id="sensor-suite">
+<h5>Sensor Suite<a class="headerlink" href="#sensor-suite" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p>ADI IMU for Localization</p></li>
+<li><p>ADI Time-of-Flight (ToF) Sensors for Perception</p></li>
+<li><p>Intel RealSense Camera?</p></li>
+</ul>
+</section>
+<section id="connectivity">
+<h5>Connectivity<a class="headerlink" href="#connectivity" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p>USB-to-CAN Adapter</p></li>
+<li><p>Ethernet and Wi-Fi Interfaces</p></li>
+</ul>
+</section>
+</section>
 </section>
 <section id="user-guides">
 <h3>User Guides<a class="headerlink" href="#user-guides" title="Link to this heading"></a></h3>
@@ -505,7 +586,6 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="software-guide/ros2-getting-started.html">AD-R1M ROS 2 Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="software-guide/ros2-examples.html">AD-R1M ROS2 examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="software-guide/ros2-architecture.html">AD-R1M ROS2 Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software-guide/ros2-milano-robot-quickstart.html">AD-R1M Milano Robot Quickstart</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="advanced-usage.html">AD-R1M Advanced Usage</a><ul>
@@ -519,7 +599,7 @@ Content on this topic
 </section>
 <section id="help-and-support">
 <h3>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h3>
-<p>TODO</p>
+<p>To receive support regarding your issue, please initiate a discussion on the <a class="icon link reference external" href="https://ez.analog.com/" target="_blank">Engineer Zone</a> community forum.</p>
 </section>
 </section>
 </section>
