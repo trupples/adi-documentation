@@ -64,7 +64,7 @@ Power Management
 Sensor Suite
 ^^^^^^^^^^^^
 - ADI IMU for Localization
-- ADI Time-of-Flight (ToF) Sensors for Perception
+- ADI Time-of-Flight (ToF) Camera for Perception
 - Intel RealSense Camera? 
 
 Connectivity
