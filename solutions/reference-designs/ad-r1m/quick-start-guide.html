@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Power on robot" name="description" />
+<meta content="Connect the charged battery pack to the robot via the XT60 connector on the back of the robot, see the figure below for the general hardware architecture and connections." name="description" />
 
     <title>AD-R1M Quick Start Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -94,7 +94,27 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">AD-R1M Quick Start Guide</a></li>
+<li><a class="reference internal" href="#">AD-R1M Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#power-on-robot">Power on robot</a></li>
+<li><a class="reference internal" href="#control-robot-using-remote-control">Control robot using remote control</a><ul>
+<li><a class="reference internal" href="#control-robot-using-keyboard-teleop">Control robot using keyboard teleop</a></li>
+<li><a class="reference internal" href="#network-setup">Network Setup</a></li>
+<li><a class="reference internal" href="#device-access">Device Access</a><ul>
+<li><a class="reference internal" href="#raspberry-pi-edge-computer">Raspberry Pi (edge computer)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#raspberry-pi-runtime">Raspberry Pi Runtime</a><ul>
+<li><a class="reference internal" href="#start-docker-container-and-rviz-visualization">Start docker container and RViz visualization</a></li>
+<li><a class="reference internal" href="#mapping">Mapping</a></li>
+<li><a class="reference internal" href="#localization">Localization</a></li>
+<li><a class="reference internal" href="#navigation">Navigation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#working-with-docker-containers">Working with Docker Containers</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </nav>
@@ -464,18 +484,246 @@ Content on this topic
             
   <section id="ad-r1m-quick-start-guide">
 <h1>AD-R1M Quick Start Guide<a class="headerlink" href="#ad-r1m-quick-start-guide" title="Link to this heading"></a></h1>
+<section id="power-on-robot">
+<h2>Power on robot<a class="headerlink" href="#power-on-robot" title="Link to this heading"></a></h2>
+<p>Connect the charged battery pack to the robot via the <strong>XT60 connector</strong> on the back of the robot, see the figure below for the general hardware architecture and connections.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/robot-hardware.png"><img alt="AD-R1M Milano robot hardware architecture and connections" src="../../../_images/robot-hardware.png" style="width: 1000px;" />
+</a>
+</figure>
+<p>Use the side-panel buttons to power and initialize the robot electronics.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/robot-buttons.png"><img alt="Robot side buttons: 1 (silver, power), 2 (red, joystick receiver reset), 3 (green, not used)" src="../../../_images/robot-buttons.png" style="width: 500px;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p><strong>Button 1 (silver)</strong>: Press to <strong>power up</strong> the robot. It will latch/stay pressed.</p></li>
+<li><p><strong>Button 2 (red)</strong>: Press to reset the RC transceiver. You should hear an audio output indicating the tele‑joystick connected to the robot.</p></li>
+<li><p>Button 3 (green): Not used in this configuration.</p></li>
+</ul>
+</section>
+<section id="control-robot-using-remote-control">
+<h2>Control robot using remote control<a class="headerlink" href="#control-robot-using-remote-control" title="Link to this heading"></a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/remote-control.png"><img alt="Remote control layout with KILLSWITCH (SB), lift (SC), power, and TELE buttons" src="../../../_images/remote-control.png" style="width: 800px;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p><strong>Power on the RC</strong>: press the On/Off button. The screen will show the model configuration and the RC battery state.</p></li>
+<li><p><strong>View robot battery</strong>: press the <code class="docutils literal notranslate"><span class="pre">TELE</span></code> button (bottom-left). The display shows <code class="docutils literal notranslate"><span class="pre">RxBt</span></code> indicating the <strong>robot battery level</strong>.</p></li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Ensure the robot battery does not drop below <strong>9 V</strong> during operation.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Enable motion</strong>: move the <strong>KILLSWITCH (SB)</strong> to the <strong>OFF</strong> position (as shown in the figure). The robot will slightly shake to indicate it is enabled.</p></li>
+<li><p><strong>Drive</strong>: use the indicated <strong>CONTROL GIMBAL</strong> to command the robot (forward/back/turn ~ up/down/left-right).</p></li>
+<li><p><strong>Lift</strong>: use switch <strong>SC</strong> to raise/hold/lower the lift as labeled in the figure.</p></li>
+</ul>
+<section id="control-robot-using-keyboard-teleop">
+<h3>Control robot using keyboard teleop<a class="headerlink" href="#control-robot-using-keyboard-teleop" title="Link to this heading"></a></h3>
+<p>MOTODO</p>
+</section>
+<section id="network-setup">
+<h3>Network Setup<a class="headerlink" href="#network-setup" title="Link to this heading"></a></h3>
+<p>Connect your workstation to the robot’s Wi‑Fi network before starting.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/wifi.png"><img alt="Connect to ADIADV_LIFT Wi‑Fi network" src="../../../_images/wifi.png" style="width: 400px;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p><strong>SSID</strong>: <code class="docutils literal notranslate"><span class="pre">ADIADV_LIFT</span></code></p></li>
+<li><p><strong>Password</strong>: <code class="docutils literal notranslate"><span class="pre">Sq7e4T9W</span></code></p></li>
+</ul>
+</section>
+<section id="device-access">
+<h3>Device Access<a class="headerlink" href="#device-access" title="Link to this heading"></a></h3>
+<p>After connecting to the Wi‑Fi, you can access onboard computers as follows.</p>
+<section id="raspberry-pi-edge-computer">
+<h4>Raspberry Pi (edge computer)<a class="headerlink" href="#raspberry-pi-edge-computer" title="Link to this heading"></a></h4>
+<ul>
+<li><p>SSH:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>analog@ad-r1m-pi-milano.local
+</pre></div>
+</div>
+</li>
+<li><p><strong>Credentials</strong>: user <code class="docutils literal notranslate"><span class="pre">analog</span></code> / password <code class="docutils literal notranslate"><span class="pre">analog</span></code></p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/ssh_rpi.png"><img alt="SSH to Raspberry Pi" src="../../../_images/ssh_rpi.png" style="width: 400px;" />
+</a>
+</figure>
+<ul class="simple">
+<li><dl class="simple">
+<dt>VNC:</dt><dd><ul>
+<li><p>Install <a class="icon link reference external" href="https://www.realvnc.com/en/connect/download/viewer/" target="_blank">VNC Viewer</a></p></li>
+<li><p>Open Viewer → File → New Connection</p></li>
+<li><p><strong>VNC Server</strong>: <code class="docutils literal notranslate"><span class="pre">ad-r1m-pi-milano.local</span></code></p></li>
+<li><p><strong>Credentials</strong>: user <code class="docutils literal notranslate"><span class="pre">analog</span></code> / password <code class="docutils literal notranslate"><span class="pre">analog</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/vnc_connect.png"><img alt="VNC connection to Raspberry Pi" src="../../../_images/vnc_connect.png" style="width: 400px;" />
+</a>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use VNC for GUI tasks like RViz, especially on the Raspberry Pi, SSH is sufficient for Portenta access and navigating the OS.</p>
+</div>
+</section>
+</section>
+<section id="raspberry-pi-runtime">
+<h3>Raspberry Pi Runtime<a class="headerlink" href="#raspberry-pi-runtime" title="Link to this heading"></a></h3>
+<section id="start-docker-container-and-rviz-visualization">
+<h4>Start docker container and RViz visualization<a class="headerlink" href="#start-docker-container-and-rviz-visualization" title="Link to this heading"></a></h4>
+<p>After connecting via VNC, run the start_rviz script to start the ROS 2 Docker container and visualize the robot.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the VNC session on Raspberry Pi</span>
+~/start_rviz
+</pre></div>
+</div>
+<p>This launches RViz with the robot model, odometry, and camera laser scan visualization.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/start_rviz.png"><img alt="RViz startup showing robot model and laser scan with odom fixed frame" src="../../../_images/start_rviz.png" style="width: 900px;" />
+</a>
+</figure>
+<p>The RViz window starts with <code class="docutils literal notranslate"><span class="pre">odom</span></code> as the <strong>Fixed Frame</strong>, displaying the robot model and sensor data.</p>
+</section>
+<section id="mapping">
+<h4>Mapping<a class="headerlink" href="#mapping" title="Link to this heading"></a></h4>
+<p>To map the environment, run the mapping script and change the fixed frame to visualize the mapping process:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the VNC session on Raspberry Pi</span>
+~/do_mapping.sh
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In RViz, change the <strong>Fixed Frame</strong> from <code class="docutils literal notranslate"><span class="pre">odom</span></code> to <code class="docutils literal notranslate"><span class="pre">map</span></code> to visualize the mapping process.</p>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/do_mapping.png"><img alt="RViz mapping view showing how to change fixed frame to map and mapping process" src="../../../_images/do_mapping.png" style="width: 900px;" />
+</a>
+</figure>
+<p>The figure shows how to change the fixed frame in RViz and observe the real-time mapping process.</p>
+<p>Move the robot around the environment using the remote control to build the map, as shown in the animated demonstration below.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../../_images/do_mapping.gif"><img alt="../../../_images/do_mapping.gif" src="../../../_images/do_mapping.gif" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Robot mapping demonstration using remote control</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The video shows the complete mapping process where the robot navigates the environment while building a real-time map using SLAM (Simultaneous Localization and Mapping).
+Save the map
+~~~~~~~~~~~~~~~~
+After completing the mapping, open a new terminal and save the map to a file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the VNC session on Raspberry Pi</span>
+~/save_map.sh
+</pre></div>
+</div>
+<p>This saves the map as <code class="docutils literal notranslate"><span class="pre">office-map.pgm</span></code> and <code class="docutils literal notranslate"><span class="pre">office-map.yaml</span></code> files in the <code class="docutils literal notranslate"><span class="pre">~/ros_data/maps</span></code> directory on the Raspberry Pi.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Save the map while the mapping node is still running and the map is being published. You can stop the mapping script after saving the map.</p>
+</div>
+</section>
+<section id="localization">
+<h4>Localization<a class="headerlink" href="#localization" title="Link to this heading"></a></h4>
+<p>To localize the robot on a previously saved map, run the localization script (make sure you stopped the <code class="docutils literal notranslate"><span class="pre">do_mapping.sh</span></code> script first):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the VNC session on Raspberry Pi</span>
+~/locate.sh
+</pre></div>
+</div>
+<p>This starts the <strong>AMCL</strong> (Adaptive Monte Carlo Localization) node to localize the robot on the saved map (<code class="docutils literal notranslate"><span class="pre">~/ros_data/maps/office-map.yaml</span></code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After starting localization, press <strong>2D Pose Estimate</strong> in RViz and click on the map to set an approximate <strong>initial pose</strong> for the robot, this helps AMCL converge faster.
+You will see the robot’s estimated position and orientation as a red arrow, and the covariance as a purple ellipse around it, see the localization demo.</p>
+</div>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../../_images/locate.gif"><img alt="../../../_images/locate.gif" src="../../../_images/locate.gif" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Robot localization demonstration</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Stop <code class="docutils literal notranslate"><span class="pre">do_mapping.sh</span></code> before starting <code class="docutils literal notranslate"><span class="pre">locate.sh</span></code>.</p>
+</div>
+</section>
+<section id="navigation">
+<h4>Navigation<a class="headerlink" href="#navigation" title="Link to this heading"></a></h4>
+<p>Keep the localization script running and open a new terminal to start the navigation stack:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the VNC session on Raspberry Pi</span>
+~/navigate.sh
+</pre></div>
+</div>
+<p>After running the navigation script, you will see the navigation nodes starting in the terminal, as shown in the figure below.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/navigate-sh.png"><img alt="Navigation terminal showing nodes starting" src="../../../_images/navigate-sh.png" style="width: 600px;" />
+</a>
+</figure>
+<p>In RViz, you will see the <strong>global costmap</strong> and <strong>local costmap</strong> in light blue and purple.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/nav_view.png"><img alt="RViz navigation view showing global and local costmaps" src="../../../_images/nav_view.png" style="width: 900px;" />
+</a>
+</figure>
+<p><strong>Sending a Navigation Goal</strong></p>
+<p>To send a navigation goal, press <strong>2D Nav Goal</strong> in RViz and click on the map to set the desired destination for the robot, as shown in the video below.
+You will see a blue arrow indicating the goal and the robot will start moving towards it.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../../_images/navigate.gif"><img alt="../../../_images/navigate.gif" src="../../../_images/navigate.gif" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Robot navigation demonstration using RViz</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The video shows the robot navigating to the set goal using the navigation stack.</p>
+</section>
+</section>
+<section id="working-with-docker-containers">
+<h3>Working with Docker Containers<a class="headerlink" href="#working-with-docker-containers" title="Link to this heading"></a></h3>
+<p><strong>Start Docker container:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>start<span class="w"> </span>ros_app
+</pre></div>
+</div>
+<p><strong>Open Docker container:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>ros_app<span class="w"> </span>bash
+</pre></div>
+</div>
+<p>The localization and navigation scripts run inside the <code class="docutils literal notranslate"><span class="pre">ros_app</span></code> Docker container and use configs and maps stored in the <code class="docutils literal notranslate"><span class="pre">~/ros_data</span></code> directory on the Raspberry Pi host.
+You can copy configuration and map files from the Docker containers on the Raspberry Pi host system using the following commands:</p>
+<p><strong>Copy map files:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>cp<span class="w"> </span>ros_app:/ros2_ws/src/adrd_demo_ros2/maps/map.yaml<span class="w"> </span>~/ros_data/maps/
+docker<span class="w"> </span>cp<span class="w"> </span>ros_app:/ros2_ws/src/adrd_demo_ros2/maps/map.pgm<span class="w"> </span>~/ros_data/maps/
+</pre></div>
+</div>
+<p><strong>Copy navigation parameters:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>cp<span class="w"> </span>ros_app:/ros2_ws/src/adrd_demo_ros2/config/nav2_params_minimal.yaml<span class="w"> </span>~/ros_data/
+</pre></div>
+</div>
+<p><strong>Copy mapper parameters:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>cp<span class="w"> </span>ros_app:/ros2_ws/src/adrd_demo_ros2/config/mapper_params_online_async.yaml<span class="w"> </span>~/ros_data/
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Files copied to <code class="docutils literal notranslate"><span class="pre">~/ros_data</span></code> persist on the Raspberry Pi host between container runs.</p>
+</div>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
 <ul class="simple">
-<li><p>Power on robot</p></li>
-<li><p>Control robot using remote control</p></li>
-<li><p>Control robot using keyboard teleop</p></li>
-<li><p>Visualise robot - rviz odometry, image, etc</p></li>
 <li><p>Brief overview of ROS 2 topics</p></li>
-<li><p>Create and save a map</p></li>
+<li><p>Create a map</p></li>
 <li><p>Point-and-click navigation in rviz</p></li>
 </ul>
 </div>
+</section>
+</section>
 </section>
 
 
