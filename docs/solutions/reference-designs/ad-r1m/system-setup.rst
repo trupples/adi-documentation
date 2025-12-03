@@ -9,8 +9,11 @@ Base AD-R1M
     * Flash SD card image
     * Connect to WiFi and update AD-R1M software
 
-AD-R1M + Nvidia AGX Orin
-------------------------
+**AD-R1M + Nvidia AGX Orin**
+-----------------------------
+.. include:: ./agx_orin_and_cuvslam_setup/agx-orin-setup.rst
+
+.. include:: ./agx_orin_and_cuvslam_setup/isaac-ros-setup.rst
 
 .. todo::
 
