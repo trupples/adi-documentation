@@ -15,6 +15,8 @@ Base AD-R1M
 
 .. include:: ./agx_orin_and_cuvslam_setup/isaac-ros-setup.rst
 
+.. include:: ./agx_orin_and_cuvslam_setup/cuvslam-and-ad-r1m-setup.rst
+
 .. todo::
 
     Prerequisites: ubuntu laptop, nvidia sdk manager

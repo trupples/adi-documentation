@@ -41,7 +41,7 @@ Table below contains the requirements for the notebook or desktop computer.
     * Launch Nvidia SDK Manager
     * based on what devices are detected in forced recovery mode, the following list is displayed:
 
-    .. figure:: ./agx_orin_and_cuvslam_setup/cuvslam_orin_setup/NVDA_SDKM_step_1_0.png
+    .. figure:: /solutions/reference-designs/ad-r1m/agx_orin_and_cuvslam_setup/cuvslam_orin_setup/NVDA_SDKM_step_1_0.png
         :alt: Jetson AGX Orin Step 1.0
         :align: center
         :width: 600px
@@ -51,21 +51,21 @@ Table below contains the requirements for the notebook or desktop computer.
         * Product Category: **Jetson**
         * SDK Version: **JetPack 6.2.1**
     
-    .. figure:: ./agx_orin_and_cuvslam_setup/cuvslam_orin_setup/NVDA_SDKM_step_1_1.png
+    .. figure:: /solutions/reference-designs/ad-r1m/agx_orin_and_cuvslam_setup/cuvslam_orin_setup/NVDA_SDKM_step_1_1.png
         :alt: Jetson AGX Orin Step 1.1
         :align: center
         :width: 600px
     
     * on STEP 02, select all checkboxes in all tree controls **except** Jetson Platform Services
 
-    .. figure:: ./agx_orin_and_cuvslam_setup/cuvslam_orin_setup/NVDA_SDKM_step_2.png
+    .. figure:: /solutions/reference-designs/ad-r1m/agx_orin_and_cuvslam_setup/cuvslam_orin_setup/NVDA_SDKM_step_2.png
         :alt: Jetson AGX Orin Step 2.0
         :align: center
         :width: 600px
 
     * continue to STEP 03 and wait until the target flash options are displayed
     
-    .. figure:: ./agx_orin_and_cuvslam_setup/cuvslam_orin_setup/NVDA_SDKM_step_3_0.png
+    .. figure:: /solutions/reference-designs/ad-r1m/agx_orin_and_cuvslam_setup/cuvslam_orin_setup/NVDA_SDKM_step_3_0.png
         :alt: Jetson AGX Orin Step 3.0
         :align: center
         :width: 600px
@@ -87,7 +87,7 @@ Table below contains the requirements for the notebook or desktop computer.
         * IP address
         * credentials
 
-    .. figure:: ./agx_orin_and_cuvslam_setup/cuvslam_orin_setup/NVDA_SDKM_step_3_1.png
+    .. figure:: /solutions/reference-designs/ad-r1m/agx_orin_and_cuvslam_setup/cuvslam_orin_setup/NVDA_SDKM_step_3_1.png
         :alt: Jetson AGX Orin Step 3.1
         :align: center
         :width: 600px
@@ -96,7 +96,7 @@ Table below contains the requirements for the notebook or desktop computer.
     * depending on the network speed, STEP 03 may take up to a couple of hours
     * wait until the setup completes
 
-    .. figure:: ./agx_orin_and_cuvslam_setup/cuvslam_orin_setup/NVDA_SDKM_step_4.png
+    .. figure:: /solutions/reference-designs/ad-r1m/agx_orin_and_cuvslam_setup/cuvslam_orin_setup/NVDA_SDKM_step_4.png
         :alt: Jetson AGX Orin Step 3.1
         :align: center
         :width: 600px
@@ -122,7 +122,7 @@ Rebot the device from terminal:
 
 The Jetson L4T version (36.4.4) and the timestamp (2025-06-16) of the new bootloader are visible on the first screen displayed after powerup/restart.
 
-.. figure:: ./agx_orin_and_cuvslam_setup/cuvslam_orin_setup/L4T_boot.jpg
+.. figure:: /solutions/reference-designs/ad-r1m/agx_orin_and_cuvslam_setup/cuvslam_orin_setup/L4T_boot.jpg
         :alt: Jetson AGX Orin - L4T boot
         :align: center
         :width: 600px
@@ -173,7 +173,7 @@ Listed version should be:
 Reboot the device to activate changes.
 Run **jtop** in a terminal. It should look like:
 
-.. figure:: ./agx_orin_and_cuvslam_setup/cuvslam_orin_setup/jtop.png
+.. figure:: /solutions/reference-designs/ad-r1m/agx_orin_and_cuvslam_setup/cuvslam_orin_setup/jtop.png
     :alt: jtop output
     :align: center
     :width: 600px
