@@ -236,6 +236,15 @@ The output should be:
         cd $ISAAC_ROS_WS
         source install/local_setup.bash
 
+3.10) Build the Isaac ROS workspace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: bash
+    
+    source /opt/ros/humble/setup.bash
+    cd $ISAAC_ROS_WS
+    cd IsaacSim-ros_workspaces/humble_ws
+    colcon build
+
 3.11) Cleanup
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
