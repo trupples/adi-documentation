@@ -17,10 +17,8 @@ Base AD-R1M
 
 .. include:: ./agx_orin_and_cuvslam_setup/cuvslam-and-ad-r1m-setup.rst
 
-.. todo::
+.. include:: ./agx_orin_and_cuvslam_setup/ad-r1m-realsense-gazebo.rst
 
-    Prerequisites: ubuntu laptop, nvidia sdk manager
-    List of supported hardware
 
 Prototype AD-R1M (Legacy)
 -------------------------
