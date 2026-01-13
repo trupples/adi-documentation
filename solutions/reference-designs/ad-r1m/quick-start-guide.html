@@ -8,11 +8,11 @@
 
     <title>AD-R1M Quick Start Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=31a9e0ba" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=5d595293" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
     <script src="../../../_static/tabs.js?v=3ee01567"></script>
-    <script async="async" src="../../../_static/app.umd.js?v=3a4867e9"></script>
+    <script async="async" src="../../../_static/app.umd.js?v=46a18818"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -98,15 +98,13 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">AD-R1M Quick Start Guide</a><ul>
-<li><a class="reference internal" href="#control-robot-using-remote-control">Control robot using remote control</a><ul>
+<li><a class="reference internal" href="#control-robot-using-remote-control">Control robot using remote control</a></li>
 <li><a class="reference internal" href="#control-robot-using-keyboard-teleop">Control robot using keyboard teleop</a></li>
 <li><a class="reference internal" href="#device-access">Device Access</a></li>
 <li><a class="reference internal" href="#raspberry-pi-runtime">Raspberry Pi Runtime</a><ul>
 <li><a class="reference internal" href="#mapping">Mapping</a></li>
 <li><a class="reference internal" href="#save-the-map">Save the map</a></li>
 <li><a class="reference internal" href="#navigation">Navigation</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -533,12 +531,13 @@ Content on this topic
 <li><p><strong>Enable motion</strong>: move the <strong>KILLSWITCH (SB)</strong> to the <strong>OFF</strong> position (as shown in the figure). The robot will slightly shake to indicate it is enabled.</p></li>
 <li><p><strong>Drive</strong>: use the indicated <strong>CONTROL GIMBAL</strong> to command the robot (forward/back/turn ~ up/down/left-right).</p></li>
 </ul>
+</section>
 <section id="control-robot-using-keyboard-teleop">
-<h3>Control robot using keyboard teleop<a class="headerlink" href="#control-robot-using-keyboard-teleop" title="Link to this heading"></a></h3>
+<h2>Control robot using keyboard teleop<a class="headerlink" href="#control-robot-using-keyboard-teleop" title="Link to this heading"></a></h2>
 <p>MOTODO</p>
 </section>
 <section id="device-access">
-<h3>Device Access<a class="headerlink" href="#device-access" title="Link to this heading"></a></h3>
+<h2>Device Access<a class="headerlink" href="#device-access" title="Link to this heading"></a></h2>
 <p>After connecting to the Wi‑Fi, you can access onboard computers as follows.</p>
 <ul>
 <li><p>SSH:</p>
@@ -554,9 +553,9 @@ Content on this topic
 </figure>
 </section>
 <section id="raspberry-pi-runtime">
-<h3>Raspberry Pi Runtime<a class="headerlink" href="#raspberry-pi-runtime" title="Link to this heading"></a></h3>
+<h2>Raspberry Pi Runtime<a class="headerlink" href="#raspberry-pi-runtime" title="Link to this heading"></a></h2>
 <section id="mapping">
-<h4>Mapping<a class="headerlink" href="#mapping" title="Link to this heading"></a></h4>
+<h3>Mapping<a class="headerlink" href="#mapping" title="Link to this heading"></a></h3>
 <p>To map the environment, run the mapping script and change the fixed frame to visualize the mapping process:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the VNC session on Raspberry Pi</span>
 ~/do_mapping.sh
@@ -578,7 +577,7 @@ Content on this topic
 <p>The video shows the complete mapping process where the robot navigates the environment while building a real-time map using SLAM (Simultaneous Localization and Mapping).</p>
 </section>
 <section id="save-the-map">
-<h4>Save the map<a class="headerlink" href="#save-the-map" title="Link to this heading"></a></h4>
+<h3>Save the map<a class="headerlink" href="#save-the-map" title="Link to this heading"></a></h3>
 <p>After completing the mapping, open a new terminal and save the map to a file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the VNC session on Raspberry Pi</span>
 ~/save_map.sh
@@ -591,7 +590,7 @@ Content on this topic
 </div>
 </section>
 <section id="navigation">
-<h4>Navigation<a class="headerlink" href="#navigation" title="Link to this heading"></a></h4>
+<h3>Navigation<a class="headerlink" href="#navigation" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~/do_navigation.sh
 </pre></div>
 </div>
@@ -622,7 +621,6 @@ You will see a blue arrow indicating the goal and the robot will start moving to
 <li><p>Brief overview of ROS 2 topics</p></li>
 </ul>
 </div>
-</section>
 </section>
 </section>
 </section>
