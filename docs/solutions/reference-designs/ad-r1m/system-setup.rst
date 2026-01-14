@@ -39,18 +39,6 @@ If you want to test this setup in a more controlled environment, we recommend us
     :maxdepth: 2
 
     agx_orin_and_cuvslam_setup/ad-r1m-realsense-gazebo
-    
-..
-    agx_orin_and_cuvslam_setup/ad-r1m-and-nvidia-cuvslam
-    agx_orin_and_cuvslam_setup/map-building-for-nav2
-..
-    .. include:: ./agx_orin_and_cuvslam_setup/agx-orin-setup.rst
-
-    .. include:: ./agx_orin_and_cuvslam_setup/isaac-ros-setup.rst
-
-    .. include:: ./agx_orin_and_cuvslam_setup/cuvslam-and-ad-r1m-setup.rst
-
-    .. include:: ./agx_orin_and_cuvslam_setup/ad-r1m-realsense-gazebo.rst
 
 
 Prototype AD-R1M (Legacy)
