@@ -23,5 +23,3 @@ Bellow is an example of cuVSLAM running with the AD-R1M + RealSense D435i Gazebo
     :alt: AD-R1M and cuVSLAM demo
     :align: center
     :width: 800px
-
-
