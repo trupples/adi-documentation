@@ -54,9 +54,6 @@ User Guides
 
    quick-start-guide
    hardware-guide
-   software-guide
-   troubleshooting
-   canopen
    production-guide
 
 Help and Support
