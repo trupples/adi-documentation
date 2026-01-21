@@ -68,6 +68,7 @@ Download the asset from NGC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Check the CDI (Container Device Interface)**
+
 List the content of CDI:
 
 .. code-block:: bash

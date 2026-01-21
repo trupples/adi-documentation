@@ -8,6 +8,7 @@ Connect the camera to any USB-A connector on the AGX Orin (USB-A 3.2 are recomme
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Check how the camera is detected**
+
 List only the USB devices with VID **0x8086** (Intel).
 
 .. code-block:: bash
@@ -23,6 +24,7 @@ The output should be similar to:
 where **0x0B3A** is the PID of RealSense D435i.
 
 **Install the packages**
+
 Register the server's public key:
 
 .. code-block:: bash
@@ -98,6 +100,7 @@ Select the 2D view mode and enable the Motion Module.  Rotate the camera module 
     :width: 600px
 
 **Test the VSLAM ROS nodes**
+
 In the existing terminal run:
 
 .. code-block:: bash
