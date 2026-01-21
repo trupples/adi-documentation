@@ -44,12 +44,12 @@ Control robot using remote control
 - **Drive**: use the indicated **CONTROL GIMBAL** to command the robot (forward/back/turn ~ up/down/left-right).
 
 Control robot using keyboard teleop
------------------------------------
+"""""""""""""""""""""""""""""""""""
 
 MOTODO
 
 Device Access
--------------
+""""""""""""""
 After connecting to the Wi‑Fi, you can access onboard computers as follows.
 
 - SSH:
@@ -81,7 +81,7 @@ After connecting to the Wi‑Fi, you can access onboard computers as follows.
            Use VNC for GUI tasks like RViz, especially on the Raspberry Pi, SSH is sufficient for Portenta access and navigating the OS.
 
 Raspberry Pi Runtime
---------------------
+""""""""""""""""""""
 
 ..
         Start docker container and RViz visualization
