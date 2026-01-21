@@ -1,5 +1,5 @@
 5) VSLAM and RealSense setup and usage on AGX Orin
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Connect the camera to any USB-A connector on the AGX Orin (USB-A 3.2 are recommended).
 
