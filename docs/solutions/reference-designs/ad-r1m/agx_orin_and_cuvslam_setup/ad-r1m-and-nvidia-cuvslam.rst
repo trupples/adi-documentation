@@ -34,12 +34,17 @@ After saving the configuration, start the localization system on the robot:
 
     sudo ./bringup_blind.sh
 
-Open a new terminal on the NVIDIA Jetson and launch the cuVSLAM node:
+Open a new terminal on the NVIDIA Jetson and run the Docker container:
 
 .. code-block:: bash
 
     cd $ISAAC_ROS_WS/src/isaac-ros-common
     ./scripts/run_dev.sh -i ros2_humble.realsense.visualslam
+
+Inside the container, launch the cuVSLAM node:
+
+.. code-block:: bash
+
     source install/setup.sh
     ros2 launch ad_r1m_cuvslam cuvslam_multirealsense.launch.py
 
