@@ -42,9 +42,9 @@ Required Hardware
 -----------------
 
 * ADRD3161
-* Stepper / BLDC / DC motor. Documented output represents the `QSH5718-51-28-101-10k <https://www.analog.com/qsh5718>`_ Stepper and `TODO` BLDC, respectively.
+* Stepper / BLDC / DC motor. Documented output represents the `QSH5718-51-28-101-10k <https://www.analog.com/qsh5718>`_ Stepper.
 * DC power supply (9 .. 70 VDC)
-* `MAX32625PICO <https://www.analog.com/max32625pico>`_ (or compatible) debug probe
+* `MAX32625PICO <https://www.analog.com/max32625pico>`_ (or other MAXDAP compatible) debug probe
 * Cables described in the previous section
 
 User Guides
@@ -59,4 +59,5 @@ User Guides
 Help and Support
 ----------------
 
-.. todo:: Support channel
+For questions and more information about this product, connect with us through the Analog Devices :ez:`sw-interface-tools/robot-operating-system-ros-sdk` .
+
