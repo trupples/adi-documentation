@@ -98,15 +98,13 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">AD-R1M Quick Start Guide</a><ul>
-<li><a class="reference internal" href="#control-robot-using-remote-control">Control robot using remote control</a><ul>
+<li><a class="reference internal" href="#control-robot-using-remote-control">Control robot using remote control</a></li>
 <li><a class="reference internal" href="#control-robot-using-keyboard-teleop">Control robot using keyboard teleop</a></li>
 <li><a class="reference internal" href="#device-access">Device Access</a></li>
 <li><a class="reference internal" href="#raspberry-pi-runtime">Raspberry Pi Runtime</a><ul>
 <li><a class="reference internal" href="#mapping">Mapping</a></li>
 <li><a class="reference internal" href="#save-the-map">Save the map</a></li>
 <li><a class="reference internal" href="#navigation">Navigation</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -341,14 +339,26 @@ Content on this topic
 <li class="toctree-l3 current"><a class="current reference internal" href="#">AD-R1M Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="use-cases.html">AD-R1M Use Case Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hardware-guide.html">AD-R1M Hardware Guide</a></li>
-<li class="toctree-l3"><a class="reference internal" href="system-setup.html">AD-R1M System Setup</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9-1" id="toctree-collapse-13-9-1"/><div class="collapse"><a class="reference internal" href="software-guide.html">AD-R1M Software Guide</a><label for="toctree-collapse-13-9-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9-1" id="toctree-collapse-13-9-1"/><div class="collapse"><a class="reference internal" href="system-setup.html">AD-R1M System Setup</a><label for="toctree-collapse-13-9-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="agx_orin_and_cuvslam_setup/agx-orin-setup.html">1) Linux installation on Jetson AGX Orin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agx_orin_and_cuvslam_setup/setup-req-pkg-agx-orin.html">2) Setup required packages on AGX Orin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agx_orin_and_cuvslam_setup/setup-isaac-ros-agx-orin.html">3) Setup Isaac ROS on AGX Orin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agx_orin_and_cuvslam_setup/setup-isaac-ros-vslam.html">4) Setup Isaac ROS Visual SLAM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agx_orin_and_cuvslam_setup/vslam-setup-and-usage.html">5) VSLAM and RealSense setup and usage on AGX Orin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agx_orin_and_cuvslam_setup/ad-r1m-jetson-orin-hardware-setup.html">6) AD-R1M and Jetson AGX Orin: hardware setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agx_orin_and_cuvslam_setup/ad-r1m-cuvslam-setup.html">7) AD-R1M and cuVSLAM setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agx_orin_and_cuvslam_setup/ad-r1m-and-nvidia-cuvslam.html">8) Launching AD-R1M and NVIDIA cuVSLAM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agx_orin_and_cuvslam_setup/map-building-for-nav2.html">9) Map building for NAV2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agx_orin_and_cuvslam_setup/ad-r1m-realsense-gazebo.html">10) AD-R1M Gazebo simulation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9-2" id="toctree-collapse-13-9-2"/><div class="collapse"><a class="reference internal" href="software-guide.html">AD-R1M Software Guide</a><label for="toctree-collapse-13-9-2"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="software-guide/ros2-getting-started.html">AD-R1M ROS 2 Getting Started</a></li>
 <li class="toctree-l4"><a class="reference internal" href="software-guide/ros2-examples.html">AD-R1M ROS2 examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="software-guide/ros2-architecture.html">AD-R1M ROS2 Architecture</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9-2" id="toctree-collapse-13-9-2"/><div class="collapse"><a class="reference internal" href="advanced-usage.html">AD-R1M Advanced Usage</a><label for="toctree-collapse-13-9-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9-3" id="toctree-collapse-13-9-3"/><div class="collapse"><a class="reference internal" href="advanced-usage.html">AD-R1M Advanced Usage</a><label for="toctree-collapse-13-9-3"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="advanced-usage/linux-system.html">AD-R1M Linux system structure (kernel, configs, services, docker)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="advanced-usage/ros2-writing-your-own-nodes.html">Writing your own ROS 2 nodes for AD-R1M</a></li>
 </ul>
@@ -533,12 +543,13 @@ Content on this topic
 <li><p><strong>Enable motion</strong>: move the <strong>KILLSWITCH (SB)</strong> to the <strong>OFF</strong> position (as shown in the figure). The robot will slightly shake to indicate it is enabled.</p></li>
 <li><p><strong>Drive</strong>: use the indicated <strong>CONTROL GIMBAL</strong> to command the robot (forward/back/turn ~ up/down/left-right).</p></li>
 </ul>
+</section>
 <section id="control-robot-using-keyboard-teleop">
-<h3>Control robot using keyboard teleop<a class="headerlink" href="#control-robot-using-keyboard-teleop" title="Link to this heading"></a></h3>
+<h2>Control robot using keyboard teleop<a class="headerlink" href="#control-robot-using-keyboard-teleop" title="Link to this heading"></a></h2>
 <p>MOTODO</p>
 </section>
 <section id="device-access">
-<h3>Device Access<a class="headerlink" href="#device-access" title="Link to this heading"></a></h3>
+<h2>Device Access<a class="headerlink" href="#device-access" title="Link to this heading"></a></h2>
 <p>After connecting to the Wi‑Fi, you can access onboard computers as follows.</p>
 <ul>
 <li><p>SSH:</p>
@@ -554,9 +565,9 @@ Content on this topic
 </figure>
 </section>
 <section id="raspberry-pi-runtime">
-<h3>Raspberry Pi Runtime<a class="headerlink" href="#raspberry-pi-runtime" title="Link to this heading"></a></h3>
+<h2>Raspberry Pi Runtime<a class="headerlink" href="#raspberry-pi-runtime" title="Link to this heading"></a></h2>
 <section id="mapping">
-<h4>Mapping<a class="headerlink" href="#mapping" title="Link to this heading"></a></h4>
+<h3>Mapping<a class="headerlink" href="#mapping" title="Link to this heading"></a></h3>
 <p>To map the environment, run the mapping script and change the fixed frame to visualize the mapping process:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the VNC session on Raspberry Pi</span>
 ~/do_mapping.sh
@@ -578,7 +589,7 @@ Content on this topic
 <p>The video shows the complete mapping process where the robot navigates the environment while building a real-time map using SLAM (Simultaneous Localization and Mapping).</p>
 </section>
 <section id="save-the-map">
-<h4>Save the map<a class="headerlink" href="#save-the-map" title="Link to this heading"></a></h4>
+<h3>Save the map<a class="headerlink" href="#save-the-map" title="Link to this heading"></a></h3>
 <p>After completing the mapping, open a new terminal and save the map to a file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the VNC session on Raspberry Pi</span>
 ~/save_map.sh
@@ -591,7 +602,7 @@ Content on this topic
 </div>
 </section>
 <section id="navigation">
-<h4>Navigation<a class="headerlink" href="#navigation" title="Link to this heading"></a></h4>
+<h3>Navigation<a class="headerlink" href="#navigation" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~/do_navigation.sh
 </pre></div>
 </div>
@@ -622,7 +633,6 @@ You will see a blue arrow indicating the goal and the robot will start moving to
 <li><p>Brief overview of ROS 2 topics</p></li>
 </ul>
 </div>
-</section>
 </section>
 </section>
 </section>
