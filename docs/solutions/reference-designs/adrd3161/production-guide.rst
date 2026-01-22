@@ -14,19 +14,19 @@ Bootstrapping the TMC9660
 The :adi:`TMC9660` has reconfigurable I/O, clocking, LDO outputs, etc. Bootstrapping is the initial step of configuring these. Through bootstrapping, a configuration may be loaded in volatile memory, or "burned" to permanent nonvolatile memory to be loaded at power-up. These burn operations should be used sparingly, as they are limited to a total of 4 :abbr:`OTP (One Time Programmable)` configuration slots.
 
 Configurations may be applied temporarily. If you want to try out a different configuration to the one provided as a default for this board, follow `AN-2601: TMC9660 Configuration and Bootstrapping
-<https://www.analog.com/en/resources/app-notes/an-2601.html>`_ and reference the *board schematic* (TODO) and *default configuration* (TODO).
+<https://www.analog.com/en/resources/app-notes/an-2601.html>`_ and reference the *board schematic* (TODO) and `default configuration <https://github.com/analogdevicesinc/adrd3161-fw/blob/main/scripts/ioconfig_adrd3161.toml>`_.
 
 These instructions assume the TMC9660 is unconfigured (or has an invalid config, as described in the TMC9660 datasheet, section *Configuration Storage*) and thus enters bootstrap mode at startup.
 
 Preparation:
 
 * Download `UBLTools <https://www.analog.com/en/products/tmc9660.html#software-resources>`_
-* Download bootstrap config file (TODO repo)
-* Obtain a suitable UART probe (TODO *list of compatible probes*, custom *pinout*)
+* Download bootstrap `config file <https://github.com/analogdevicesinc/adrd3161-fw/blob/main/scripts/ioconfig_adrd3161.toml>`_.
+* Obtain an UART probe (:adi:`MAX32625PICO` or other MAXDAP compatible)
 
 Steps:
 
-#. Connect the UART probe to header P7 (*diagram*)
+#. Connect the UART probe to header P7
 #. Take note of which serial interface the probe took. In the following commands, replace ``COM123`` with the actual serial port name.
 #. Verify the TMC9660 communicates and is in bootstrap mode:
 
@@ -40,10 +40,9 @@ Steps:
 
    .. code-block:: console
 
-      $ ublcli.exe --port COM123 write config --burn ad-amr-drv-bootstrap.toml
-      Writing config values to TM01
-      Configuration write and boot completed
-      TODO: this is the --boot output, not --burn, change
+      $ ublcli.exe --port COM123 write config --burn ioconfig_adrd3161.toml
+      Proceed with OTP burn? (y/n): y
+      Config burned successfully
 
 Flashing the MAX32662
 ---------------------
@@ -113,7 +112,7 @@ Build the firmware:
 
 .. code-block:: console
 
-   $ west build -p auto app
+   $ west build -b adrd3161 -p auto app
 
 Flash the firmware (will build if necessary):
 
@@ -122,14 +121,14 @@ Flash the firmware (will build if necessary):
    # Replace /MaximSDK/ with the path to MSDK
    $ west flash --openocd-search /MaximSDK/Tools/OpenOCD/scripts/ --openocd /MaximSDK/Tools/OpenOCD/openocd
 
-If your debug probe supports this, you may also flash the firmware by dragging and dropping the ``build/zephyr/zephyr.hex`` file onto the debug probe filesystem (?word?): (TODO example screenshots/gif)
+If your debug probe supports this, you may also flash the firmware by dragging and dropping the ``build/zephyr/zephyr.hex`` file onto the debug probe virtual storage device.
 
-Quick test
-----------
+Visual check
+------------
 
-TODO: How to quickly test a single board works
+A correctly prepared flashed board should do the following when power is applied:
 
-Test bench setup
-----------------
+* FAULT LED flashes briefly but stays off
+* DS1 LED flashes briefly but stays off
+* DS2 LED blinks at 2.5Hz indicating CANopen PRE-OPERATIONAL state
 
-TODO: How to set up an ADI production testing setup
