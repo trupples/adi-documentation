@@ -17,6 +17,20 @@ inside your workspace and load any of the available worlds.
 
 The gazebo simulation can be run on any PC while the cuVSLAM can be run only on a NVIDIA Isaac ROS compliant setup.
 
+On NVIDIA AGX Orin run the docker container in a new terminal:
+
+.. code-block:: bash
+
+     cd $ISAAC_ROS_WS/src/isaac_ros_common
+    ./scripts/run_dev.sh -i ros2_humble.realsense.visualslam
+
+Inside the Docker container launch cuVSLAM:
+
+.. code-block:: bash
+
+    source install/setup.sh
+    ros2 launch ad_r1m_cuvslam vslam_single_realsense.launch.py
+
 Bellow is an example of cuVSLAM running with the AD-R1M + RealSense D435i Gazebo simulation:
 
 .. figure:: /solutions/reference-designs/ad-r1m/agx_orin_and_cuvslam_setup/cuvslam_orin_setup/simulation_demo.gif
