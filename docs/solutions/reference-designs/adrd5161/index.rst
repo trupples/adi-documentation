@@ -23,6 +23,7 @@ Specifications
 * On-board OLED display with push buttons to control/ navigate menu
 
 Supporting hardware:
+
 * :adi:`MAX32662` Arm Cortex-M4 Processor with FPU-Based Microcontroller (MCU) with 256KB Flash and 80KB SRAM
 * :adi:`ADM3053` Signal and Power Isolated CAN Transceiver with Integrated Isolated DC-to-DC Converter
 * :adi:`MAX17320` 2S-4S ModelGauge m5 EZ Fuel Gauge with Protector, Internal Self-Discharge Detection, and SHA-256 Authentication
@@ -30,11 +31,14 @@ Supporting hardware:
 * :adi:`MAX77958` Standalone USB Type-C and USB Power Delivery Controller
 
 Connections:
+
 * Battery connector: XT60 connector and corresponding cable + balancing leads
 * Charger connection: USB-C cable
-* CAN, isolated: 2x Custom header described below(4 pin).
+* CAN, isolated: 2x Custom header described in the Hardware Guide.
 * Programming/ debugging: SWD header
-* Power cables to power up other modules: screw terminal
+* Power cables to power up other modules: 10 POS terminal block
+
+.. figure:: res/allconnections.jpg
 
 Required Hardware
 -----------------
@@ -60,11 +64,10 @@ To set the system up:
 
 To poweroff the module, press S2 button. Be mindful when using this feature, as this cuts the power supply to the entire system.
 
-
+.. figure:: res/buttons.jpg
 
 A detailed description of each state and how to control them from the onboard buttons is provided in the Quick Start section.
 
-TO DO:  add images and proper references
 
 User Guides
 -----------
