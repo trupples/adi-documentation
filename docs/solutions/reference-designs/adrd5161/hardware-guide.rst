@@ -1,7 +1,7 @@
 ADRD5161 Hardware Guide
 =======================
 
-.. todo:: Board image with annotations
+.. figure:: res/bms.png
 
 
 Block Diagram

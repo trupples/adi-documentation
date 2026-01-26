@@ -16,7 +16,7 @@ For development and debugging, data is printed to the serial console.
 Specifications
 --------------
 
-* 20V DC supply to charge battery
+* 20V DC USB standard supply  to charge battery
 * 3A maximum Constant Charge Current
 * Supported Battery: 3S LiPo battery packs
 * Isolated CAN bus communication, CANopen CiA 419
