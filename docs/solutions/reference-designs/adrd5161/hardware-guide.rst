@@ -1,26 +1,30 @@
 ADRD5161 Hardware Guide
 =======================
 
-.. todo:: Board image with annotations
+.. figure:: res/bms.png
 
 
 Block Diagram
 -------------
 
 .. figure:: res/hw_block_diagram.png
-   :width: 900 px
 
-   Schematic Block Diagram
-   
-TODO: add block diagram vs board top photo with main parts encircled + description
 
 Connectors
 ----------
 
-TODO: add picture with board + description of connectors
+Connections:
+
+* Battery connector: XT60 connector and corresponding cable + balancing leads
+* Charger connection: USB-C cable
+* CAN, isolated: 2x Custom header
+* Programming/ debugging: SWD header
+* Power cables to power up other modules: 10 POS terminal block
+
+.. figure:: res/allconnections.jpg
 
 CAN cable
-~~~~~~~~~
+---------
 
 The ADRDx161 board family communicates via CAN bus. The two headers P8, P9 allow for daisy-chaining CAN devices.
 
@@ -63,7 +67,11 @@ USB-C Adapter
 Led Indicators
 --------------
 
-TODO: describe onboard leds + photo with board with leds encircled
+When the module is connected to an external USB-C power supply, the 3 LEDs highlighted turn on.
+The second red LED, highlighted with green is blinking.
+
+.. figure:: res/leds.jpg
+
 
 Design and Integration Files
 ----------------------------
