@@ -97,6 +97,7 @@ User Guides
    quick-start-guide
    hardware-guide
    software-guide
+   battery-config
    canopen
 
 Help and Support
