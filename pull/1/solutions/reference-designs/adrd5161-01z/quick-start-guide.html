@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="ADRD5161-01Z" name="description" />
+
+    <title>ADRD5161-01Z Quick Start Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ADRD5161-01Z Hardware Guide" href="hardware-guide.html" />
+    <link rel="prev" title="ADRD5161-01Z" href="index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADRD5161-01Z Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#firmware-flashing">Firmware flashing</a></li>
+<li><a class="reference internal" href="#bms-state-machine-description-and-gui-control">BMS State Machine Description and GUI control</a><ul>
+<li><a class="reference internal" href="#configure-state-battery-pack-configuration">Configure State - Battery Pack Configuration</a></li>
+<li><a class="reference internal" href="#normal-state">Normal State</a></li>
+<li><a class="reference internal" href="#charging-state">Charging State</a></li>
+<li><a class="reference internal" href="#shutdown-state">Shutdown State</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">ADRD5161-01Z</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADRD5161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware-guide.html">ADRD5161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-guide.html">ADRD5161-01Z Software Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery-config.html">ADRD5161-01Z Battery Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="canopen.html">ADRD5161-01Z CANopen reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">ADRD5161-01Z</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="adrd5161-01z-quick-start-guide">
+<span id="adrd5161-01z-quick-guide-guide"></span><h1>ADRD5161-01Z Quick Start Guide<a class="headerlink" href="#adrd5161-01z-quick-start-guide" title="Link to this heading"></a></h1>
+<section id="required-hardware">
+<h2>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>ADRD5161-01Z</p></li>
+<li><p>3S LiPo battery pack with an XT60 connector</p></li>
+<li><p>USB PD charger, capable of 15V/20V, 3A (min)</p></li>
+<li><p>CAN cable</p></li>
+<li><p>Optional: MAXPICO (or compatible) debug / programming probe</p></li>
+</ul>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<p>The ADRD5161-01Z module comes with the state machine firmware already flashed.
+MAX17320 and MAX77958 are already configured for Panasonic NCR18650B batteries, with a total capacity 6600mAh.</p>
+<ul class="simple">
+<li><p>Connect the battery pack and balancing leads to the BMS module</p></li>
+<li><p>In order to start the module, after the battery is connected, S1 needs to be pressed.</p></li>
+<li><p>To poweroff the module, press S2.</p></li>
+<li><p>If the battery pack requires charging, plug in the USB-C cable, connected to
+20V/3A capable power supply. In this case, the module will power up
+automatically.</p></li>
+<li><p>After powering up, the module will enter the Configure State, where it waits
+for user input to be triggered. If no user input is received, the module will
+use default values.</p></li>
+<li><p>Depending on whether or not the USB-C cable is plugged in, the module will
+enter either the Normal or the Charging State.</p></li>
+<li><p>The Shutdown state cuts the power to the CAN Transceiver and the rest of the
+system, while keeping the BMS module powered on.</p></li>
+</ul>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/buttons.jpg"><img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/buttons.jpg" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/buttons.jpg" style="width: 40em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADRD5161-01Z switches S1 and S2.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="firmware-flashing">
+<h2>Firmware flashing<a class="headerlink" href="#firmware-flashing" title="Link to this heading"></a></h2>
+<p>Hardware Requirements:</p>
+<ul class="simple">
+<li><p>MAX32625PICO or similar DAPLINK programmer + cable</p></li>
+</ul>
+<p>Software Requirements:</p>
+<ul class="simple">
+<li><p>MaximSDK installed</p></li>
+<li><p>ZephyrSDK installed</p></li>
+<li><p>Zephyr Workspace configured</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Replace<span class="w"> </span>/MaximSDK/<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>MSDK
+<span class="gp">$ </span>west<span class="w"> </span>flash<span class="w"> </span>--openocd-search<span class="w"> </span>/MaximSDK/Tools/OpenOCD/scripts/<span class="w"> </span>--openocd<span class="w"> </span>/MaximSDK/Tools/OpenOCD/openocd
+</pre></div>
+</div>
+<p>Complete build instructions for the firmware, required tools and Zephyr
+workspace configuration are provided in the <a class="reference internal" href="software-guide.html#adrd5161-01z-software-guide"><span class="std std-ref">ADRD5161-01Z Software Guide</span></a>.</p>
+</section>
+<section id="bms-state-machine-description-and-gui-control">
+<h2>BMS State Machine Description and GUI control<a class="headerlink" href="#bms-state-machine-description-and-gui-control" title="Link to this heading"></a></h2>
+<section id="configure-state-battery-pack-configuration">
+<h3>Configure State - Battery Pack Configuration<a class="headerlink" href="#configure-state-battery-pack-configuration" title="Link to this heading"></a></h3>
+<p>The first step required when plugging in a new battery pack is configuring the BMS parameters for it. This may be done via the GUI on the BMS board.
+Analog Devices Inc. recommends using the battery configuration provided, which was already tested.</p>
+<p>However, the Configure state allows for the following parameters to be configured:</p>
+<ul class="simple">
+<li><p>FullCapacity - with a maximum of 6600mAh</p></li>
+<li><p>Constant Charge Current: 100mA &lt; CC Current &lt; 3A</p></li>
+<li><p>Charge Termination Voltage: 10.2V &lt; Vt &lt; 12.6V</p></li>
+</ul>
+<p>At power up, the module will go to the Configure State. To trigger user
+configuration, press S4 button. Then, to increase the value for each parameter,
+the same button needs to be pressed(S4). To decrease, S5 must be pressed. When
+satisfied with the value, and to move on to the next parameter, press S6. The
+buttons and their significance for the Configure State are highlighted in the
+image below.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/configure1.jpg"><img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/configure1.jpg" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/configure1.jpg" style="width: 40em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">ADRD5161-01Z startup screen and navigation button S4.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/configure2.jpg"><img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/configure2.jpg" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/configure2.jpg" style="width: 40em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">ADRD5161-01Z startup screen and navigation buttons S4, S5, S6.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="normal-state">
+<h3>Normal State<a class="headerlink" href="#normal-state" title="Link to this heading"></a></h3>
+<p>When in the Normal State, the ADRD5161-01Z board enables the power supply
+towards the system( motor control boards, localization boards) The CAN
+Transceiver is powered up here as well, thus enabling CAN communication. This
+state displays the following parameters, both on the screen in the serial
+console:</p>
+<ul class="simple">
+<li><p>State of Charge - SoC - %</p></li>
+<li><p>Pack Voltage - mV (serial console) &amp; V on display</p></li>
+<li><p>Cell1, Cell2, Cell3 Voltage - mV</p></li>
+<li><p>Current - mA</p></li>
+<li><p>Fuel Gauge Temperature - °C</p></li>
+<li><p>Remaining Capacity - mAh</p></li>
+<li><p>Full Capacity - mAh</p></li>
+<li><p>Time to empty - minutes</p></li>
+<li><p>Charging Current - mA</p></li>
+<li><p>Temperature (from onboard Temperature sensor) - °C</p></li>
+</ul>
+<p>To navigate OLED display, press S5.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/normal.jpg"><img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/normal.jpg" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/normal.jpg" style="width: 40em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">ADRD5161-01Z screen during normal operation.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="charging-state">
+<h3>Charging State<a class="headerlink" href="#charging-state" title="Link to this heading"></a></h3>
+<p>When in the Charging State, the ADRD5161-01Z board enables the charging power
+path. This allows for the battery pack to be charged, without cutting the power
+to the additional modules. In case of an undervoltage event (e.g. connecting
+USB-C cable from 5V supply, instead of 20V), the module will go to Shutdown
+state. This state displays the following parameters, both on the screen in the
+serial console:</p>
+<ul class="simple">
+<li><p>State of Charge - SoC - %</p></li>
+<li><p>Pack Voltage - mV (serial console) &amp; V on display</p></li>
+<li><p>Cell1, Cell2, Cell3 Voltage - mV</p></li>
+<li><p>Current - mA</p></li>
+<li><p>Fuel Gauge Temperature - °C</p></li>
+<li><p>Remaining Capacity - mAh</p></li>
+<li><p>Full Capacity - mAh</p></li>
+<li><p>Time to full - minutes</p></li>
+<li><p>Temperature (from onboard Temperature sensor) - °C</p></li>
+</ul>
+<p>To navigate OLED display, press S5. When in this state, the highlighted LED is on.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/charging.jpg"><img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/charging.jpg" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/charging.jpg" style="width: 40em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">ADRD5161-01Z screen during charging.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="shutdown-state">
+<h3>Shutdown State<a class="headerlink" href="#shutdown-state" title="Link to this heading"></a></h3>
+<p>When in the Shutdown state, the ADRD5161-01Z is still powered on. However, the
+supply to the consumers and the CAN Transceiver is cut off. This state can be
+triggered either by faults appearing in the powerpath, or by pressing the
+designated S4 button. To exit Shutdown State, the same button must be pressed.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/shutdown.jpg"><img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/shutdown.jpg" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/shutdown.jpg" style="width: 40em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">ADRD5161-01Z screen during shutdown.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ADRD5161-01Z</a>
+    <a href="hardware-guide.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADRD5161-01Z Hardware Guide</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

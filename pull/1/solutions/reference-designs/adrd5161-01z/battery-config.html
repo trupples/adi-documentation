@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The fuel-gauge chip MAX17320 has the configuration data stored in a non-volatile memory, which has a limited number of writes. Because of this, we recommend using the configuration that is already loaded on the chip, which is compatible with for 3 series, 2 parallel Panasonic NCR18650GA Li-ion batteries. In order to obtain compatibility with other battery packs, MAX17320’s non-volatile memory needs to be updated to reflect the characteristics of the new batteries. The following sections describe this process. NOTE: We strongly suggest using the recommended configuration." name="description" />
+
+    <title>ADRD5161-01Z Battery Configuration &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ADRD5161-01Z CANopen reference" href="canopen.html" />
+    <link rel="prev" title="ADRD5161-01Z Software Guide" href="software-guide.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADRD5161-01Z Battery Configuration</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#hardware-requirements">Hardware Requirements</a></li>
+<li><a class="reference internal" href="#software-requirements">Software Requirements</a></li>
+<li><a class="reference internal" href="#install-tools">Install Tools</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">ADRD5161-01Z</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="quick-start-guide.html">ADRD5161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware-guide.html">ADRD5161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-guide.html">ADRD5161-01Z Software Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADRD5161-01Z Battery Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="canopen.html">ADRD5161-01Z CANopen reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">ADRD5161-01Z</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="adrd5161-01z-battery-configuration">
+<h1>ADRD5161-01Z Battery Configuration<a class="headerlink" href="#adrd5161-01z-battery-configuration" title="Link to this heading"></a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The fuel-gauge chip MAX17320 has the configuration data stored in a non-volatile memory, which has a limited number of writes. Because of this, we recommend using
+the configuration that is already loaded on the chip, which is compatible with for 3 series, 2 parallel Panasonic NCR18650GA Li-ion batteries.
+In order to obtain compatibility with other battery packs, MAX17320’s non-volatile memory needs to be updated to reflect the characteristics of the new batteries.
+The following sections describe this process.
+NOTE: We strongly suggest using the recommended configuration.</p>
+</section>
+<section id="hardware-requirements">
+<h2>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>ADRD5161-01Z board</p></li>
+<li><p>I2C FTDI Programmer with SWD Header</p></li>
+<li><p>User desired battery pack</p></li>
+</ul>
+</section>
+<section id="software-requirements">
+<h2>Software Requirements<a class="headerlink" href="#software-requirements" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>MAX17320 Wizard - available on analog.com</p></li>
+</ul>
+</section>
+<section id="install-tools">
+<h2>Install Tools<a class="headerlink" href="#install-tools" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Download and install the  MAX17320 Evaluation GUI available on analog.com.</p></li>
+</ul>
+</section>
+<section id="hardware-setup">
+<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<p>In order to ensure communication between the computer, which is running the Configuration Wizard, and the fuel-gauge chip on the board,
+the solder jumpers highlighted in the image below must be switched from: JP4-5-6 : 3-2 -&gt; 1-2.
+NOTE: After configuring MAX17320, these jumpers must go back to their initial positions , to communicate with the MCU.</p>
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/jumpers.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/jumpers.png" />
+<p>After configuring the jumpers, the I2C adaptor board needs to be connected to the SWD hearder, that is located close to the on-board display,
+highlighted with red, below.</p>
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/i2cswd.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/i2cswd.png" />
+<p>Finally, you need to have your battery pack connected, so the chip and GUI can draw proper measurements.</p>
+</section>
+<section id="software-setup">
+<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
+<p>After installing the MAX17320 Evaluation software, follow along the process as shown in the images below.</p>
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/1.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/1.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/2.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/2.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/3.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/3.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/4.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/4.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/5.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/5.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/6.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/6.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/7.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/7.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/8.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/8.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/9.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/9.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/10.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/10.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/11.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/11.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/12.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/12.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/13.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/13.png" />
+<img alt="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/14.png" src="https://media.githubusercontent.com/media/trupples/adi-documentation/adrd5161-add-battery-config-guide/docs/solutions/reference-designs/adrd5161-01z/res/14.png" />
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="software-guide.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ADRD5161-01Z Software Guide</a>
+    <a href="canopen.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADRD5161-01Z CANopen reference</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
