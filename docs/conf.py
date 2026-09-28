@@ -2,7 +2,7 @@
 
 from os import path
 import sys
-sys.path.insert(0, path.abspath('ext'))
+sys.path.insert(0, path.abspath(path.dirname(__file__)))
 
 # -- Project information -----------------------------------------------------
 
