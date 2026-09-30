@@ -142,6 +142,15 @@ USB and Power
    v4l2_driver
    firmware_module_upgrade
 
+Terms
+-----
+
+- **FOI**: Field of Illumination
+- **FOV**: Field of View
+- **FPS**: Frames per Second
+- **SOM**: System On Module
+- **VCSEL**: Vertical-Cavity Surface-Emitting Laser
+
 Support Links
 -------------
 
@@ -153,26 +162,6 @@ Support Links
 
    -  https://www.lumentum.com/en/products/10-w-940-nm-triple-junction-vcsel-array
    -  https://www.lumentum.com/en/products/multi-junction-vcsel-arrays
-
-Terms
------
-
-.. glossary::
-
-   FOI
-      Field of Illumination
-
-   FOV
-      Field of View
-
-   FPS
-      Frames per Second
-
-   SOM
-      System On Module
-
-   VCSEL
-      Vertical-Cavity Surface-Emitting Laser
 
 Recommendations
 ---------------
