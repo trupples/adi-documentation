@@ -111,9 +111,9 @@ Table of Contents
 
          #. Linux software
 
-            #. :ref:`ADRV9009/ADRV9008 Linux Device Driver <iio-transceiver adrv9009>`
+            #. :external+linux:ref:`ADRV9009/ADRV9008 Linux Device Driver <adrv9009>`
 
-               #. :ref:`ADRV9009/ADRV9008 Device Driver Customization <iio-transceiver adrv9009 customization>`
+               #. :external+linux:ref:`ADRV9009/ADRV9008 Device Driver Customization <adrv9009-customization>`
                #. :ref:`Customizing the devicetree on the target <linux-kernel zynq-tips-tricks>`
 
             #. :dokuwiki:`JESD204 (FSM) Interface Linux Kernel Framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
