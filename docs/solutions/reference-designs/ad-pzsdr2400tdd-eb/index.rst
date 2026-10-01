@@ -34,10 +34,15 @@ path consists of a 2.4GHz filter, half watt driver amplifier :adi:`ADL5324` and
    Layout Considerations <hardware/layout_considerations>
    FCC or CE Certification <hardware/fcc_or_ce_certification>
    Software <software>
-   Help and Support <help_and_support>
 
 For HDL reference documentation on the AD9361 TDD mode support, see
 :external+hdl:doc:`library/axi_ad9361/tdd_support`.
+
+Help and Support
+----------------
+
+For questions and support, please visit the :ez:`fpga` community on
+EngineerZone.
 
 Warning
 -------
